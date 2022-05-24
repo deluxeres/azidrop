@@ -1,0 +1,89 @@
+.header-lent {
+    background: transparent;
+    width: 100%;
+    height: 200px;
+}
+
+.tab-live {
+    display: flex;
+
+    .tab-list__right {
+        overflow: hidden;
+    }
+
+    .tab-btn {
+        background-color: #222A68;
+        border-radius: 12px;
+        height: 48px;
+        width: 48px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s all;
+    }
+
+    .tabLive__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 200px;
+        justify-content: space-between;
+        margin-right: 32px;
+    }
+}
+
+.live-top {
+    .live-top__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .live-card__card {
+        background-color: #222A68;
+        border: 1px solid #414DA4;
+        border-radius: 16px;
+        height: 200px;
+        width: 150px;
+        padding: 15px;
+        transition: 0.3s all;
+        margin-right: 15px;
+
+        &:hover {
+            background-color: #1c224e;
+            transform: scale(0.97);
+        }
+
+        .live-card__name {
+            font-weight: 400;
+            font-size: 12px;
+            color: #FFFBFF;
+        }
+        
+        .live-card__tag {
+            .card-tag {
+                &__orange {
+                    background-color: #F19A38;
+                    width: 6px;
+                    height: 6px;
+                    display: block;
+                    border-radius: 50%;
+                }
+                &__purple {
+                    background-color: #AB67ED;
+                    width: 6px;
+                    height: 6px;
+                    display: block;
+                    border-radius: 50%;
+                }
+                &__blue {
+                    background-color: #2887F7;
+                    width: 6px;
+                    height: 6px;
+                    display: block;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
