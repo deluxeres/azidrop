@@ -1,6 +1,6 @@
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
+import Main from "./components/Main/Main";
 import Header from "./components/Header/Header";
 import HeaderLive from "./components/Header/HeaderLive/HeaderLive";
 
@@ -10,7 +10,7 @@ function App() {
         <Header />
         <HeaderLive />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Main />} />
         </Routes>
     </div>
   );

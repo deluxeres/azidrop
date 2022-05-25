@@ -20,7 +20,7 @@ function Header() {
                     <nav>
                       <ul>
                         <li>
-                          <Link className="headerMenu__link" to="/cases">Кейсы</Link>
+                          <Link className="headerMenu__link" to="/contracts">Контракты</Link>
                         </li>
                         <li>
                         <Link className="headerMenu__link" to="/cases">Тестовая страница</Link>
