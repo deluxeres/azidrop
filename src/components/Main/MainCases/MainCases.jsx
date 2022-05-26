@@ -1,18 +1,9 @@
 import React from "react";
-import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
 import "./MainCases.scss";
 import db from "../../../DataBase/Live.json";
-import { setCurrentCase } from "../reducer/reducer"
 
 function MainCases(props) {
-
-  // const history = useNavigate();
-  // const dispatch = useDispatch();
-  // const handleClick = () => {
-  //   dispatch(setCurrentCase(cases));
-  //   history.push(`/app/${db["cases"].id}`);
-  // };
 
   return (
     <div className="main-wrapper">
@@ -39,7 +30,5 @@ function MainCases(props) {
     </div>
   );
 }
-
-// to={'/casePage' + caseDb.id}
 
 export default MainCases;

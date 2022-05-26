@@ -2,7 +2,6 @@ import React from 'react'
 import './CasePage.scss'
 
 function CasePage(props) {
-
   return (
     <div className="case-page">
       <div className="container">
