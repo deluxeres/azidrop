@@ -23,7 +23,8 @@ function CasePage(props) {
     <div className="case-page">
       <div className="container">
         <div className="case-wrapper">
-          <div className="case">
+          <div className="case-left">
+            <div className="case__container">
             <div className="case__innerName">
               <span></span>
             </div>
@@ -33,6 +34,15 @@ function CasePage(props) {
             <div className="case__image">
               <img src={caseElem.image} alt="case" />
             </div>
+            </div>
+          </div>
+          <div className="case-right">
+              <div className="case-right__info">
+                <button>Прокрутить</button>
+              </div>
+              <div className="case-right__description">
+                  <p>Накопив определенное количество бонусов, вы сможете открыть определенные кейсы, на которых цена указана в бонусах.</p>
+              </div>
           </div>
         </div>
       </div>

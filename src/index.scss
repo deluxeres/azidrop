@@ -25,3 +25,19 @@ a {
 li {
   list-style: none;
 }
+
+::-webkit-scrollbar {
+  width: 5px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
+  background-color: #143861;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #1373e0;
+  border-radius: 9em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}

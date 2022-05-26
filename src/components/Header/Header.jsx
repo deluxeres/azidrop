@@ -30,10 +30,10 @@ function Header() {
                           <Link className="headerMenu__link" to="/contracts">Контракты</Link>
                         </li>
                         <li>
-                        <Link className="headerMenu__link" to="/cases">Тестовая страница</Link>
+                        <Link className="headerMenu__link" to="/cases">FAQ</Link>
                         </li>
                         <li>
-                          <Link className="headerMenu__link" to="/cases">Страница</Link>
+                          <Link className="headerMenu__link" to="/cases">Ежедневный бонус</Link>
                         </li>
                       </ul>
                     </nav>

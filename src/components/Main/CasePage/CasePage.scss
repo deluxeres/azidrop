@@ -2,21 +2,26 @@
   .case-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    .case {
+    justify-content: space-around;
+    .case-left {
       width: 400px;
       height: 400px;
       position: relative;
+      
 
-      &__name {
+      .case__name {
         font-weight: bold;
         font-size: 30px;
         color: #fff;
         text-align: center;
         margin-bottom: 40px;
+
+        span {
+          border-bottom: 3px solid #fff;
+        }
       }
 
-      &__image {
+      .case__image {
         img {
           width: 100%;
         }
@@ -35,6 +40,44 @@
             filter: blur(8px);
             left: 0;
         }
+      }
+    }
+
+    .case-right {
+      border-bottom: 2px solid #e737376e;
+      padding-bottom: 10px;
+      &__info {
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: skewX(-10deg);
+          border-radius: 6px;
+          background-color: #6dae01;
+          border: 1px solid transparent;
+          transition: .2s ease-in-out;
+          cursor: pointer;
+          color: #fff;
+          font-weight: 600;
+          width: 180px;
+          height: 45px;
+          transition: 0.3s;
+          -webkit-box-shadow: 0px 0px 25px -1px rgba(109,174,1,0.69); 
+          box-shadow: 0px 0px 25px -1px rgba(109,174,1,0.69);
+
+          &:hover {
+            background-color: #3c9917;
+          }
+          &:active {
+            border: 1px solid white;
+          }
+        }
+      }
+      &__description {
+        width: 350px;
+        color: #fff;
+        font-style: italic;
+        margin-top: 30px;
       }
     }
   }
