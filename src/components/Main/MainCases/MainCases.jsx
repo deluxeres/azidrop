@@ -4,7 +4,6 @@ import "./MainCases.scss";
 import db from "../../../DataBase/Live.json";
 
 function MainCases(props) {
-
   return (
     <div className="main-wrapper">
       <div className="cases">
