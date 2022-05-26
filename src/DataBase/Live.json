@@ -1,94 +1,130 @@
-[
+{
+  "live": [
     {
-        "id": 1,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09Kzm7-FmP7mDLfYkWNFpsch2evFo9Wl2lflr0RtZzilJNTBdgE3ZAyDr1nrx-vs0cK9vsmamnt9-n51UgTl8ms/100fx74f/image.png",
-        "line": "live-card__line__purple",
-        "badge": "purple"
+      "id": 1,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09Kzm7-FmP7mDLfYkWNFpsch2evFo9Wl2lflr0RtZzilJNTBdgE3ZAyDr1nrx-vs0cK9vsmamnt9-n51UgTl8ms/100fx74f/image.png",
+      "line": "live-card__line__purple",
+      "badge": "purple"
     },
     {
-        "id": 2,
-        "name": "Desert Eagle | Blaze",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
-        "line": "live-card__line__orange",
-        "badge": "orange"
+      "id": 2,
+      "name": "Desert Eagle | Blaze",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
+      "line": "live-card__line__orange",
+      "badge": "orange"
     },
     {
-        "id": 3,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5rbbOKMyJYYl2STKFNVfw3-x7TBCI24dJuGoOy8-0EKgrv5YaVMbgkOIpJTcbSU_OFYwuo7UIxg_JafJCMqXvqjn_3ejBdkE3axU4/100fx74f/image.png",
-        "line": "live-card__line__blue",
-        "badge": "blue"
+      "id": 3,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5rbbOKMyJYYl2STKFNVfw3-x7TBCI24dJuGoOy8-0EKgrv5YaVMbgkOIpJTcbSU_OFYwuo7UIxg_JafJCMqXvqjn_3ejBdkE3axU4/100fx74f/image.png",
+      "line": "live-card__line__blue",
+      "badge": "blue"
     },
     {
-        "id": 4,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3KqnUjlRc7cF4n-SPrYrx2wKxqRY9ZGCgdYSScFJtZAnQ-VDryLjqgJG0uJybz3BgvXQm4mGdwUKgJSXXOg/100fx74f/image.png",
-        "line": "live-card__line__blue",
-        "badge": "blue"
+      "id": 4,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3KqnUjlRc7cF4n-SPrYrx2wKxqRY9ZGCgdYSScFJtZAnQ-VDryLjqgJG0uJybz3BgvXQm4mGdwUKgJSXXOg/100fx74f/image.png",
+      "line": "live-card__line__blue",
+      "badge": "blue"
     },
     {
-        "id": 5,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf1OD3dzxP7c-JhoGHm-7LPr7Vn35cpsRw3bySrYr03wLsqkE_MTzyLdWdclA9ZlqF_QDowL290JG-7s_IyHV9-n51iAGw7_U/100fx74f/image.png",
-        "line": "live-card__line__purple",
-        "badge": "purple"
+      "id": 5,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf1OD3dzxP7c-JhoGHm-7LPr7Vn35cpsRw3bySrYr03wLsqkE_MTzyLdWdclA9ZlqF_QDowL290JG-7s_IyHV9-n51iAGw7_U/100fx74f/image.png",
+      "line": "live-card__line__purple",
+      "badge": "purple"
     },
     {
-        "id": 6,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
-        "line": "live-card__line__purple",
-        "badge": "purple"
+      "id": 6,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
+      "line": "live-card__line__purple",
+      "badge": "purple"
     },
     {
-        "id": 7,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3KqnUjlRc7cF4n-SPrYrx2wKxqRY9ZGCgdYSScFJtZAnQ-VDryLjqgJG0uJybz3BgvXQm4mGdwUKgJSXXOg/100fx74f/image.png",
-        "line": "live-card__line__purple",
-        "badge": "purple"
+      "id": 7,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3KqnUjlRc7cF4n-SPrYrx2wKxqRY9ZGCgdYSScFJtZAnQ-VDryLjqgJG0uJybz3BgvXQm4mGdwUKgJSXXOg/100fx74f/image.png",
+      "line": "live-card__line__purple",
+      "badge": "purple"
     },
     {
-        "id": 8,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
-        "line": "live-card__line__orange",
-        "badge": "orange"
+      "id": 8,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
+      "line": "live-card__line__orange",
+      "badge": "orange"
     },
     {
-        "id": 9,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf1OD3dzxP7c-JhoGHm-7LPr7Vn35cpsRw3bySrYr03wLsqkE_MTzyLdWdclA9ZlqF_QDowL290JG-7s_IyHV9-n51iAGw7_U/100fx74f/image.png",
-        "line": "live-card__line__orange",
-        "badge": "orange"
+      "id": 9,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf1OD3dzxP7c-JhoGHm-7LPr7Vn35cpsRw3bySrYr03wLsqkE_MTzyLdWdclA9ZlqF_QDowL290JG-7s_IyHV9-n51iAGw7_U/100fx74f/image.png",
+      "line": "live-card__line__orange",
+      "badge": "orange"
     },
     {
-        "id": 10,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3KqnUjlRc7cF4n-SPrYrx2wKxqRY9ZGCgdYSScFJtZAnQ-VDryLjqgJG0uJybz3BgvXQm4mGdwUKgJSXXOg/100fx74f/image.png",
-        "line": "live-card__line__blue",
-        "badge": "blue"
+      "id": 10,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3KqnUjlRc7cF4n-SPrYrx2wKxqRY9ZGCgdYSScFJtZAnQ-VDryLjqgJG0uJybz3BgvXQm4mGdwUKgJSXXOg/100fx74f/image.png",
+      "line": "live-card__line__blue",
+      "badge": "blue"
     },
     {
-        "id": 11,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf1OD3dzxP7c-JhoGHm-7LPr7Vn35cpsRw3bySrYr03wLsqkE_MTzyLdWdclA9ZlqF_QDowL290JG-7s_IyHV9-n51iAGw7_U/100fx74f/image.png",
-        "line": "live-card__line__blue",
-        "badge": "blue"
+      "id": 11,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf1OD3dzxP7c-JhoGHm-7LPr7Vn35cpsRw3bySrYr03wLsqkE_MTzyLdWdclA9ZlqF_QDowL290JG-7s_IyHV9-n51iAGw7_U/100fx74f/image.png",
+      "line": "live-card__line__blue",
+      "badge": "blue"
     },
     {
-        "id": 12,
-        "name": "StatTrak™ MAC-10 | Neon Rider",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09Kzm7-FmP7mDLfYkWNFpsch2evFo9Wl2lflr0RtZzilJNTBdgE3ZAyDr1nrx-vs0cK9vsmamnt9-n51UgTl8ms/100fx74f/image.png",
-        "line": "live-card__line__blue",
-        "badge": "blue"
+      "id": 12,
+      "name": "StatTrak™ MAC-10 | Neon Rider",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09Kzm7-FmP7mDLfYkWNFpsch2evFo9Wl2lflr0RtZzilJNTBdgE3ZAyDr1nrx-vs0cK9vsmamnt9-n51UgTl8ms/100fx74f/image.png",
+      "line": "live-card__line__blue",
+      "badge": "blue"
     },
     {
-        "id": 13,
-        "name": "Desert Eagle | Blaze",
-        "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
-        "line": "live-card__line__silver",
-        "badge": "silver"
+      "id": 13,
+      "name": "Desert Eagle | Blaze",
+      "imageUrl": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv2P8dWsiQKyrxFoMGj3Io_BcwA6YFDSq1a6lLq91J7o6Z3MzHVhvHFz4GGdwUK867nN7w/100fx74f/image.png",
+      "line": "live-card__line__silver",
+      "badge": "silver"
     }
-    
-]
+  ],
+  "promo": [
+    {
+      "procent": 35,
+      "promocode": "C98A0B35-1209-41AC-BA21",
+      "limit": 3310,
+      "limitLast": 4000
+    }
+  ],
+  "cases": [
+    {
+      "id": 1,
+      "image": "https://images.steamcdn.io/forcedrop/cases/new_milspec.png",
+      "name": "Армейское",
+      "price": 30
+    },
+    {
+      "id": 2,
+      "image": "https://images.steamcdn.io/forcedrop/cases/sprngcaseee.png",
+      "name": "Buy Round",
+      "price": 129
+    },
+    {
+      "id": 3,
+      "image": "https://images.steamcdn.io/forcedrop/cases/travis.png",
+      "name": "Travis Scott",
+      "price": 300
+    }
+    ,
+    {
+      "id": 4,
+      "image": "https://images.steamcdn.io/forcedrop/cases/ytcase121.png",
+      "name": "YouTube",
+      "price": 575
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+.case-page {
+  .case-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .case {
+      width: 400px;
+      height: 400px;
+      position: relative;
+
+      &__name {
+        font-weight: bold;
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      &__image {
+        img {
+          width: 100%;
+        }
+      }
+      .case__innerName {
+        span {
+            background-image: url(https://forcedrop.app/public/img/title_flare.png);
+            display: block;
+            background-size: contain;
+            position: absolute;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            z-index: -1;
+            filter: blur(8px);
+            left: 0;
+        }
+      }
+    }
+  }
+}
