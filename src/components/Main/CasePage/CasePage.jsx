@@ -1,12 +1,8 @@
 import React from 'react'
 import './CasePage.scss'
-import { useSelector} from 'react-redux';
 
-function CasePage() {
-  const game = useSelector(state => state.games.currentGame);
+function CasePage(props) {
 
-  if(!game) return null
-  
   return (
     <div className="case-page">
       <div className="container">

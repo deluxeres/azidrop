@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './header.scss'
 import { Link } from 'react-router-dom'
+import {Input, Text} from '@chakra-ui/react'
 import userProfile from '../../Assets/images/Header/user.png'
 import headerLogo from '../../Assets/images/Header/logo.png'
  
 function Header() {
+
+  const [show, setShow] = useState(false)
+
+  const [value, setValue] = React.useState('')
+  const handleChange = (event) => setValue(event.target.value)
+
   return (
     <div className="header">
       <div className="container">
@@ -46,9 +53,34 @@ function Header() {
                     <div className="header-profile__balance">
                       <span>5,56 $</span>
                     </div>
-                    <button className="header-profile__deposit">Пополнить</button>
+                    <button onClick={() => setShow(!show)} className="header-profile__deposit">Пополнить</button>
                   </div>
               </div>
+            {show &&
+              <div className="pay-popup">
+                <div className="popup-modal">
+                    <div className="popup-modal__container">
+                        <button onClick={() => setShow(!show)}><svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="23px" height="23px"><path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"/></svg></button>
+                        <div className="popup-modal__title">
+                          <p>Пополнение баланса</p>
+                        </div>
+                        <div className="popup-modal__sum">
+                          <Text color="white" mb='8px' mt="15px">К оплате: {value} руб.</Text>
+                          <Input
+                            value={value}
+                            onChange={handleChange}
+                            placeholder='Введите сумму пополнения'
+                            size='sm'
+                          />
+                        </div>
+                        <div className="popup-modal__limit">
+                            <img src="https://forcedrop.app/public/img/icon_attention.svg?v=2" alt='limit'/>
+                            <span>Минимальная сумма: 80 RUB</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            }
           </div>
       </div>
     </div>

@@ -145,3 +145,97 @@
     font-weight: bold;
     margin-left: 17px;
 }
+
+.pay-popup {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.568);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .popup-modal {
+        width: 450px;
+        height: 400px;
+        background-color: #2d248f;
+        border: 2px solid #885bf1;
+        border-radius: 6px;
+        transform: skewX(-5deg);
+
+        &__container {
+            padding: 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            height: 100%;
+
+            button {
+                width: 25px;
+                height: 20px;
+                background: transparent;
+                outline: none;
+                border: none;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+                
+                &:active {
+                    svg {
+                        fill: #F19A38;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            p {
+                font-size: 25px;
+                color: #fff;
+                font-weight: 500;
+            }
+        }
+
+        &__sum {
+            input {
+                background-color: transparent;
+                color: #ffffff;
+                width: 100%;
+                height: 40px;
+                font-size: 17px;
+                border: 1px solid #ffffff;
+                padding: 0px 20px;
+                outline: none;
+            }
+        }
+
+        &__limit {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 20px;
+            width: 60%;
+            padding: 11px 16px 11px 10px;
+            min-height: 55px;
+            border-radius: 8px;
+            background-color: rgba(255, 221, 69, 0.2);
+            font-size: 12px;
+            line-height: 17px;
+            font-weight: 400;
+            justify-content: space-around;
+            color: #fbae21;
+        }
+    }
+}

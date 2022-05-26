@@ -12,7 +12,7 @@ function App() {
       <HeaderLive />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/CasePage/:id" element={<CasePage />} />
+        <Route path="/casePage/:id" element={<CasePage />} />
       </Routes>
     </div>
   );
