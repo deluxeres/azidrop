@@ -17,7 +17,7 @@ function Home() {
 
         {db['promo'].map((promoBase) => {
             return (
-          <div className="promo">
+          <div className="promo" key={promoBase.id}>
             <span className="promo-title">Бонус к сумме пополнения<span className="promo-procent">{promoBase.procent}<span>%</span></span></span>
             <div className="promo-section">
               <div className="promo-block">

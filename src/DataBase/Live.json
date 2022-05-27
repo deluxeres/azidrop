@@ -118,13 +118,71 @@
       "image": "https://images.steamcdn.io/forcedrop/cases/travis.png",
       "name": "Travis Scott",
       "price": 300
-    }
-    ,
+    },
     {
       "id": 4,
       "image": "https://images.steamcdn.io/forcedrop/cases/ytcase121.png",
       "name": "YouTube",
       "price": 575
+    },
+    {
+      "id": 5,
+      "image": "https://images.steamcdn.io/forcedrop/cases/FARMCOVERTCASE.png",
+      "name": "Фарм тайного",
+      "price": 222
+    },
+    {
+      "id": 6,
+      "image": "https://images.steamcdn.io/forcedrop/cases/freecase_3.png",
+      "name": "Фарм",
+      "price": 76
+    },
+    {
+      "id": 7,
+      "image": "https://images.steamcdn.io/forcedrop/cases/nekoglai.png",
+      "name": "Некоглай",
+      "price": 400
+    },
+    {
+      "id": 8,
+      "image": "https://images.steamcdn.io/forcedrop/cases/hole.png",
+      "name": "Дырявый",
+      "price": 29
+    }
+    ,
+    {
+      "id": 9,
+      "image": "https://images.steamcdn.io/forcedrop/cases/glcases.png",
+      "name": "Перчатки",
+      "price": 2400
+    }
+    ,
+    {
+      "id": 10,
+      "image": "https://images.steamcdn.io/forcedrop/cases/ecocase.png",
+      "name": "Eco Round",
+      "price": 100
+    }
+    ,
+    {
+      "id": 11,
+      "image": "https://images.steamcdn.io/forcedrop/cases/alisher.png",
+      "name": "Моргенштерн",
+      "price": 1080
+    }
+    ,
+    {
+      "id": 12,
+      "image": "https://images.steamcdn.io/forcedrop/cases/COR.png",
+      "name": "COVID-19",
+      "price": 720
+    }
+    ,
+    {
+      "id": 13,
+      "image": "https://images.steamcdn.io/forcedrop/cases/simple.png",
+      "name": "Симпл Димпл",
+      "price": 120
     }
   ]
 }

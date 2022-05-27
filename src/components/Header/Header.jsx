@@ -19,7 +19,7 @@ function Header() {
               <div className="header__left">
                 <div className="header__logo">
                     <Link to="/">
-                    <img src={headerLogo} alt="logotype"/>
+                      <img src={headerLogo} alt="logotype"/>
                       <span className="header__logotype">AziDrop</span>
                     </Link>
                 </div>
@@ -41,7 +41,7 @@ function Header() {
               </div>
               <div className="header__right">
                   <div className="header-profile">
-                    <span className="header-profile__name">LindseyOwsen</span>
+                    <span className="header-profile__name">admin</span>
                     <div className="header-profile__user">
                         <div className="header-profile__img">
                           <img src={userProfile} alt="user"/>
@@ -51,7 +51,7 @@ function Header() {
                         </div>
                     </div>
                     <div className="header-profile__balance">
-                      <span>5,56 $</span>
+                      <span>0,00 Р</span>
                     </div>
                     <button onClick={() => setShow(!show)} className="header-profile__deposit">Пополнить</button>
                   </div>
@@ -60,7 +60,7 @@ function Header() {
               <div className="pay-popup">
                 <div className="popup-modal">
                     <div className="popup-modal__container">
-                        <button onClick={() => setShow(!show)}><svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="23px" height="23px"><path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"/></svg></button>
+                        <button className="popup-modal__btn" onClick={() => setShow(!show)}><svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="23px" height="23px"><path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"/></svg></button>
                         <div className="popup-modal__title">
                           <p>Пополнение баланса</p>
                         </div>
@@ -77,6 +77,7 @@ function Header() {
                             <img src="https://forcedrop.app/public/img/icon_attention.svg?v=2" alt='limit'/>
                             <span>Минимальная сумма: 80 RUB</span>
                         </div>
+                        <button className="popup-modal__pay">Пополнить счет</button>
                     </div>
                 </div>
               </div>

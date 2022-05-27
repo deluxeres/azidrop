@@ -22,6 +22,7 @@
             transition: .1s ease-in-out;
             border-bottom: 1px solid #3e395f;
             transition: 0.3s;
+            margin-bottom: 80px;
 
             &:hover {
                 transform: scale(1.07);
@@ -48,8 +49,10 @@
             }
         
             &__img {
+                width: 210px;
+                height: 180px;
                 img {
-                    width: 210px;
+                    width: 100%;
                     transform: translateZ(0);
                 }
             }
