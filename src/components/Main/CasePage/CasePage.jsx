@@ -5,6 +5,7 @@ import bumble2 from "../../../Assets/images/bumble2.png";
 import "./CasePage.scss";
 import db from "../../../DataBase/Live.json";
 import caseItem from "../../../DataBase/CaseItems.json";
+import Statictic from "../Statictic/Statictic"
 
 function CasePage(props) {
   const [caseElem, setCaseElem] = useState({});
@@ -62,6 +63,9 @@ function CasePage(props) {
             {caseItem.map((itemGun) => {
               return (
                 <div className="case-content__item" key={itemGun.id}>
+                <div className="case-badge">
+                  <span className={itemGun.badge}></span>
+                </div>
                   <div className="case-item__img">
                     <img src={itemGun.itemImg} alt="itemGun" />
                   </div>
@@ -71,6 +75,7 @@ function CasePage(props) {
             })}
           </div>
         </div>
+        <Statictic />
       </div>
     </div>
   );

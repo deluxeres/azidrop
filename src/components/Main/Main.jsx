@@ -2,13 +2,33 @@ import React, { useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import MainCases from './MainCases/MainCases';
 import db from '../../DataBase/Live.json'
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import './Main.scss'
 
 function Home() {
 
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
   const handleCopy = () => {
     console.log('copied');
   }
+
+  const [open, setOpen] = React.useState(false);
+
+  const alertClick = () => {
+    setOpen(true);
+  };
+
+  const alertClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <div className="main">
@@ -22,7 +42,7 @@ function Home() {
             <div className="promo-section">
               <div className="promo-block">
                   <CopyToClipboard text={promoBase.promocode} onCopy={handleCopy}>
-                    <div className="promo-block__code">
+                    <div className="promo-block__code" onClick={alertClick}>
                         <span>{promoBase.promocode}</span>
                     </div>
                   </CopyToClipboard>
@@ -36,6 +56,11 @@ function Home() {
                     <span>{promoBase.limitLast}</span>
                   </div>
                 </div>
+                <Snackbar open={open} autoHideDuration={6000} onClose={alertClose}>
+                  <Alert onClose={alertClose} severity="info" sx={{ width: '100%' }}>
+                    Промокод {promoBase.promocode} скопирован
+                  </Alert>
+                </Snackbar>
             </div>
           </div>
           );

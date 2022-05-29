@@ -27,6 +27,7 @@
             padding-right: 16px;
             width: 420px;
             justify-content: space-between;
+            margin-right: 20px;
 
             &__name {
                 color: #7E83B0;
@@ -137,6 +138,15 @@
 .header__logo a {
     display: flex;
     align-items: center;
+    transition: 0.3s;
+
+    img {
+        transition: 0.3s;
+    }
+
+    &:hover img {
+        transform: rotate(150deg);
+    }
 }
 
 .header__logotype {
@@ -150,7 +160,7 @@
     position: fixed;
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.568);
+    background-color: rgba(0, 0, 0, 0.719);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -160,12 +170,10 @@
     align-items: center;
 
     .popup-modal {
-        width: 450px;
-        height: 400px;
-        background-color: #2d248f;
-        border: 2px solid #885bf1;
+        width: 650px;
+        height: 500px;
+        background-color: #17171f;
         border-radius: 6px;
-        transform: skewX(-5deg);
 
         &__container {
             padding: 15px;
@@ -239,19 +247,78 @@
         }
         
         &__pay {
-            width: 100%;
+            width: 50%;
             height: 40px;
-            background-color: chartreuse;
+            background-color: #574ae2;
             position: static !important;
             transform: skewX(-5deg);
             border: none;
             outline: none;
-            color: #4439c2;
+            color: #ffffff;
             transition: 0.3s;
+            cursor: pointer;
 
             &:hover {
-                background-color: rgb(23, 206, 17); 
+                background-color: #3427be;
+            }
+            &:active {
+                background-color: #281daa;
             }
         }
+    }
+}
+
+.popup-tab {
+    padding: 15px 20px;
+    background-color: rgb(82, 82, 82);
+    outline: none;
+    border: none;
+    color: rgb(211, 211, 211);
+    font-weight: 500;
+}
+
+
+.popup-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tab-list {
+    width: 100%;
+    background-color: #1d1d26;;
+}
+
+.tab-card {
+    width: 120px;
+    height: 80px;
+    border-radius: 7px;
+    background-color: #1d1d26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:active {
+        background-color: #30303b;
+    }
+    img {
+        width: 70px;
+    }
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+}
+
+.header-social {
+    a {
+        margin-right: 7px;
+    }
+    svg:hover {
+        opacity: 0.7;
     }
 }

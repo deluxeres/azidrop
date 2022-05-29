@@ -1,0 +1,258 @@
+.profile {
+    .profile-block {
+        width: 90%;
+        height: 300px;
+        background-color: #000016;
+        padding: 25px;
+        border-radius: 12px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        .profile-block-left {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 100%;
+            padding-right: 35px;
+            border-right: 1px solid #7272f729;
+        }
+
+        .profile-general-user {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            justify-content: space-between;
+        }
+
+        .profile-general-block {
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-user {
+            margin-right: 30px;
+            img {
+                width: 50px;
+            }
+        }
+
+        .profile-user-info {
+            .profile-name {
+                font-size: 17px;
+                line-height: 1;
+                color: rgb(255, 255, 255);
+                font-weight: 400;
+                display: block;
+                margin-bottom: 7px;
+            }
+            .profile-balance {
+                font-size: 16px;
+                font-weight: 700;
+                color: rgb(239, 187, 10);
+                display: block;
+            }
+        }
+        .profile-main {
+            &__pay {
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+                height: min-content;
+                padding: 10px 20px;
+                background: rgb(239, 187, 10);
+                border-radius: 3px;
+                font-size: 12px;
+                color: rgb(58, 49, 26);
+                cursor: pointer;
+                outline: none;
+                border: none;
+                font-size: 14px;
+                font-weight: 600;
+
+                &:active {
+                    background: rgb(223, 149, 12); 
+                }
+
+                span {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background: rgb(173, 137, 18);
+                    font-size: 13px;
+                    color: #000;
+                    margin-right: 4px;
+                }
+            }
+        }
+        .profile-trade {
+            color: rgb(96, 96, 98);
+            display: block;
+            span {
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .profile-trade-block {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    color: rgb(239, 187, 10);
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .profile-trade-wrapper {
+                display: flex;
+                align-items: center;
+
+                .profile-trade-text {
+                    background: rgb(0, 0, 0);
+                    height: 44px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0px 15px 0px 10px;
+                }
+
+                input {
+                    height: 44px;
+                    width: 100%;
+                    outline: none;
+                    font-size: 15px;
+                    line-height: 1;
+                    color: rgb(255, 255, 255);
+                    background: rgb(0, 0, 0);
+                    border: none;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}
+
+
+.profile-stat-block {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    .profile-stat-img {
+        width: 44px;
+        height: 44px;
+        background: #222222;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    }
+    .profile-stat__balance {
+        margin-bottom: 5px;
+        display: block;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+    }
+    .profile-stat__cases {
+        font-size: 14px;
+        color: rgb(96, 96, 98);
+        text-transform: lowercase;
+    }
+}
+
+.profile-info-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-skills {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.profile-skill-block {
+    height: 100%;
+    width: 200px;
+    background-color: #15153c;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 10px;
+    margin-right: 20px;
+}
+
+.profile-skill-btn {
+    color: #fff;
+    background-color: #29296c;
+    width: 70%;
+    height: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #35359c; 
+    }
+    &:active {
+        background-color: #3333ce;
+    }
+}
+
+.profile-skill-img {
+    width: 130px;
+    img {
+        width: 100%;
+    }
+}
+
+.profile-block-title {
+    color: #838383;
+    font-weight: 500;
+}
+
+.btn-back {
+    margin-bottom: 40px;
+    width: 150px;
+
+    a {
+        padding: 12px 20px;
+        background-color: #15153c;
+        border: 1px solid #1e1e5c;
+        cursor: pointer;
+        transition: all 0.3s ease-out 0s;
+        user-select: none;
+        font-size: 12px;
+        font-weight: 500;
+        color: rgb(121, 121, 121);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 12px;
+
+        &:hover {
+            background-color: #282870;
+            border: 1px dashed #ffffff3b;
+            color: #fff;
+        }
+        &:active {
+            background-color: #2d2d7e; 
+        }
+    }
+}
+
