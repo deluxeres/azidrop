@@ -1,4 +1,5 @@
 import "./App.scss";
+import React, {useState, useEffect} from 'react';
 import { Routes, Route } from "react-router-dom";
 import Main from "./components/Main/Main";
 import Header from "./components/Header/Header";
@@ -8,7 +9,18 @@ import Footer from "./components/Footer/Footer";
 import ProfilePage from "./components/Main/ProfilePage/ProfilePage";
 import NotFound from './components/NotFound'
 
+
 function App() {
+
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 6000)
+  }, [])
+
   return (
     <div className="App">
       <Header />

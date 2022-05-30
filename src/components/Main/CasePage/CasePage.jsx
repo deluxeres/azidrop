@@ -26,7 +26,7 @@ function CasePage(props) {
   return (
     <div className="case-page" key={caseElem.id}>
       <div className="container">
-        <div className="case-wrapper">
+        <div className="case-wrapper" id="caseWrap">
           <div className="case-wrapper-container">
             <div className="case-mystery">
               <span className="case-mystery__price">
