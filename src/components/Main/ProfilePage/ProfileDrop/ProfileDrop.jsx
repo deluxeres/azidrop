@@ -14,6 +14,7 @@ function ProfileDrop() {
               <Tab className="drop-tab" _selected={{ color: "white", bg: "#000016" }}>Мой дроп</Tab>
               <Tab className="drop-tab" _selected={{ color: "white", bg: "#000016" }}>Контракты</Tab>
               <Tab className="drop-tab" _selected={{ color: "white", bg: "#000016" }}>Апгрейды</Tab>
+              <Tab className="drop-tab" _selected={{ color: "white", bg: "#000016" }}>Ежедневный бонус</Tab>
             </TabList>
             <TabPanels className="drop-tabpanels">
               <TabPanel className="drop-tabpanel">
@@ -29,6 +30,10 @@ function ProfileDrop() {
                             <img src={dropItem.itemImg} alt="itemGun" />
                           </div>
                           <span className="drop-item__name">{dropItem.ItemName}</span>
+
+                          <div className="drop-price">
+                            <span className="drop-item-price">{dropItem.itemPrice} Р</span>
+                          </div>
 
                           <div className="drop-hover">
                             <button className="drop-sell">Продать</button>
@@ -55,6 +60,24 @@ function ProfileDrop() {
                 <span className="drop-tab-title">Ваш инвентарь пуст</span>
                 <p>Перейдите на главную и откройте кейсы.</p>
                 <Link to="/">Перейти к кейсам</Link>
+              </TabPanel>
+              <TabPanel>
+                <div className="inventory-wrapper">
+                    <div className="profile-drop-daily">
+                      <div className="drop-daily__item">
+                        <div className="daily-item-img"></div>
+                        <div className="daily-item-title"><span>+20% к пополнению</span></div>
+                      </div>
+                      <div className="drop-daily__item">
+                        <div className="daily-item-img"></div>
+                        <div className="daily-item-title"><span>+20% к пополнению</span></div>
+                      </div>
+                      <div className="drop-daily__item">
+                        <div className="daily-item-img"></div>
+                        <div className="daily-item-title"><span>+20% к пополнению</span></div>
+                      </div>
+                    </div>
+                </div>
               </TabPanel>
             </TabPanels>
           </Tabs>

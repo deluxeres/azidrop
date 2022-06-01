@@ -15,7 +15,6 @@
     }
 
     .drop-tab {
-        width: 100px;
         height: 40px;
         background-color: #000016;
         color: #b5b5d4;
@@ -93,6 +92,8 @@
     transform: skewX(0deg);
     transition: 0.2s;
     height: 180px;
+    border-radius: 12px;
+    position: relative;
 
     &:hover {
         justify-content: space-around;
@@ -109,6 +110,30 @@
     &:hover .drop-item__name {
         font-size: 14px;
         font-weight: 600;
+    }
+
+    .drop-price {
+        z-index: 2500;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .drop-item-price {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 600;
+            color: #fff;
+            transform: skewX(-5deg);
+            transition: .2s ease-in-out;
+            -webkit-user-select: none;
+            user-select: none;
+            background-color: #578b01;
+            border-top: 1px solid #6fa40d;
+        }
     }
 }
 
@@ -142,7 +167,6 @@
     color: #fff;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 5px;
 
     &:hover {
         background-color: #3131be;
@@ -164,35 +188,75 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 12px;
 
   &__purple {
     background: linear-gradient(180deg,rgba(81,17,29,0),rgba(209,56,102,.24) 90%),#201f2b;
     width: 100%;
     display: block;
     height: 100%;
+    border-radius: 12px !important;
   }
   &__silver {
     background: linear-gradient(180deg,rgba(36,70,78,0),rgba(82,172,192,.22) 90%),#201f2b;
     width: 100%;
     display: block;
     height: 100%;
+    border-radius: 12px !important;
   }
   &__blue {
     background: linear-gradient(180deg,rgba(34,17,81,0),rgba(125,46,204,.24) 90%),#201f2b;
     width: 100%;
     display: block;
     height: 100%;
+    border-radius: 12px !important;
   }
   &__red {
     background: linear-gradient(180deg,rgba(81,25,17,0),rgba(197, 48, 28, 0.486) 90%),#201f2b;
     width: 100%;
     display: block;
     height: 100%;
+    border-radius: 12px !important;
   }
   &__orange {
     background: linear-gradient(180deg,rgba(81,55,17,0),rgba(197, 138, 28, 0.541) 90%),#201f2b;
     width: 100%;
     display: block;
     height: 100%;
+    border-radius: 12px !important;
   }
+}
+
+.inventory-wrapper {
+    margin-top: 40px;
+    .profile-drop-daily {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .drop-daily__item {
+            background-color: #15153c;
+            height: 200px;
+            border-radius: 12px;
+            width: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            .daily-item-img {
+                height: 150px;
+                width: 90%;
+                background: #574ae2;
+                border-radius: 12px;
+            }
+            .daily-item-title {
+                span {
+                    color: #dbdbf5;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }

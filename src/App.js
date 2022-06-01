@@ -8,6 +8,8 @@ import CasePage from "./components/Main/CasePage/CasePage";
 import Footer from "./components/Footer/Footer";
 import ProfilePage from "./components/Main/ProfilePage/ProfilePage";
 import NotFound from './components/NotFound'
+import BonusPage from './components/Main/BonusPage/BonusPage'
+import Dailybonus from './components/Main/Dailybonus/Dailybonus' 
 
 
 function App() {
@@ -29,7 +31,9 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/casePage/:id" element={<CasePage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/bonus" element={<BonusPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/dailybonus" element={<Dailybonus />} />
       </Routes>
       <Footer />
     </div>

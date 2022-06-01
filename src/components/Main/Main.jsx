@@ -41,6 +41,7 @@ function Home() {
             <span className="promo-title">Бонус к сумме пополнения<span className="promo-procent">{promoBase.procent}<span>%</span></span></span>
             <div className="promo-section">
               <div className="promo-block">
+                <div className="promo-block-badge"></div>
                   <CopyToClipboard text={promoBase.promocode} onCopy={handleCopy}>
                     <div className="promo-block__code" onClick={alertClick}>
                         <span>{promoBase.promocode}</span>

@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import './header.scss'
 import { Link } from 'react-router-dom'
 import {Input, Text} from '@chakra-ui/react'
-import userProfile from '../../Assets/images/Header/user.png'
 import headerLogo from '../../Assets/images/Header/logo.png'
  
 function Header() {
@@ -27,13 +26,23 @@ function Header() {
                     <nav>
                       <ul>
                         <li>
-                          <Link className="headerMenu__link" to="/contracts">Контракты</Link>
+                          <Link className="headerMenu__link" to="/contracts">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="17" viewBox="0 0 15 17" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 0.041748L0 13.0321H1.99509L7.49991 3.4975L13.0047 13.0321H15L7.5 0.041748ZM2.30376 16.0632L7.55376 6.96995L12.8038 16.0632H2.30376ZM5.30376 14.3312L7.55376 10.4341L9.80376 14.3312H5.30376Z" fill="url(#paint0_linear)"/>
+                            <defs>
+                            <linearGradient id="paint0_linear" x1="24.375" y1="-20.0934" x2="-0.220872" y2="19.4016" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FC4743"/>
+                            <stop offset="1" stop-color="#FFE910"/>
+                            </linearGradient>
+                            </defs>
+                          </svg>
+                          Контракты</Link>
                         </li>
                         <li>
-                        <Link className="headerMenu__link" to="/cases">FAQ</Link>
+                        <Link className="headerMenu__link" to="/cases">Сражения</Link>
                         </li>
                         <li>
-                          <Link className="headerMenu__link" to="/cases">Ежедневный бонус</Link>
+                          <Link className="headerMenu__link" to="/dailybonus">Ежедневный бонус</Link>
                         </li>
                       </ul>
                     </nav>
@@ -44,14 +53,14 @@ function Header() {
                     <span className="header-profile__name">admin</span>
                     <div className="header-profile__user">
                         <div className="header-profile__img">
-                          <img src={userProfile} alt="user"/>
+                          <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/69/6944253d1584dbae9258919e300c2734dd94b035_full.jpg" alt="user"/>
                         </div>
                         <div className="header-profile__counter">
                           <span>3</span>
                         </div>
                     </div>
                     <div className="header-profile__balance">
-                      <span>0,00 Р</span>
+                      <span>0.00 Р</span>
                     </div>
                     <button onClick={() => setShow(!show)} className="header-profile__deposit">Пополнить</button>
                   </Link>

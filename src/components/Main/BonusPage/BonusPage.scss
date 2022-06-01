@@ -1,0 +1,165 @@
+.bonus-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &__title {
+        font-size: 30px;
+        line-height: 20px;
+        font-weight: 500;
+        color: #fff;
+        position: relative;
+        margin-bottom: 100px;
+        background: linear-gradient(45deg, #000000 0%, #0D61BC 55%, #000000);
+
+        &::after {
+            left: 50%;
+            bottom: -25px;
+            position: absolute;
+            z-index: 1;
+            content: "";
+            width: 145px;
+            height: 3px;
+            background-color: #f1eaff;
+            border-radius: 8px 3px 8px 3px;
+            transform: translateX(-50%) skewX(-30deg);
+            backface-visibility: hidden;
+        }
+    }
+
+    &__text {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 130px;
+
+        .bonus-card {
+            width: 235px;
+            height: 330px;
+            background: transparent;
+            border: 1px solid rgba(67, 58, 128, 0.8);
+            padding: 15px 20px;
+            background-color: rgba(26, 21, 56, 0.35);
+            margin-right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            .bonus-card__img {
+                width: 85%;
+                img {
+                    width: 100%;
+                }
+            }
+            &__title {
+                margin-bottom: 3px;
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 500;
+                color: #ac9dbc;
+                display: block;
+            }
+            &__price {
+                font-size: 30px;
+                line-height: 38px;
+                color: #fff;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 7px;
+            }
+
+        }
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            width: 100%;
+            border: 1px solid #6dae01;
+            border-radius: 4px;
+            background-color: #222632;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 14px;
+            font-weight: 400;
+            color: #6dae01;
+            transition: .2s ease;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: #4b740a;
+                color: #fff; 
+            }
+            &:active {
+                background-color: #3b5511;
+            }
+        }
+    }
+}
+
+.bonus-banner {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(10, 4, 46, 0.89);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: 1px solid #433a80;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 230px;
+        padding: 25px;
+    }
+    &__icon {
+        margin: -30px 0;
+        width: 245px;
+        height: 210px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url(https://forcedrop.app/public/img/bonus/icon-nickname-bonus.png?v=2);
+        background-position: 50%;
+    }
+    &__right {
+        margin: 25px 0;
+        padding: 0 25px;
+        max-width: 572px;
+        width: 100%;
+        border-left: 1px solid #433a80;
+    }
+    &__intro {
+        margin: -30px 0 -10px;
+        width: 100%;
+        height: 160px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url(https://forcedrop.app/public/img/bonus/bg-nickname-bonus.png?v=2);
+        background-position: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__text {
+        margin: 5px 0;
+        text-align: center;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #eaf3f8ad;
+    }
+}

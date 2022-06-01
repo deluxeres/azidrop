@@ -1,0 +1,241 @@
+.dailybonus {
+    margin-top: 80px;
+    .bonus-wrapper {
+        .bonus-form {
+            position: absolute;
+            left: 50%;
+            top: -50px;
+            width: 340px;
+            height: 130px;
+            padding: 15px;
+            transform: translateX(-50%) skewX(-10deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            background: linear-gradient(177.67deg,#2c265d -15.36%,#241f4f 111.71%);
+            border-radius: 16px;
+            box-shadow: 0 0 25px 5px #2f0a4a;
+            backface-visibility: hidden;
+        
+            .bonus-code {    
+                width: 300px;
+                height: 52px;
+                display: flex;
+                align-items: center;
+                background-color: #110f24;
+                border-radius: 8px;
+                border: 1px solid #66609b;
+                transition: .14s ease;
+                overflow: hidden;
+                transform: skewX(180deg);
+                input {
+                    width: 100%;
+                    height: 100%;
+                    padding-right: 60px;
+                    padding-left: 25px;
+                    background-color: transparent;
+                    font-size: 20px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    color: #fff;
+                    outline: none;
+                    border: none;
+                }
+                button {
+                    position: absolute;
+                    right: 5px;
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 42px;
+                    height: 42px;
+                    flex: none;
+                    border-radius: 4px;
+                    background: linear-gradient(180.92deg,#6a3da4 -13.51%,#3a2164 115.88%);
+                    cursor: pointer;
+                    transition: .14s ease;
+                    &::before {
+                        content: "";
+                        width: 25px;
+                        height: 25px;
+                        background-size: 100%;
+                        background-repeat: no-repeat;
+                        background-image: url("https://forcedrop.app/public/img/icon_check.svg");
+                        background-position: 50%;
+                        transform: skewX(10deg);
+                    }
+                }
+            }
+        }
+        .bonus-section {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 2000px;
+            padding: 75px 20px 40px;
+            background-color: #1f1a47;
+            border: 1px solid rgba(51,43,115,.1);
+            border-radius: 17px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -107px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 565px;
+                height: 220px;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-image: url("https://forcedrop.app/public/img/flare.png?v=3");
+                background-position: 50%;
+                pointer-events: none;
+            }
+            .bonus-section-text {
+                color: #fff;
+                display: block;
+                font-weight: 600;
+                position: absolute;
+                top: 34px;
+                width: 340px;
+                font-size: 20px;
+                left: 50px;
+            }
+            .bonus-info {
+                margin: 60px auto 0;
+                max-width: 700px;
+                border: 1px solid #332a7a;
+                border-radius: 6px;
+
+
+                &__top {
+                    padding: 30px 20px 20px;
+                    background-color: rgba(0,0,0,.15);
+                    border-radius: 6px 6px 0 0;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        bottom: -29px;
+                        transform: translateX(-50%);
+                        width: 150px;
+                        height: 55px;
+                        background-size: 100%;
+                        background-repeat: no-repeat;
+                        background-image: url("https://forcedrop.app/public/img/flare.png");
+                        background-position: 50%;
+                    }
+                }
+                &__icon {
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    position: absolute;
+                    top: -17px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 34px;
+                    height: 35px;
+                    background-image: url("https://forcedrop.app/public/img/icon_attention.svg");
+                }
+                &__text {
+                    margin: 10px 0;
+                    font-size: 15px;
+                    line-height: 23px;
+                    font-weight: 400;
+                    color: #fff;
+                    text-align: center;
+                    b {
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        color: #f8ab2b;
+                    }
+                }
+
+                &__btn {
+                    margin-top: 10px;
+                    a {
+                        padding: 10px 25px 12px;
+                        background-color: #62b3ff;
+                        border-color: #7cbfff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transform: skewX(-10deg);
+                        border-radius: 6px;
+                        border: 1px solid transparent;
+                        transition: .2s ease-in-out;
+                        cursor: pointer;
+                        color: #fff;
+                        transition: 0.3s;
+
+                        &:hover {
+                            background-color: #399bf7; 
+                        }
+                    }
+                }
+            }
+            .bonus-how-work {
+                padding: 60px 40px 30px;
+                border-radius: 17px;
+                position: relative;
+                justify-content: center;
+                width: 100%;
+                background-color: rgba(85,76,155,.1);
+                margin-top: 100px;
+                
+                .bonus-work__wrapper {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .bonus-work__item {
+                        padding: 0 40px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .bonus-work__img {
+                            position: relative;
+                            margin-bottom: 10px;
+                        }
+                        
+                        .bonus-item__title {
+                            position: absolute;
+                            z-index: 1;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            white-space: nowrap;
+                            margin-bottom: 3px;
+                            font-size: 25px;
+                            line-height: 29px;
+                            font-weight: 700;
+                            color: #ffb300;
+                            margin-bottom: 10px;
+                            transform: translate(-50%, -50%);
+                            top: 50%;
+                            left: 50%;
+                        }
+                        .bonus-item__text {
+                            font-size: 15px;
+                            line-height: 18px;
+                            font-weight: 400;
+                            color: #fff;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
