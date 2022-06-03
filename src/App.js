@@ -9,7 +9,9 @@ import Footer from "./components/Footer/Footer";
 import ProfilePage from "./components/Main/ProfilePage/ProfilePage";
 import NotFound from './components/NotFound'
 import BonusPage from './components/Main/BonusPage/BonusPage'
-import Dailybonus from './components/Main/Dailybonus/Dailybonus' 
+import Dailybonus from './components/Main/Dailybonus/Dailybonus'
+import Faq from './components/Main/Faq/Faq'
+import BonusPrize from "./components/Main/BonusPrize/BonusPrize"
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
         <Route path="/bonus" element={<BonusPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/dailybonus" element={<Dailybonus />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/bonus-prize" element={<BonusPrize />} />
       </Routes>
       <Footer />
     </div>

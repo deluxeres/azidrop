@@ -244,12 +244,42 @@
             flex-direction: column;
             margin-right: 20px;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            position: relative;
             .daily-item-img {
                 height: 150px;
                 width: 90%;
-                background: #574ae2;
                 border-radius: 12px;
+                img {
+                    width: 100%;
+                }
             }
+
+            .daily-item-terms {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+
+                .daily-item-terms__btn {
+                    background: rgb(87, 74, 228);
+                    border-top: 1px solid #ffffff;
+                    font-size: 12px;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 3px 7px;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    line-height: 14px;
+                    font-weight: 600;
+                    color: #fff;
+                    transform: skewX(-5deg);
+                    transition: .2s ease-in-out;
+                    -webkit-user-select: none;
+                    user-select: none;
+                }
+            }
+
             .daily-item-title {
                 span {
                     color: #dbdbf5;

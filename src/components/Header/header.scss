@@ -188,6 +188,7 @@
         height: 500px;
         background-color: #17171f;
         border-radius: 6px;
+        border: 1px dashed #ffffff3d;
 
         &__container {
             padding: 15px;
@@ -234,6 +235,7 @@
         }
 
         &__sum {
+            width: 80%;
             input {
                 background-color: #ffffff;
                 color: #000000;
@@ -274,6 +276,7 @@
             color: #ffffff;
             transition: 0.3s;
             cursor: pointer;
+            border-radius: 12px;
 
             &:hover {
                 background-color: #3427be;

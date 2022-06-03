@@ -1,0 +1,24 @@
+.header-top {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #574ae2;
+
+    .header-top__link {
+        nav {
+            ul {
+                display: flex;
+                align-items: center;
+                li {
+                    margin-right: 30px;
+
+                    a {
+                        color: #ffffff;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}
