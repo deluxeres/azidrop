@@ -2,6 +2,7 @@
     background-image: url(./Assets/images/background2.png);
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .container {
@@ -11,6 +12,11 @@
 
 .container-top {
     margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 50px;
 }
 
 .LiveContainer {

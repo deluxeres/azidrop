@@ -1,17 +1,17 @@
 .header {
-    height: 70px;
+    padding: 30px 0px;
     background-color: #040305;
     z-index: 100;
     width: 100%;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #222A68;
-    margin-bottom: 25px;
+    margin-bottom: 70px;
 
     &__menu {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        position: relative;
     }
 
     &__left {
@@ -26,7 +26,7 @@
             border-right: 1px solid #222A68;
             padding-right: 16px;
             width: 370px;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-right: 20px;
 
             &__name {
@@ -45,30 +45,32 @@
             }
 
             &__deposit {
-                background: #574AE2;
+                background: #f3a92b;
                 border-radius: 10px;
                 padding: 10px 24px;
                 font-weight: 400;
                 font-size: 16px;
-                color: #FFFBFF;
+                color: #000000;
                 outline: none;
                 border: none;
                 cursor: pointer;
                 transition: 0.3s;
 
                 &:hover {
-                    background: #4439c2;
+                    background: #df910b
                 }
             }
 
             .header-profile__user {
                 position: relative;
                 .header-profile__img {
+                    margin-right: 15px;
                     img {
-                        width: 32px;
-                        height: 32px;
+                        width: 70px;
+                        height: 70px;
                         border-radius: 50%;
                         cursor: pointer;
+                        border: 2px dashed #fffbff;
                     }
                 }
                 .header-profile__counter {
@@ -100,14 +102,16 @@
 
 .header__link nav ul li a {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 17px;
     color: #c0b5d4;
     margin-right: 24px;
     position: relative;
     padding-bottom: 10px;
+    display: flex;
+    align-items: center;
 
     svg {
-        margin-right: 5px;
+        margin-right: 10px;
     }
 
     &:before, &:after {
@@ -334,11 +338,15 @@
     align-items: center;
 }
 
-.header-social {
-    a {
-        margin-right: 7px;
-    }
-    svg:hover {
-        opacity: 0.7;
-    }
+.header__right-profile {
+    display: flex;
+    align-items: center;
+}
+
+.header__menu-btn {
+    width: 170px;
+    background-color: #ff7474;
+    height: 55px;
+    position: absolute;
+    right: 0
 }

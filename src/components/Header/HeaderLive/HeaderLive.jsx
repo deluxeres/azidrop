@@ -2,12 +2,20 @@ import React from "react";
 import "./HeaderLive.scss";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
 import liveGuns from "../../../DataBase/Live.json";
+import { Link } from "react-router-dom";
+import headerLogo from "../../../Assets/images/Header/logo.png";
 
 function HeaderLive() {
   return (
     <div className="header-live">
       <div className="LiveContainer">
         <div className="header-lent">
+        <div className="header__logo">
+                <Link to="/">
+                  <img src={headerLogo} alt="logotype" />
+                  <span className="header__logotype">AziDrop</span>
+                </Link>
+              </div>
           <div className="live-tabs">
             <Tabs variant="unstyled" className="tab-live">
               <div className="tab-list__left">

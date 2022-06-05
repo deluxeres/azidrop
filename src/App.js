@@ -12,6 +12,7 @@ import BonusPage from './components/Main/BonusPage/BonusPage'
 import Dailybonus from './components/Main/Dailybonus/Dailybonus'
 import Faq from './components/Main/Faq/Faq'
 import BonusPrize from "./components/Main/BonusPrize/BonusPrize"
+import HeaderTop from "./components/Header/HeaderTop/HeaderTop"
 
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <HeaderTop />
       <HeaderLive />
+      <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/casePage/:id" element={<CasePage />} />

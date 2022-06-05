@@ -2,7 +2,8 @@
     height: 40px;
     display: flex;
     align-items: center;
-    background-color: #574ae2;
+    background-color: #161d4f;
+    margin-bottom: 25px;
 
     .header-top__link {
         nav {
@@ -10,7 +11,7 @@
                 display: flex;
                 align-items: center;
                 li {
-                    margin-right: 30px;
+                    margin-right: 20px;
 
                     a {
                         color: #ffffff;
@@ -20,5 +21,14 @@
                 }
             }
         }
+    }
+}
+
+.header-social {
+    a {
+        margin-right: 7px;
+    }
+    svg:hover {
+        opacity: 0.7;
     }
 }
