@@ -1,6 +1,7 @@
 import React from "react";
 import "./Faq.scss";
 import { Link } from "react-router-dom"
+import Statictic from "../Statictic/Statictic"
 
 function Faq() {
   return (
@@ -53,6 +54,7 @@ function Faq() {
             </div>
           </div>
         </div>
+        <Statictic />
       </div>
     </div>
   );

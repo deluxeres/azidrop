@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import { Input, Text } from "@chakra-ui/react";
-import headerLogo from "../../Assets/images/Header/logo.png";
 
 function Header() {
   const [show, setShow] = useState(false);
