@@ -1,0 +1,31 @@
+.spiner {
+    position: relative;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.spinerInner {
+    display: flex;
+    /* transition: 1s;
+    transition-timing-function: ease-in-out; */
+    &__item {
+        flex: 0 0 auto;
+        padding: 10px;
+    }
+    &__card{
+        margin: 0;
+    }
+}
+
+.arrow{
+    border: 12px solid transparent;
+    border-bottom: 24px solid brown;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+}
+.btn{
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+}
