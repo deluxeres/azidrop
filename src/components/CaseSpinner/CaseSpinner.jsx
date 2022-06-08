@@ -21,24 +21,27 @@ const Item = function (props) {
 }
 
 export default function CaseSpinner(props) {
+    const spinerRef = useRef();
     const spinerInnerRef = useRef();
     const prevScroll = useRef(0);
     const lastId = useRef();
     const dispatch = useDispatch();
 
-    const caseOpen = function (id) {
-        for (const item of props.data) {
-            if (item.CaseId === id) {
+    const onStop = function (id) {
+        props.onStop(id);
 
-                dispatch(openCasePopup({
-                    title: item.ItemName,
-                    img: item.itemImg,
-                    text: item.itemPrice + ' P',
-                }));
+        // for (const item of props.data) {
+        //     if (item.CaseId === id) {
 
-                break;
-            }
-        }
+        //         dispatch(openCasePopup({
+        //             title: item.ItemName,
+        //             img: item.itemImg,
+        //             text: item.itemPrice + ' P',
+        //         }));
+
+        //         break;
+        //     }
+        // }
     }
 
     let multiplyData = [];
@@ -61,7 +64,7 @@ export default function CaseSpinner(props) {
                 for (const item of itemElems) {
                     itemElemsArr.push({
                         id: item.getAttribute('data-id'),
-                        left: item.getBoundingClientRect().left + prevScroll.current - (window.innerWidth / 2) + (item.offsetWidth / 2)
+                        left: item.getBoundingClientRect().left - spinerRef.current.getBoundingClientRect().left + prevScroll.current - (spinerRef.current.offsetWidth / 2) + (item.offsetWidth / 2)
                     });
                 }
 
@@ -74,7 +77,7 @@ export default function CaseSpinner(props) {
                     spinerInnerRef.current.style.transform = 'translateX(-' + progress + 'px)';
                 }, () => {
                     setTimeout(() => {
-                        caseOpen(lastId.current);
+                        onStop(lastId.current);
                     }, 500);
                 });
 
@@ -96,12 +99,19 @@ export default function CaseSpinner(props) {
 
     return (
         <>
-            <div className={css.spiner}>
-                <div ref={spinerInnerRef} className={css.spinerInner}>
-                    {items}
+            <div className={css.spinerWrap}>
+                <div ref={spinerRef} className={css.spiner}>
+                    <div ref={spinerInnerRef} className={css.spinerInner}>
+                        {items}
+                    </div>
+                </div>
+                <div className={css.spinerWrap__arrow}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 15 17" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 0.041748L0 13.0321H1.99509L7.49991 3.4975L13.0047 13.0321H15L7.5 0.041748ZM2.30376 16.0632L7.55376 6.96995L12.8038 16.0632H2.30376ZM5.30376 14.3312L7.55376 10.4341L9.80376 14.3312H5.30376Z" fill="url(#paint0_linear)"></path><defs><linearGradient id="paint0_linear" x1="24.375" y1="-20.0934" x2="-0.220872" y2="19.4016" gradientUnits="userSpaceOnUse"><stop stop-color="#FC4743"></stop><stop offset="1" stop-color="#FFE910"></stop></linearGradient></defs></svg>
+                </div>
+                <div className={css.spinerWrap__arrow + ' ' + css.spinerWrap__arrow_bot}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 15 17" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 0.041748L0 13.0321H1.99509L7.49991 3.4975L13.0047 13.0321H15L7.5 0.041748ZM2.30376 16.0632L7.55376 6.96995L12.8038 16.0632H2.30376ZM5.30376 14.3312L7.55376 10.4341L9.80376 14.3312H5.30376Z" fill="url(#paint0_linear)"></path><defs><linearGradient id="paint0_linear" x1="24.375" y1="-20.0934" x2="-0.220872" y2="19.4016" gradientUnits="userSpaceOnUse"><stop stop-color="#FC4743"></stop><stop offset="1" stop-color="#FFE910"></stop></linearGradient></defs></svg>
                 </div>
             </div>
-            <div className={css.arrow}></div>
         </>
     );
 }

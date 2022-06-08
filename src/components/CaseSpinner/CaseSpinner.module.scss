@@ -1,7 +1,47 @@
+.spinerWrap{
+    position: relative;
+    z-index: 9999;
+    width: 100%;
+    padding: 50px 90px;
+    border: 2px solid #8c2c91;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, .9);
+    &::before,
+    &::after{
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 35px;
+        z-index: 2;
+    }
+    &::before{
+        left: 85px;
+        background-image: linear-gradient(to right, #000 5%, rgba(0,0,0,0));
+    }
+    &::after{
+        right: 85px;
+        background-image: linear-gradient(to left, #000 5%, rgba(0,0,0,0));
+    }
+    &__arrow{
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+        top: -20px;
+        &_bot{
+            top: auto;
+            bottom: -20px;
+            transform: translateX(-50%);
+        }
+    }
+}
 .spiner {
+    width: 100%;
     position: relative;
     overflow: hidden;
-    z-index: 9999;
 }
 
 .spinerInner {

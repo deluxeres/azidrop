@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { openCasePopup } from '../../../app/popupSlice';
 import CaseSpinner from '../../CaseSpinner/CaseSpinner';
 import { isCaseSpin, setCaseSpin } from '../../../app/caseSlice';
+import OpenedCase from '../../OpenedCase/OpenedCase';
 
 const getRandomId = function (delay = 0) {
   return new Promise((resolve, reject) => {
@@ -23,6 +24,7 @@ const getRandomId = function (delay = 0) {
 
 function CasePage(props) {
   const [caseElem, setCaseElem] = useState({});
+  const [openedCaseState, setOpenedCaseState] = useState({ isOpened: false, data: {} });
   const { id } = useParams();
   const dispatch = useDispatch();
   const isSpin = useSelector(isCaseSpin);
@@ -50,11 +52,18 @@ function CasePage(props) {
     for (const item of caseItem) {
       if (item.CaseId === id) {
 
-        dispatch(openCasePopup({
-          title: item.ItemName,
-          img: item.itemImg,
-          text: item.itemPrice + ' P',
-        }));
+        // dispatch(openCasePopup({
+        //   title: item.ItemName,
+        //   img: item.itemImg,
+        //   text: item.itemPrice + ' P',
+        // }));
+
+        dispatch(setCaseSpin(false));
+
+        setOpenedCaseState({
+          isOpened: true,
+          data: item
+        });
 
         setQuickOpen(false);
 
@@ -64,6 +73,32 @@ function CasePage(props) {
   }
 
   const getRandomIdForSpin = () => getRandomId(1100);
+
+  const onStopSpinner = async function (id) {
+    for (const item of caseItem) {
+      if (item.CaseId === id) {
+        dispatch(setCaseSpin(false));
+
+        setOpenedCaseState({
+          isOpened: true,
+          data: item
+        });
+        break;
+      }
+    }
+  }
+
+  const tryAgain = function () {
+    setOpenedCaseState({
+      isOpened: false
+    });
+  }
+
+  const take = function () {
+    setOpenedCaseState({
+      isOpened: false
+    });
+  }
 
   return (
     <div className="case-page" key={caseElem.id}>
@@ -87,7 +122,7 @@ function CasePage(props) {
                 <span>{caseElem.name}</span>
               </div>
 
-              {!isSpin &&
+              {!isSpin && !openedCaseState.isOpened &&
                 <>
                   <div className="case__image">
                     <img src={caseElem.image} alt="case" />
@@ -103,7 +138,17 @@ function CasePage(props) {
                 </>
               }
 
-              {isSpin && <CaseSpinner data={caseItem} getRandomId={getRandomIdForSpin} />}
+              {isSpin &&
+                <CaseSpinner
+                  data={caseItem}
+                  getRandomId={getRandomIdForSpin}
+                  onStop={onStopSpinner}
+                />
+              }
+
+              {openedCaseState.isOpened &&
+                <OpenedCase data={openedCaseState.data} tryAgain={tryAgain} take={take} />
+              }
 
             </div>
           </div>
