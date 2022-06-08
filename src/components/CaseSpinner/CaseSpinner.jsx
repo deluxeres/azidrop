@@ -1,6 +1,5 @@
 import css from "./CaseSpinner.module.scss";
 import { useEffect, useRef } from 'react';
-import { openCasePopup } from '../../app/popupSlice';
 import { useDispatch } from 'react-redux';
 import Animate from './CaseSpinnerAnimation';
 import sound from './../../Assets/spinner.mp3';
@@ -31,19 +30,6 @@ export default function CaseSpinner(props) {
 
     const onStop = function (id) {
         props.onStop(id);
-
-        // for (const item of props.data) {
-        //     if (item.CaseId === id) {
-
-        //         dispatch(openCasePopup({
-        //             title: item.ItemName,
-        //             img: item.itemImg,
-        //             text: item.itemPrice + ' P',
-        //         }));
-
-        //         break;
-        //     }
-        // }
     }
 
     let multiplyData = [];

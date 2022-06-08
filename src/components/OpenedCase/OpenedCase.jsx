@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import css from "./OpenedCase.scss";
+import "./OpenedCase.scss";
 
 export default function OpenedCase(props) {
     return (
@@ -12,6 +12,9 @@ export default function OpenedCase(props) {
             </div>
             <div className={"case__image " + props.data.badge}>
                 <img src={props.data.itemImg} alt="item" />
+            </div>
+            <div className="opened-case__price">
+                {props.data.itemPrice} P
             </div>
             <div className="opened-case__txt">
                 Вы можете забрать этот предмет <Link to="/profile">в профиле</Link>

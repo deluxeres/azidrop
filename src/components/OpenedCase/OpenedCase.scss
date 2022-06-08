@@ -1,11 +1,16 @@
 .opened-case{
-    &__title{
+    &__title,
+    &__price{
         font-size: 24px;
         color: #fff;
         font-style: italic;
         font-weight: 700;
         text-align: center;
         margin-top: 10px;
+    }
+    &__price{
+        font-size: 20px;
+        margin-bottom: 20px;
     }
     &__txt{
         font-size: 18px;

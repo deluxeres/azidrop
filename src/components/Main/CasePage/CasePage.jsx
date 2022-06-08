@@ -7,7 +7,6 @@ import db from "../../../DataBase/Live.json";
 import caseItem from "../../../DataBase/CaseItems.json";
 import Statictic from "../Statictic/Statictic"
 import { useDispatch, useSelector } from 'react-redux';
-import { openCasePopup } from '../../../app/popupSlice';
 import CaseSpinner from '../../CaseSpinner/CaseSpinner';
 import { isCaseSpin, setCaseSpin } from '../../../app/caseSlice';
 import OpenedCase from '../../OpenedCase/OpenedCase';
@@ -51,13 +50,6 @@ function CasePage(props) {
 
     for (const item of caseItem) {
       if (item.CaseId === id) {
-
-        // dispatch(openCasePopup({
-        //   title: item.ItemName,
-        //   img: item.itemImg,
-        //   text: item.itemPrice + ' P',
-        // }));
-
         dispatch(setCaseSpin(false));
 
         setOpenedCaseState({
