@@ -7,7 +7,8 @@ export const popupSlice = createSlice({
         visiblePopup: '',
         message: {
             title: '',
-            text: ''
+            text: '',
+            img: ''
         },
     },
     reducers: {
@@ -16,6 +17,7 @@ export const popupSlice = createSlice({
             state.visiblePopup = 'CasePopup';
             state.message.title = action.payload.title;
             state.message.text = action.payload.text;
+            state.message.img = action.payload.img;
         },
         closePopup: function (state, action) {
             state.status = 'closed';

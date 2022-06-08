@@ -2,6 +2,7 @@ import css from "./CaseSpinner.module.scss";
 import { useEffect, useRef } from 'react';
 import { openCasePopup } from '../../app/popupSlice';
 import { useDispatch } from 'react-redux';
+import Animate from './CaseSpinnerAnimation';
 
 const Item = function (props) {
     return (
@@ -19,122 +20,6 @@ const Item = function (props) {
     );
 }
 
-const animate = function ({ from, to, duration, ease, infinite, amountPerDuration }, draw, complete) {
-    const start = performance.now();
-
-    let endTimeFraction = 0,
-        endAnimateTo,
-        currentAnimateTo,
-        stop = false,
-        currentTimeFraction;
-
-    if (infinite) {
-        requestAnimationFrame(function anim(time) {
-            let timeFraction = (time - start) / duration;
-
-            if (timeFraction < 1) {
-                let progress = easing(timeFraction, 'easeInQuad');
-
-                const animateTo = from + (amountPerDuration * progress);
-
-                currentAnimateTo = animateTo;
-                currentTimeFraction = timeFraction;
-
-                draw(animateTo);
-
-            } else if (stop) {
-                endTimeFraction = timeFraction - currentTimeFraction;
-
-                if (endTimeFraction > 1) {
-                    endTimeFraction = 1;
-                }
-
-                let progress = easing(endTimeFraction, 'easeOutQuad');
-
-                const animateTo = currentAnimateTo + ((endAnimateTo - currentAnimateTo) * progress);
-
-                draw(animateTo);
-
-            } else {
-                let progress = timeFraction;
-
-                const animateTo = from + (amountPerDuration * progress * 2);
-
-                currentAnimateTo = animateTo;
-                currentTimeFraction = timeFraction;
-
-                draw(animateTo);
-
-                if (endAnimateTo && endAnimateTo - animateTo <= amountPerDuration) {
-                    stop = true;
-                }
-            }
-
-            if (endTimeFraction < 1) {
-                requestAnimationFrame(anim);
-            } else {
-                if (complete !== undefined) {
-                    complete();
-                }
-            }
-        });
-
-    } else {
-        requestAnimationFrame(function anim(time) {
-            let timeFraction = (time - start) / duration;
-
-            if (timeFraction > 1) {
-                timeFraction = 1;
-            }
-
-            let progress = timeFraction;
-
-            if (ease) {
-                progress = easing(timeFraction, ease);
-            }
-
-            const animateTo = from + ((to - from) * progress);
-
-            draw(animateTo);
-
-            if (timeFraction < 1) {
-                requestAnimationFrame(anim);
-            } else {
-                if (complete !== undefined) {
-                    complete();
-                }
-            }
-        });
-    }
-
-    return {
-        stop: function (val) {
-            endAnimateTo = val;
-        }
-    };
-}
-
-function easing(timeFraction, ease) {
-    switch (ease) {
-        case 'easeInQuad':
-            return quad(timeFraction);
-
-        case 'easeOutQuad':
-            return 1 - quad(1 - timeFraction);
-
-        case 'easeInOutQuad':
-            if (timeFraction <= 0.5) {
-                return quad(2 * timeFraction) / 2;
-            } else {
-                return (2 - quad(2 * (1 - timeFraction))) / 2;
-            }
-    }
-}
-
-function quad(timeFraction) {
-    return Math.pow(timeFraction, 2)
-}
-
 export default function CaseSpinner(props) {
     const spinerInnerRef = useRef();
     const prevScroll = useRef(0);
@@ -146,7 +31,9 @@ export default function CaseSpinner(props) {
             if (item.CaseId === id) {
 
                 dispatch(openCasePopup({
-                    text: item.ItemName
+                    title: item.ItemName,
+                    img: item.itemImg,
+                    text: item.itemPrice + ' P',
                 }));
 
                 break;
@@ -156,7 +43,7 @@ export default function CaseSpinner(props) {
 
     let multiplyData = [];
 
-    for (let i = 0; i < 33; i++) {
+    for (let i = 0; i < 21; i++) {
         multiplyData = multiplyData.concat(props.data);
     }
 
@@ -178,10 +65,9 @@ export default function CaseSpinner(props) {
                     });
                 }
 
-                const an = animate({
+                const anim = Animate({
                     from: prevScroll.current,
                     duration: 1000,
-                    infinite: true,
                     amountPerDuration: 1000
                 }, (progress) => {
                     scrolled = progress;
@@ -190,13 +76,6 @@ export default function CaseSpinner(props) {
                     setTimeout(() => {
                         caseOpen(lastId.current);
                     }, 500);
-                    // for (const item of itemElemsArr) {
-                    //     if (item.id == lastId && item.left > window.innerWidth) {
-                    //         spinerInnerRef.current.style.transform = 'translateX(-' + item.left + 'px)';
-                    //         prevScroll.current = item.left;
-                    //         break;
-                    //     }
-                    // }
                 });
 
                 const id = await props.getRandomId();
@@ -205,16 +84,13 @@ export default function CaseSpinner(props) {
 
                 for (const item of itemElemsArr) {
                     if (item.id == id && item.left - 3000 > scrolled) {
-                        an.stop(item.left);
-                        console.log(item);
+                        anim.stop(item.left);
                         break;
                     }
                 }
-
-                console.log(id);
             }
 
-            setTimeout(spin, 500);
+            setTimeout(spin, 300);
         }
     }, []);
 
@@ -226,7 +102,6 @@ export default function CaseSpinner(props) {
                 </div>
             </div>
             <div className={css.arrow}></div>
-            {/* <button className={css.btn} onClick={spin}>Крутить</button> */}
         </>
     );
 }

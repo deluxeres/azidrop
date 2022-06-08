@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import bumble1 from "../../../Assets/images/bumble.png";
 import bumble2 from "../../../Assets/images/bumble2.png";
@@ -6,16 +6,27 @@ import "./CasePage.scss";
 import db from "../../../DataBase/Live.json";
 import caseItem from "../../../DataBase/CaseItems.json";
 import Statictic from "../Statictic/Statictic"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openCasePopup } from '../../../app/popupSlice';
 import CaseSpinner from '../../CaseSpinner/CaseSpinner';
+import { isCaseSpin, setCaseSpin } from '../../../app/caseSlice';
+
+const getRandomId = function (delay = 0) {
+  return new Promise((resolve, reject) => {
+    const min = 1;
+    const max = 16;
+    setTimeout(function () {
+      resolve(Math.floor(Math.random() * (max - min + 1)) + min);
+    }, delay);
+  });
+}
 
 function CasePage(props) {
   const [caseElem, setCaseElem] = useState({});
-  const [isCaseSpin, setCaseSpin] = useState(false);
-  const [ts, tSt] = useState(false);
   const { id } = useParams();
   const dispatch = useDispatch();
+  const isSpin = useSelector(isCaseSpin);
+  const [isQuickOpening, setQuickOpen] = useState(false);
 
   useEffect(() => {
     setCaseElem(db["cases"].filter((item) => item.id === +id));
@@ -27,27 +38,32 @@ function CasePage(props) {
     });
   }, []);
 
-  console.log();
-
   const spinCase = function () {
-    setCaseSpin(true);
+    dispatch(setCaseSpin(true));
   }
 
-  const quickOpen = function () {
-    dispatch(openCasePopup({
+  const quickOpen = async function () {
+    setQuickOpen(true);
 
-    }));
+    const id = await getRandomId();
+
+    for (const item of caseItem) {
+      if (item.CaseId === id) {
+
+        dispatch(openCasePopup({
+          title: item.ItemName,
+          img: item.itemImg,
+          text: item.itemPrice + ' P',
+        }));
+
+        setQuickOpen(false);
+
+        break;
+      }
+    }
   }
 
-  const getRandomId = function () {
-    return new Promise((resolve, reject) => {
-      const min = 1;
-      const max = 16;
-      setTimeout(function () {
-        resolve(Math.floor(Math.random() * (max - min + 1)) + min);
-      }, 1000);
-    });
-  }
+  const getRandomIdForSpin = () => getRandomId(1100);
 
   return (
     <div className="case-page" key={caseElem.id}>
@@ -71,7 +87,7 @@ function CasePage(props) {
                 <span>{caseElem.name}</span>
               </div>
 
-              {!isCaseSpin &&
+              {!isSpin &&
                 <>
                   <div className="case__image">
                     <img src={caseElem.image} alt="case" />
@@ -81,13 +97,13 @@ function CasePage(props) {
                       <button onClick={spinCase}>Прокрутить за {caseElem.price} Р</button>
                     </div>
                     <div className="case-buttons__item">
-                      <button onClick={quickOpen}>Открыть быстро</button>
+                      <button onClick={quickOpen} disabled={isQuickOpening}>Открыть быстро</button>
                     </div>
                   </div>
                 </>
               }
 
-              {isCaseSpin && <CaseSpinner data={caseItem} getRandomId={getRandomId} />}
+              {isSpin && <CaseSpinner data={caseItem} getRandomId={getRandomIdForSpin} />}
 
             </div>
           </div>

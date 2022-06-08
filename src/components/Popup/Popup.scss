@@ -311,7 +311,7 @@ $def-vw-base: 1920;
 	overflow: auto;
 	z-index: 99999;
 	text-align: center;
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.5);
 	font-size: 0;
 
 	&:before {
@@ -333,7 +333,7 @@ $def-vw-base: 1920;
 
 	&__inner {
 		position: relative;
-		background: rgba(255, 255, 255, 0.1);
+		background: rgba(0, 0, 0, 0.9);
 		border: 1px solid $whBg;
 		backdrop-filter: blur(12px);
 		padding: r(100);
@@ -352,104 +352,12 @@ $def-vw-base: 1920;
 		line-height: (43/32);
 		font-weight: 300;
 		margin-bottom: em(44, 32);
-
-		@media (max-width: 750px) {
-			font-size: em(27);
-		}
-	}
-
-	&__sub-title {
-		font-size: em(20);
-		line-height: (26/20);
-		margin-top: em(-28, 20);
-		margin-bottom: em(44, 20);
-	}
-
-	&__sub-title-bold {
-		font-size: em(22);
-		line-height: (28/22);
-		font-weight: 700;
-		margin-top: em(-44, 22);
-		margin-bottom: em(65, 22);
 	}
 
 	&__text {
 		font-size: em(20);
 		line-height: (26/20);
-
-		.list {
-			text-align: left;
-			max-width: em(380);
-			margin: 0 auto;
-
-			li {
-				font-size: em(16);
-				line-height: (21/16);
-				margin-top: em(26, 16);
-				padding-left: em(40, 16);
-
-				&::before,
-				&::after {
-					background: $whTxt;
-				}
-			}
-		}
-	}
-
-	&__info-pictures {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 1.5rem;
-
-		@media (max-width: 750px) {
-			grid-template-columns: repeat(1, 1fr);
-		}
-	}
-
-	&__info-picture {
-		& img {
-			display: block;
-			width: 100%;
-		}
-	}
-
-	&__info-title {
-		margin-top: 0.8rem;
-		font-size: 1.3rem;
-		font-weight: 300;
-
-		@media (max-width: 750px) {
-			font-size: 1rem;
-		}
-	}
-
-	&__info-block {
-		margin-top: 2rem;
-		font-size: 1.5rem;
-		padding: 3rem 1rem;
-		font-weight: 300;
-		border: 1px solid $whBg;
-		line-height: 20px;
-
-		@media (max-width: 750px) {
-			font-size: 1rem;
-			padding: 2rem 1rem;
-		}
-	}
-
-	&__btn {
-		max-width: em(384);
-		margin: em(78) auto 0;
-
-		.btn {
-			border-color: $whTxt;
-			color: $whTxt;
-
-			&:hover {
-				background: $whTxt;
-				color: $txt;
-			}
-		}
+		margin-bottom: em(44, 20);
 	}
 
 	&__message {
@@ -464,67 +372,45 @@ $def-vw-base: 1920;
 		}
 	}
 
-	&__watch-img {
-		width: em(233);
-		height: em(316);
-		background-size: 100% 100%;
-		margin: 0 auto em(35);
-	}
-
-	&__brands {
-		padding: r(100) r(20);
-		text-align: left;
-		max-width: r(367);
-		margin: 0 auto;
-
-		&-scroll {
-			max-height: rem(455);
-			margin: r(40) 0 r(56);
-			overflow: auto;
-
-			&::-webkit-scrollbar {
-				width: 3px;
-			}
-
-			&::-webkit-scrollbar-track {
-				background-color: #424242;
-			}
-
-			&::-webkit-scrollbar-thumb {
-				background-color: #1b1b1b;
-			}
-		}
-
-		.brands__block {
-			margin-top: em(40);
-
-			&-tit {
-				font-size: em(24);
-			}
-		}
-
-		.brands__list {
-			li {
-				padding-left: 0;
-
-				&::before {
-					display: none;
-				}
-			}
+	&__img {
+		width: 50%;
+		margin: 20px auto;
+		img{
+			@extend %fw-img;
 		}
 	}
 
 	&-buttons {
 		display: flex;
 		align-items: center;
-
 		&__item {
 			flex: 0 1 auto;
 			padding: 0 10px;
+		}
+	}
 
-			button {
-				width: 275px !important;
-			}
+	&__btn {
+		@extend %btn;
+		width: 275px;
+		height: 40px;
+		background-color: #46c90a;
+		transform: skewX(-10deg);
+		border-radius: 12px;
+		color: #fff;
+		outline: none;
+		border: none;
+		transition: 0.3s;
+		font-size: 18px;
+		font-weight: bold;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #42ad10;
+		}
+
+		&:active,
+		&:disabled {
+			background-color: #2d700e;
 		}
 	}
 
@@ -564,22 +450,6 @@ $def-vw-base: 1920;
 		}
 	}
 
-	input {
-		border-color: $whTxt;
-	}
-
-	form {
-		max-width: 384px;
-		margin: 0 auto;
-	}
-
-	.lds-ring {
-		display: inline-block;
-		vertical-align: middle;
-		max-width: 150px;
-		max-height: 150px;
-	}
-
 	@media (max-width: 750px) {
 		&__window {
 			max-width: calc(100vw - 48px);
@@ -604,45 +474,6 @@ $def-vw-base: 1920;
 			height: 256px;
 			background-size: 100% 100%;
 			margin-bottom: 26px;
-		}
-	}
-}
-
-.popup-watch {
-	max-width: r(478);
-	text-align: left;
-
-	.popup {
-		&__inner {
-			padding: r(90) r(60) r(32);
-
-			.lot-card {
-				margin: 0;
-
-				&__rows {
-					margin-bottom: 0;
-				}
-			}
-
-			.c-gray {
-				color: $gy;
-			}
-		}
-	}
-
-	@media(max-width: 750px) {
-		max-width: calc(100vw - 48px);
-
-		.popup {
-			&__inner {
-				padding: 80px 12px 30px;
-
-				.lot-card {
-					&__title {
-						margin-top: 36px;
-					}
-				}
-			}
 		}
 	}
 }

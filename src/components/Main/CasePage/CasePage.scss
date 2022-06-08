@@ -107,7 +107,8 @@
         &:hover {
           background-color: #42ad10;
         }
-        &:active {
+        &:active,
+        &:disabled {
           background-color: #2d700e;
         }
       }
