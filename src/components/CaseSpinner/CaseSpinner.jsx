@@ -41,6 +41,12 @@ export default function CaseSpinner(props) {
     const items = multiplyData.map((it, i) => <Item {...it} key={i} />);
 
     useEffect(() => {
+        const allLinks = document.querySelectorAll('a');
+
+        for (const link of allLinks) {
+            link.setAttribute('data-disabled', 'disabled');
+        }
+
         if (lastId.current === undefined) {
             lastId.current = null;
 
@@ -65,6 +71,10 @@ export default function CaseSpinner(props) {
                     spinerInnerRef.current.style.transform = 'translateX(-' + progress + 'px)';
                 }, () => {
                     setTimeout(() => {
+                        for (const link of allLinks) {
+                            link.removeAttribute('data-disabled');
+                        }
+
                         onStop(lastId.current);
                     }, 500);
                 });

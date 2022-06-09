@@ -23,3 +23,7 @@
     width: 100%;
     padding: 0px 40px;
 }
+
+[data-disabled="disabled"]{
+    pointer-events: none;
+}
