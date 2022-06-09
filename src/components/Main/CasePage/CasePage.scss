@@ -1,3 +1,4 @@
+
 .case-page {
   .case-content {
     margin-top: 100px;
@@ -19,6 +20,7 @@
 
     .case-mystery {
       width: 100%;
+      max-width: 590px;
       padding: 30px 0px;
       text-align: center;
       background-color: rgba(78, 78, 87, 0.07);
@@ -27,6 +29,8 @@
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
       margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto;
       transition: 0.3s;
 
       &:hover {
@@ -103,7 +107,8 @@
         &:hover {
           background-color: #42ad10;
         }
-        &:active {
+        &:active,
+        &:disabled {
           background-color: #2d700e;
         }
       }
@@ -137,6 +142,9 @@
       top: 0;
       left: 0;
       transform: rotate(25deg);
+    }
+    &-container{
+      max-width: 100%;
     }
   }
 }
@@ -222,5 +230,18 @@
     height: 100%;
     border-radius: 12px;
     border: 1px solid #ffffff30;
+  }
+}
+.case{
+  &-buttons{
+    display: flex;
+    align-items: center;
+    &__item{
+      flex: 0 1 auto;
+      padding: 0 10px;
+      button{
+        width: 275px !important;
+      }
+    }
   }
 }

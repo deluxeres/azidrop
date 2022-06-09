@@ -13,6 +13,7 @@ import Dailybonus from './components/Main/Dailybonus/Dailybonus'
 import Faq from './components/Main/Faq/Faq'
 import BonusPrize from "./components/Main/BonusPrize/BonusPrize"
 import HeaderTop from "./components/Header/HeaderTop/HeaderTop"
+import Popup from './components/Popup/Popup';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/bonus-prize" element={<BonusPrize />} />
       </Routes>
       <Footer />
+      <Popup />
     </div>
   );
 }
