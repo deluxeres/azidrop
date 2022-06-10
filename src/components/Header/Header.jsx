@@ -52,7 +52,7 @@ function Header() {
                   <ul>
                     <li>
                       <Link className="headerMenu__link" to="/contracts">
-                        <svg
+                        {/* <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="45"
                           height="45"
@@ -78,7 +78,7 @@ function Header() {
                               <stop offset="1" stopColor="#FFE910" />
                             </linearGradient>
                           </defs>
-                        </svg>
+                        </svg> */}
                         Контракты
                       </Link>
                     </li>

@@ -120,10 +120,10 @@ function CasePage(props) {
                     <img src={caseElem.image} alt="case" />
                   </div>
                   <div className="case-buttons">
-                    <div className="case-buttons__item">
+                    <div className="case-button__spin">
                       <button onClick={spinCase}>Прокрутить за {caseElem.price} Р</button>
                     </div>
-                    <div className="case-buttons__item">
+                    <div className="case-button__quick">
                       <button onClick={quickOpen} disabled={isQuickOpening}>Открыть быстро</button>
                     </div>
                   </div>

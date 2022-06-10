@@ -90,27 +90,77 @@
           width: 100%;
         }
       }
-      button {
-        width: 70%;
-        height: 40px;
-        background-color: #46c90a;
-        transform: skewX(-10deg);
-        border-radius: 12px;
-        color: #fff;
-        outline: none;
-        border: none;
-        transition: 0.3s;
-        font-size: 18px;
-        font-weight: bold;
-        cursor: pointer;
+      // button {
+      //   width: 70%;
+      //   height: 40px;
+      //   background-color: #46c90a;
+      //   transform: skewX(-10deg);
+      //   border-radius: 12px;
+      //   color: #fff;
+      //   outline: none;
+      //   border: none;
+      //   transition: 0.3s;
+      //   font-size: 18px;
+      //   font-weight: bold;
+      //   cursor: pointer;
 
-        &:hover {
-          background-color: #42ad10;
-        }
-        &:active,
-        &:disabled {
-          background-color: #2d700e;
-        }
+      //   &:hover {
+      //     background-color: #42ad10;
+      //   }
+      //   &:active,
+      //   &:disabled {
+      //     background-color: #2d700e;
+      //   }
+      // }
+    }
+    .opened-case {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .case-button__spin button {
+      padding: 0px 15px;
+      height: 40px;
+      background-color: #46c90a;
+      transform: skewX(-10deg);
+      border-radius: 12px;
+      color: #fff;
+      outline: none;
+      border: none;
+      transition: 0.3s;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 15px;
+
+      &:hover {
+        background-color: #42ad10;
+      }
+      &:active,
+      &:disabled {
+        background-color: #2d700e;
+      }
+    }
+    .case-button__quick button {
+      padding: 0px 15px;
+      height: 40px;
+      background-color: #1373e0;
+      transform: skewX(-10deg);
+      border-radius: 12px;
+      color: #fff;
+      outline: none;
+      border: none;
+      transition: 0.3s;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #045dc2;
+      }
+      &:active,
+      &:disabled {
+        background-color: #0950a0;
       }
     }
     .wrapper-bumble__1 {

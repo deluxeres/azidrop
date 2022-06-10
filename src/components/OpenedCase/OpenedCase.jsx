@@ -20,11 +20,11 @@ export default function OpenedCase(props) {
                 Вы можете забрать этот предмет <Link to="/profile">в профиле</Link>
             </div>
             <div className="case-buttons">
-                <div className="case-buttons__item">
+                <div className="case-button__spin">
                     <button onClick={props.tryAgain}>Попробовать ещё</button>
                 </div>
-                <div className="case-buttons__item">
-                    <button onClick={props.take}>Забрать</button>
+                <div className="case-button__quick">
+                    <button onClick={props.take}>Продать за {props.data.itemPrice}₽</button>
                 </div>
             </div>
         </div>
