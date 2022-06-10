@@ -96,7 +96,7 @@ function Header() {
                 </nav>
               </div>
             </div>
-            <div className="header__menu-btn"></div>
+            <Link to="/bonus" className="header__menu-btn">Бонусы</Link>
             {show && (
               <div className="pay-popup">
                 <div className="popup-modal">

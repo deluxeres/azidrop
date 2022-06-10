@@ -88,7 +88,33 @@ function HeaderLive() {
                     </div>
                   </TabPanel>
                   <TabPanel>
-                    <p>2</p>
+                  <div className="live-top">
+                      <div className="live-top__container">
+                        {liveGuns['live'].map((gun) => {
+                          return (
+                            <div className="live-card__card" key={gun.id}>
+                              {/* <div className="live-card__name">
+                                <span>{gun.name}</span>
+                              </div> */}
+                              <div className="live-card__line">
+                                <span className={gun.line}></span>
+                              </div>
+
+                              <div className="live-card__badge">
+                                <span className={gun.badge}></span>
+                              </div>
+
+                              <div className="live-card__img">
+                                <img src={gun.imageUrl} alt="gun" />
+                              </div>
+                              {/* <div className="live-card__tag">
+                                <span className={gun.badge}></span>
+                              </div> */}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </TabPanel>
                 </TabPanels>
               </div>
