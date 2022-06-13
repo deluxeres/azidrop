@@ -43,12 +43,7 @@
     }
 
     .live-card__card {
-        background: rgb(2,0,36);
-        background: -moz-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(34,42,104,1) 50%, rgba(30,46,138,0.47942927170868344) 100%);
-        background: -webkit-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(34,42,104,1) 50%, rgba(30,46,138,0.47942927170868344) 100%);
-        background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(34,42,104,1) 50%, rgba(30,46,138,0.47942927170868344) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#1e2e8a",GradientType=1);
-        border: 1px solid #414DA4;
         border-top-right-radius: 0px;
         border-top-left-radius: 0px;
         border-bottom-left-radius: 16px;
@@ -64,7 +59,7 @@
         position: relative;
 
         &:hover {
-            background-color: #1c224e;
+            border: 1px solid #414ca446;
             transform: scale(0.97);
         }
 

@@ -3,7 +3,8 @@ import "./HeaderLive.scss";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
 import liveGuns from "../../../DataBase/Live.json";
 import { Link } from "react-router-dom";
-import headerLogo from "../../../Assets/images/Header/logo.png";
+// import headerLogo from "../../../Assets/images/Header/logo.png";
+import headerLogo from "../../../Assets/images/Header/logotype.png";
 
 function HeaderLive() {
   return (
@@ -12,8 +13,9 @@ function HeaderLive() {
         <div className="header-lent">
         <div className="header__logo">
                 <Link to="/">
-                  <img src={headerLogo} alt="logotype" />
-                  <span className="header__logotype">AziDrop</span>
+                <img src={headerLogo} alt="logotype" />
+                  {/* <img src={headerLogo} alt="logotype" />
+                  <span className="header__logotype">AziDrop</span> */}
                 </Link>
               </div>
           <div className="live-tabs">
@@ -61,7 +63,7 @@ function HeaderLive() {
                   <TabPanel>
                     <div className="live-top">
                       <div className="live-top__container">
-                        {liveGuns['live'].map((gun) => {
+                        {liveGuns['live'].reverse().map((gun) => {
                           return (
                             <div className="live-card__card" key={gun.id}>
                               {/* <div className="live-card__name">

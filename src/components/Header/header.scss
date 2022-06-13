@@ -1,11 +1,10 @@
 .header {
     padding: 30px 0px;
-    background-color: #040305;
     z-index: 100;
     width: 100%;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #222A68;
+    border-bottom: 1px solid #ffffff1f;
     margin-bottom: 70px;
 
     &__menu {
@@ -148,10 +147,11 @@
     display: flex;
     align-items: center;
     transition: 0.3s;
+    width: 150px;
 
     img {
         transition: 0.3s;
-        animation: App-logo-spin infinite 7s linear;
+        width: 100%;
     }
 
     @keyframes App-logo-spin {
@@ -162,10 +162,6 @@
           transform: rotate(360deg);
         }
       }
-
-    &:hover img {
-        transform: rotate(150deg);
-    }
 }
 
 .header__logotype {
