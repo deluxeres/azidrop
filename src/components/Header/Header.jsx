@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import "./header.scss";
+import contractImg from "../../Assets/images/Header/contracts.png"
+import battleImg from "../../Assets/images/Header/battle.png"
+import upgradeImg from "../../Assets/images/Header/upgrade.png"
+import bonusImg from "../../Assets/images/Header/bonus.png"
 import { Link } from "react-router-dom";
 import { Input, Text } from "@chakra-ui/react";
 
@@ -41,54 +45,38 @@ function Header() {
               </Link>
             </div>
             <div className="header__left">
-              {/* <div className="header__logo">
-                <Link to="/">
-                  <img src={headerLogo} alt="logotype" />
-                  <span className="header__logotype">AziDrop</span>
-                </Link>
-              </div> */}
               <div className="header__link">
                 <nav>
                   <ul>
                     <li>
                       <Link className="headerMenu__link" to="/contracts">
-                        {/* <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="45"
-                          height="45"
-                          viewBox="0 0 15 17"
-                          fill="none"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M7.5 0.041748L0 13.0321H1.99509L7.49991 3.4975L13.0047 13.0321H15L7.5 0.041748ZM2.30376 16.0632L7.55376 6.96995L12.8038 16.0632H2.30376ZM5.30376 14.3312L7.55376 10.4341L9.80376 14.3312H5.30376Z"
-                            fill="url(#paint0_linear)"
-                          />
-                          <defs>
-                            <linearGradient
-                              id="paint0_linear"
-                              x1="24.375"
-                              y1="-20.0934"
-                              x2="-0.220872"
-                              y2="19.4016"
-                              gradientUnits="userSpaceOnUse"
-                            >
-                              <stop stopColor="#FC4743" />
-                              <stop offset="1" stopColor="#FFE910" />
-                            </linearGradient>
-                          </defs>
-                        </svg> */}
+                        <div className="header-svg">
+                          <img src={contractImg} alt="link"/>
+                        </div>
                         Контракты
                       </Link>
                     </li>
                     <li>
                       <Link className="headerMenu__link" to="/cases">
+                        <div className="header-svg">
+                          <img src={battleImg} alt="link"/>
+                        </div>
                         Сражения
                       </Link>
                     </li>
                     <li>
                       <Link className="headerMenu__link" to="/dailybonus">
+                        <div className="header-svg">
+                          <img src={upgradeImg} alt="link"/>
+                        </div>
+                        Upgrade
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="headerMenu__link" to="/dailybonus">
+                        <div className="header-svg">
+                          <img src={bonusImg} alt="link"/>
+                        </div>
                         Ежедневный бонус
                       </Link>
                     </li>
