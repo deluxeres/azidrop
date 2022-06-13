@@ -64,7 +64,7 @@ export default function CaseSpinner(props) {
 
                 const anim = Animate({
                     from: prevScroll.current,
-                    duration: 1000,
+                    duration: 700,
                     amountPerDuration: 1000
                 }, (progress) => {
                     scrolled = progress;
