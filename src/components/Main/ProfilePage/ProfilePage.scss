@@ -136,35 +136,35 @@
             justify-content: center;
             position: relative;
 
-            a {
-                position: absolute;
-                z-index: 3;
-                left: 50%;
-                transform: translateX(-50%) skewX(-10deg);
-                width: 56px;
-                height: 38px;
-                background: #6dae01;
-                border-radius: 6px;
-                border: 1px solid #83d101;
-                border-bottom: none;
-                transition: .2s ease-in-out;
-                backface-visibility: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                bottom: 0;
-                transition: 0.3s;
-                svg {
-                    transition: 0.2s;
-                }
+            // a {
+            //     position: absolute;
+            //     z-index: 3;
+            //     left: 50%;
+            //     transform: translateX(-50%) skewX(-10deg);
+            //     width: 56px;
+            //     height: 38px;
+            //     background: #6dae01;
+            //     border-radius: 6px;
+            //     border: 1px solid #83d101;
+            //     border-bottom: none;
+            //     transition: .2s ease-in-out;
+            //     backface-visibility: hidden;
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            //     bottom: 0;
+            //     transition: 0.3s;
+            //     svg {
+            //         transition: 0.2s;
+            //     }
 
-                &:hover svg {
-                    transform: scale(1.2);
-                }
-                &:hover {
-                    background: #578a05;
-                }
-            }
+            //     &:hover svg {
+            //         transform: scale(1.2);
+            //     }
+            //     &:hover {
+            //         background: #578a05;
+            //     }
+            // }
         }
 
         .profile-avatar {
@@ -470,5 +470,21 @@
     border-bottom: 1px dashed #fff;
     &:hover {
         color: #fcfcfc;
+    }
+}
+.profile-user__name {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: -35px;
+    transform: translate(-50%, -50%);
+    /* transform: translateX(-50%) skewX(-10deg); */
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+    transition: 0.1s;
+    border-bottom: 1px solid #fff;
+    &:hover {
+        color: #574ae2;
     }
 }

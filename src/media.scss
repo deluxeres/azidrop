@@ -1,4 +1,4 @@
-@media screen and (max-width: 1470px) {
+@media screen and (max-width: 1270px) {
     .container {
         width: 100% !important;
         padding: 0px 15px;
@@ -178,5 +178,29 @@
         align-items: center !important;
         justify-content: left !important;
         width: 100% !important;
+    }
+    .case-item__name {
+        text-align: center !important;
+    }
+    .case-content__item {
+        height: 120px !important;
+        width: 130px !important;
+        padding: 5px 0px 0px !important;
+        transform: skewX(0deg) !important;
+            .case-item__img {
+                width: 100px !important;
+                img {
+                    width: 100% !important;
+                }
+            }
+    }
+    .CaseSpinner_spinerWrap__LWxhK {
+        padding: 15px 20px !important;
+    }
+    .CaseSpinner_spinerWrap__LWxhK::before  {
+        width: 0px !important;
+    }
+    .CaseSpinner_spinerWrap__LWxhK::after {
+        width: 0px !important;
     }
 }
