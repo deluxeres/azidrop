@@ -30,12 +30,12 @@ function CasePage(props) {
   const [isQuickOpening, setQuickOpen] = useState(false);
 
   useEffect(() => {
-    setCaseElem(db["cases"].filter((item) => item.id === +id));
-
-    db["cases"].forEach((item) => {
-      if (item.id === +id) {
-        setCaseElem(item);
-      }
+    db["cases"].forEach(cat => {
+      cat.items.forEach(item => {
+        if (item.id === +id) {
+          setCaseElem(item);
+        }
+      });
     });
   }, []);
 
