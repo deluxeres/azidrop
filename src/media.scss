@@ -21,7 +21,12 @@
         }
     }
     .header__logo {
-        display: none;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .header-lent {
+        flex-direction: column-reverse !important;
     }
     .LiveContainer {
         padding: 0px 15px !important;
@@ -149,6 +154,29 @@
     .bonus-prize .prize-section .prize-board-wrapper .prize-board {
         flex-direction: column;
         align-items: center;
+        width: 100% !important;
+    }
+    .header__link nav ul li a {
+        text-align: center !important;
+        justify-content: space-between !important;
+        margin: 0px 10px !important;
+    }
+    .header-svg {
+        width: 65px !important;
+    }
+    .live-top__container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    .live-card__card {
+        overflow-x: hidden !important;
+        overflow-y: hidden !important;
+    }
+    .live-tabs {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: left !important;
         width: 100% !important;
     }
 }
