@@ -37,14 +37,14 @@
             display: flex;
             padding: 0px 30px;
             flex: none;
-            background-color: #1a162b;
-            border-left: 2px solid #4c4292;
+            background-color: #ec9200;
+            border-left: 2px solid #ffffff;
             font-size: 14px;
             line-height: 17px;
             font-weight: 400;
-            color: #fff;
+            color: rgb(0, 0, 0);
             font-style: italic;
-            border: 1px solid #45348f;
+            border: 1px solid #ffffff;
             border-top-right-radius: 0px;
             border-top-left-radius: 0px;
             border-bottom-left-radius: 0px;
@@ -54,6 +54,7 @@
                 margin-bottom: 4px;
                 transform: skewX(10deg);
                 color: hsla(0,0%,100%,.85);
+                font-weight: 600;
             }
 
             &__limit {
@@ -63,7 +64,10 @@
                 align-items: center;
 
                 .promo-limit-used {
-                    color: #6dae01;
+                    color: #000000;
+                }
+                .promo-limit-count {
+                    color: #ffffff;
                 }
 
                 span {
@@ -75,7 +79,7 @@
 
         .promo-block {
             width: 100%;
-            background: #201842;
+            background: #f19800;
             font-size: 14px;
             line-height: 32px;
             font-weight: 700;
@@ -87,7 +91,7 @@
             align-items: center;
             font-size: 30px;
             padding: 0px 30px;
-            border: 1px solid #45348f;
+            border: 1px solid #ffffff;
             position: relative;
             border-top-right-radius: 0px;
             border-top-left-radius: 0px;
@@ -95,8 +99,8 @@
             border-bottom-right-radius: 0px;
 
             &:hover {
-                background: #1a123b;
-                color: #fbae21;
+                background: #d68904;
+                color: #ffffff;
                 cursor: pointer;
             }
 
@@ -146,8 +150,8 @@
         width: 90%;
         position: absolute;
         top: 0px;
-        background-color: #574ae2;
-        height: 50px;
+        background-color: #ff6401;
+        height: 80px;
         filter: blur(25px);
     }
 }

@@ -23,25 +23,24 @@
         padding-top: 50px;
 
         .footer-logo {
-            margin-right: 40px;
-            .footer-logo__block {
-                width: 300px;
-                a {
-                    display: flex;
-                    align-items: center;
-                    padding-bottom: 30px;
-                }
+            margin-right: 30px;
+        }
 
-                span {
-                    font-size: 35px;
-                }
+        .footer-logo__block a{
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+            width: 150px;
+
+            img {
+                width: 100%;
             }
+
             p {
-                font-weight: 400;
-                font-size: 16px;
-                color: #7E83B0;
+                color: #fff;
             }
         }
+
         .footer-info {
             &__link {
                 a {

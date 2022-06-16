@@ -13,6 +13,7 @@ function Header() {
   const [value, setValue] = React.useState("");
   const handleChange = (event) => setValue(event.target.value);
 
+
   return (
     <div className="header-section">
       <div className="header">
@@ -70,14 +71,6 @@ function Header() {
                           <img src={upgradeImg} alt="link"/>
                         </div>
                         Upgrade
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="headerMenu__link" to="/dailybonus">
-                        <div className="header-svg">
-                          <img src={bonusImg} alt="link"/>
-                        </div>
-                        Ежедневный бонус
                       </Link>
                     </li>
                   </ul>
@@ -164,6 +157,12 @@ function Header() {
                         value={value}
                         onChange={handleChange}
                         placeholder="Введите сумму пополнения"
+                        size="sm"
+                      />
+                    </div>
+                    <div className="popup-modal__sum">
+                      <input
+                        placeholder="FREE#234235"
                         size="sm"
                       />
                     </div>

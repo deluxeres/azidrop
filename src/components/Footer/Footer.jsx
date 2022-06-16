@@ -7,6 +7,7 @@ import eco from "../../Assets/images/Footer/eco.png";
 import master from "../../Assets/images/Footer/master.png";
 import footerLogo from '../../Assets/images/Header/logo.png'
 import "./Footer.scss";
+import headerLogo from "../../Assets/images/Header/logotype.png"
 
 
 function Footer() {
@@ -24,11 +25,10 @@ function Footer() {
           <div className="footer-logo">
             <div className="footer-logo__block">
             <Link to="/">
-                <img src={footerLogo} alt="logotype" />
-                <span className="header__logotype">AziDrop</span>
+              <img src={headerLogo} alt="logotype" />
             </Link>
             </div>
-            <p>© casebits – CS: GO cases that you want to open</p>
+            <p>© azidrop – CS: GO cases that you want to open</p>
           </div>
           <div className="footer-info">
             <div className="footer-info__link">

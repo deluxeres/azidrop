@@ -2,7 +2,7 @@
     height: 40px;
     display: flex;
     align-items: center;
-    background-color: #161d4f;
+    background-color: #ffffff0d;
     margin-bottom: 25px;
 
     .header-top__link {
@@ -25,10 +25,57 @@
 }
 
 .header-social {
+    display: flex;
+    align-items: center;
     a {
         margin-right: 7px;
     }
     svg:hover {
         opacity: 0.7;
+    }
+    .header-online {
+        display: flex;
+        align-items: center;
+        margin-right: 50px;
+
+        .online-general-bar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #f19800;
+            background: transparent;
+            position: relative;
+        }
+        .online-bar {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #fb7201;
+            margin-right: 5px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation-duration: 1.3s;
+            animation-name: fade;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        span {
+            margin-left: 6px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+}
+
+@keyframes fade {
+    from {
+        background-color: #fb710100;
+    }
+
+    to {
+        background-color: #fb7201;
     }
 }

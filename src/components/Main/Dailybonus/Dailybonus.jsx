@@ -6,7 +6,7 @@ function Dailybonus() {
   return (
     <div className="dailybonus">
       <div className="container">
-        <div className="bonus-wrapper">
+        {/* <div className="bonus-wrapper">
           <div className="bonus-section">
             <span className="bonus-section-text">
               Получайте свой ежедневный бонус простым кликом на кнопку!
@@ -231,7 +231,7 @@ function Dailybonus() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

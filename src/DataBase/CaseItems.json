@@ -35,6 +35,13 @@
         "itemPrice": 312.10
     },
     {
+        "CaseId": 20,
+        "itemImg": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTjVb096jkL-ZkvPLP7LWnn8f7JQl0-_A9tWtjVXm-EVoamCmJtDEcwM3M1DS_lO-kOa60MLp6sydzWwj5HdUq-XHzA/140fx105f/image.png",
+        "ItemName": "Five-SeveN Багровое цветение",
+        "badge": "case-badge__blue",
+        "itemPrice": 51.21
+    },
+    {
         "CaseId": 6,
         "itemImg": "https://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMyJYdAXUBKxfY_Qt5DfhDCM7_cotA4Lhr7lSLQ_tt4GVYrl4MY1IGJOGX_fTYF-p6E1u0qJVL5GB8S-9jDOpZDknDIyvzQ/140fx105f/image.png",
         "ItemName": "AWP Кортисейра",
@@ -77,6 +84,13 @@
         "itemPrice": 125.73
     },
     {
+        "CaseId": 18,
+        "itemImg": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3Jq_ummJW4NE_376S84-tiwHt_0VqZDzwI47DcVNqaFDZ-gLrxea918S5tJucwSY2uj5iuygjNe-uOA/140fx105f/image.png",
+        "ItemName": "USP-S Cortex",
+        "badge": "case-badge__purple",
+        "itemPrice": 312
+    },
+    {
         "CaseId": 12,
         "itemImg": "https://steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56P7fiDzRyTQXJVfdhX_o45gnTBCI24dJuGtay8-MEew_n4YCTNOMuNNhLF8GDU6KDNFipvEg-gfRfLp2PpXi82Hz3ejBdOj7r2Ww/140fx105f/image.png",
         "ItemName": "AK-47 Красная линия",
@@ -96,13 +110,20 @@
         "ItemName": "AWP Кортисейра",
         "badge": "case-badge__red",
         "itemPrice": 125.51
-    },
+    }, 
+    {
+        "CaseId": 17,
+        "itemImg": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7umeldf1OD3fDxBvYyJh5SKm_zxIYTdn2xZ_ItyiL3Foo2j2FXi8kpraz_yIYGQdwQ4N1HX8wPrybvu0Je5v5WYz3VgpGB8smMduxoo/140fx105f/image.png",
+        "ItemName": "MAC-10 На охоте",
+        "badge": "case-badge__red",
+        "itemPrice": 435
+    },    
     {
         "CaseId": 15,
         "itemImg": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJS_8W1nI-bluP8DLbUkmJE5Ysji7vHrNjxjgKw_RVtazr3INWddQRsYljS-QLql-e9hJXt75ucm3BlpGB8snSRBTot/140fx105f/image.png",
         "ItemName": "AWP Горячечные грёзы",
         "badge": "case-badge__orange",
-        "itemPrice": 62.15
+        "itemPrice": 262.15
     },
     {
         "CaseId": 16,
@@ -110,5 +131,12 @@
         "ItemName": "Dual Berettas Melondrama",
         "badge": "case-badge__orange",
         "itemPrice": 189.61
+    },
+    {
+        "CaseId": 19,
+        "itemImg": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAQ1h3LAVbv6mxFABs3OXNYgJR_Nm1nYGHnuTgDLTDl2VW7fpmguDV8LP4jVC9vh5yYWqldoSXcFM5ZlrRqATtwersh57tvMzAmiY2vyF0t3rYyRy3hRxPavsv26Lj6N29Hg/140fx105f/image.png",
+        "ItemName": "★ ПЕРЧАТКИ СПЕЦНАЗА Основа",
+        "badge": "case-badge__orange",
+        "itemPrice": 7220.14
     }
 ]

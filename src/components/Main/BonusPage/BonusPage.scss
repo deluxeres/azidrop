@@ -109,57 +109,52 @@
 }
 
 .bonus-banner {
+    width: 80%;
+    background-color: #ffffff0d;
+    border-radius: 10px;
+    height: 220px;
     display: flex;
-    justify-content: center;
-    background-color: rgba(10, 4, 46, 0.89);
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    border: 1px solid #433a80;
+    align-items: center;
+    position: relative;
 
-    &__left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 230px;
-        padding: 25px;
-    }
-    &__icon {
-        margin: -30px 0;
-        width: 245px;
-        height: 210px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-image: url(https://forcedrop.app/public/img/bonus/icon-nickname-bonus.png?v=2);
-        background-position: 50%;
-    }
-    &__right {
-        margin: 25px 0;
-        padding: 0 25px;
-        max-width: 572px;
-        width: 100%;
-        border-left: 1px solid #433a80;
-    }
-    &__intro {
-        margin: -30px 0 -10px;
-        width: 100%;
-        height: 160px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-image: url(https://forcedrop.app/public/img/bonus/bg-nickname-bonus.png?v=2);
-        background-position: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
     &__text {
-        margin: 5px 0;
-        text-align: center;
-        font-size: 15px;
-        line-height: 20px;
+        z-index: 100;
+
+        .bonusCopy {
+            margin: 0px 5px;
+            cursor: pointer;
+        }
+    }
+
+    &__text p {
+        font-weight: 700;
+        font-size: 40px;
+        color: #fff;
+        margin-bottom: 7px;
+    }
+
+    &__text span {
         font-weight: 400;
-        color: #eaf3f8ad;
+        font-size: 18px;
+        line-height: 24px;
+        color: #fff;
+    }
+
+    &__container {
+        padding: 10px 35px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 59%
+    }
+
+    &__img {
+        position: absolute;
+        right: 0;
+        top: 10%;
+
+        img {
+            width: 100%;
+        }
     }
 }

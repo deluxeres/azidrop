@@ -5,6 +5,7 @@ import db from '../../DataBase/Live.json'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import './Main.scss'
+import Statictic from "../Main/Statictic/Statictic"
 
 function Home() {
 
@@ -53,12 +54,12 @@ function Home() {
                   <div className="promo-block-info__title">Осталось</div>
                   <div className="promo-block-info__limit">
                     <span className="promo-limit-used">{promoBase.limit}</span>
-                    <span>из</span>
-                    <span>{promoBase.limitLast}</span>
+                    <span className="promo-limit-count">из</span>
+                    <span className="promo-limit-count">{promoBase.limitLast}</span>
                   </div>
                 </div>
                 <Snackbar open={open} autoHideDuration={6000} onClose={alertClose}>
-                  <Alert onClose={alertClose} severity="info" sx={{ width: '100%' }}>
+                  <Alert onClose={alertClose} severity="success" sx={{ width: '100%' }}>
                     Промокод {promoBase.promocode} скопирован
                   </Alert>
                 </Snackbar>
@@ -68,6 +69,7 @@ function Home() {
         })}
         </div>
         <MainCases />
+        <Statictic />
       </div>
     </div>
   )

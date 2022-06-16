@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ffffff1f;
-    margin-bottom: 70px;
+    margin-bottom: 45px;
 
     &__menu {
         display: flex;
@@ -22,7 +22,7 @@
         .header-profile {
             display: flex;
             align-items: center;
-            border-right: 1px solid #222A68;
+            border-right: 1px solid #fb7201;
             padding-right: 16px;
             width: 370px;
             justify-content: space-around;
@@ -44,7 +44,7 @@
             }
 
             &__deposit {
-                background: #f3a92b;
+                background: #f19800;
                 border-radius: 10px;
                 padding: 10px 24px;
                 font-weight: 400;
@@ -139,7 +139,7 @@
 }
 
 .header__logo {
-    border-right: 1px solid #222A68;
+    border-right: 1px solid #fa7501;
     padding-right: 40px;
     margin-right: 40px;
 }
@@ -344,7 +344,7 @@
 .header__menu-btn {
     /* width: 130px; */
     padding: 10px 24px;
-    background-color: #f3a92b;
+    background-color: #f19800;
     /* height: 41px; */
     display: flex;
     align-items: center;
