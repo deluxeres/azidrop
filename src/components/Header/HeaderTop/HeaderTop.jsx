@@ -2,7 +2,16 @@ import React from "react";
 import "./HeaderTop.scss";
 import { Link } from "react-router-dom";
 
+// function onlineCount() {
+//   return Math.floor(100+480*Math.random()); 
+// }
+
+// setInterval(onlineCount, 1000);
+
 function HeaderTop() {
+  
+  const onlineCount = Math.floor(100+480*Math.random()) 
+
   return (
     <div className="header-top">
       <div className="container-top">
@@ -26,9 +35,9 @@ function HeaderTop() {
           <div className="online-general-bar">
             <div className="online-bar"></div>
           </div>
-          <span>926</span>
+          <span>{onlineCount}</span>
         </div>
-          <a href="https://twitter.com/" target="_blanc">
+          <a href="https://twitter.com/" target="_blanc" rel="noopener">
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +53,7 @@ function HeaderTop() {
               ></path>
             </svg>
           </a>
-          <a href="https://twitter.com/" target="_blanc">
+          <a href="https://twitter.com/" target="_blanc" rel="noopener">
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +69,7 @@ function HeaderTop() {
               ></path>
             </svg>
           </a>
-          <a href="https://twitter.com/" target="_blanc">
+          <a href="https://twitter.com/" target="_blanc" rel="noopener">
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +83,7 @@ function HeaderTop() {
               ></path>
             </svg>
           </a>
-          <a href="https://twitter.com/" target="_blanc">
+          <a href="https://twitter.com/" target="_blanc" rel="noopener">
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

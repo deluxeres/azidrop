@@ -248,4 +248,26 @@
             display: none !important;
         }
     }
+    .prize-board {
+        width: 100% !important;
+    }
+    .prize-item {
+        width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+    .prize-item-container {
+        flex-direction: column !important;
+    }
+    .bonus-banner__container {
+        flex-direction: column !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .bonus-banner {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    .bonus-banner__img {
+        display: none !important;
+    }
 }

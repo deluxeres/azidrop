@@ -4,6 +4,9 @@ import "./ProfilePage.scss"
 import { Link } from "react-router-dom"
 import {Input, Text} from '@chakra-ui/react'
 import ProfileDrop from './ProfileDrop/ProfileDrop'
+import contractImg from "../../../Assets/images/Header/contracts.png"
+import upgradeImg from "../../../Assets/images/Header/upgrade.png"
+import battleImg from "../..//../Assets/images/Header/battle.png"
 
 function ProfilePage() {
 
@@ -25,17 +28,17 @@ function ProfilePage() {
           <div className="profile-block-container">
               <div className="profile-block-top">
                 <div className="profile-block__inner">
-                  <img src='https://forcedrop.app/public/img/profile/icon_cases.svg?v=3' alt='profile'/>
+                  <img className="profile-block__img" src={contractImg} alt='profile'/>
                   <span>0</span>
                   <p>Кейсы</p>
                 </div>
                 <div className="profile-block__inner">
-                  <img src='https://forcedrop.app/public/img/profile/icon_cases.svg?v=3' alt='profile'/>
-                  <span>4 дня</span>
+                  <img className="profile-block__img" src={contractImg} alt='profile'/>
+                  <span>0 дней</span>
                   <p>На нашем сайте</p>
                 </div>
                 <div className="profile-block__inner">
-                  <img src='https://forcedrop.app/public/img/profile/icon_contracts.svg?v=3' alt='profile'/>
+                  <img className="profile-block__img" src={contractImg} alt='profile'/>
                   <span>0</span>
                   <p>Контракты</p>
                 </div>
@@ -53,12 +56,12 @@ function ProfilePage() {
               </div>
               <div className="profile-block-bottom">
                 <div className="profile-block__inner">
-                  <img src='https://forcedrop.app/public/img/profile/icon_battles.svg?v=3' alt='profile'/>
+                  <img className="profile-block__img" src={battleImg} alt='profile'/>
                   <span>0 /<span className="bad-point"> 0</span></span>
                   <p>Сражения (Победа / Поражение)</p>
                 </div>
                 <div className="profile-block__inner">
-                  <img src='https://forcedrop.app/public/img/profile/icon_upgrade.svg?v=3' alt='profile'/>
+                  <img className="profile-block__img" src={upgradeImg} alt='profile'/>
                   <span>0 /<span className="bad-point"> 0</span></span>
                   <p>Апгрейды (Победа / Поражение)</p>
                 </div>

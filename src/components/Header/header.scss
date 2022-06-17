@@ -368,3 +368,29 @@
         width: 100%;
     }
 }
+
+.header__profile-login {
+    margin-right: 50px;
+
+    button {
+        padding: 10px 7px;
+        background-color: #f19800;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-weight: 500;
+        border-radius: 5px;
+        border: 1px solid #ffffff2b;
+        box-shadow: 0px 0px 20px 0px #ff6a00;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f17400;
+        }
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+}
