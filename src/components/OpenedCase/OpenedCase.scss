@@ -17,6 +17,16 @@
         color: #fff;
         font-style: italic;
         text-align: center;
+
+        a {
+            color: #f19800;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: 0.3s;
+            &:hover {
+                color: #fff;
+            }
+        }
     }
     .case__image{
         margin: 20px auto;

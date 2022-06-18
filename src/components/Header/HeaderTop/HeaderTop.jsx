@@ -2,16 +2,8 @@ import React from "react";
 import "./HeaderTop.scss";
 import { Link } from "react-router-dom";
 
-// function onlineCount() {
-//   return Math.floor(100+480*Math.random()); 
-// }
-
-// setInterval(onlineCount, 1000);
 
 function HeaderTop() {
-  
-  const onlineCount = Math.floor(100+480*Math.random()) 
-
   return (
     <div className="header-top">
       <div className="container-top">
@@ -35,7 +27,7 @@ function HeaderTop() {
           <div className="online-general-bar">
             <div className="online-bar"></div>
           </div>
-          <span>{onlineCount}</span>
+          <span>{Math.floor(100 + 480 * Math.random())}</span>
         </div>
           <a href="https://twitter.com/" target="_blanc" rel="noopener">
             <svg

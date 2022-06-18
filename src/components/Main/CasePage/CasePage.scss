@@ -121,9 +121,9 @@
     .case-button__spin button {
       padding: 0px 15px;
       height: 40px;
-      background-color: #46c90a;
-      transform: skewX(-10deg);
-      border-radius: 12px;
+      background-color: #f19800;
+      transform: skewX(0deg);
+      border-radius: 0px;
       color: #fff;
       outline: none;
       border: none;
@@ -132,21 +132,22 @@
       font-weight: bold;
       cursor: pointer;
       margin-right: 15px;
+      box-shadow: 0px 6px 8px -1px #e95b04;
 
       &:hover {
-        background-color: #42ad10;
+        background-color: #ec6a00;
       }
       &:active,
       &:disabled {
-        background-color: #2d700e;
+        background-color: #c45a03;
       }
     }
     .case-button__quick button {
       padding: 0px 15px;
       height: 40px;
-      background-color: #1373e0;
-      transform: skewX(-10deg);
-      border-radius: 12px;
+      background-color: #4800c3;
+      transform: skewX(0deg);
+      border-radius: 0px;
       color: #fff;
       outline: none;
       border: none;
@@ -154,13 +155,14 @@
       font-size: 18px;
       font-weight: bold;
       cursor: pointer;
+      box-shadow: 0px 6px 8px -1px #6700c3;
 
       &:hover {
-        background-color: #045dc2;
+        background-color: #6b00c3;
       }
       &:active,
       &:disabled {
-        background-color: #0950a0;
+        background-color: #5a0e97;
       }
     }
     .wrapper-bumble__1 {
@@ -212,16 +214,18 @@
 }
 
 .case-content__item {
-    width: 170px;
-    background-color: rgb(40, 33, 107);
-    margin: 0px 10px 30px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5px 0px 10px;
-    transform: skewX(-5deg);
-    border-radius: 12px;
+  height: 140px;
+  width: 170px;
+  background-color: #28216b;
+  margin: 0px 10px 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px 0px 10px;
+  transform: skewX(-5deg);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .case-item__img {
@@ -233,6 +237,7 @@
   color: #fff;
   font-weight: 400;
   z-index: 100;
+  text-align: center;
 }
 
 .case-badge {
@@ -286,6 +291,8 @@
   &-buttons{
     display: flex;
     align-items: center;
+    border-top: 2px solid #ff7700;
+    padding-top: 10px;
     &__item{
       flex: 0 1 auto;
       padding: 0 10px;
