@@ -342,9 +342,10 @@
 }
 
 .header__menu-btn {
+    width: 200px;
     /* width: 130px; */
-    padding: 10px 24px;
-    background-color: #f19800;
+    // padding: 10px 24px;
+    // background-color: #f19800;
     /* height: 41px; */
     display: flex;
     align-items: center;
@@ -354,11 +355,12 @@
     color: #000;
     font-weight: 500;
     border-radius: 12px;
-    border: 2px dashed #ffffff29;
-    box-shadow: 0px 0px 20px 0px #f3a92b;
+    // border: 2px dashed #ffffff29;
+    // box-shadow: 0px 0px 20px 0px #f3a92b;
     transition: 0.3s;
-    &:hover {
-        background-color: #d88d0b;   
+
+    img {
+        width: 100%;
     }
 }
 .header-svg {
