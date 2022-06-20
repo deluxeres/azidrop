@@ -3,7 +3,7 @@
     z-index: 9999;
     width: 100%;
     padding: 50px 90px;
-    border: 2px solid #8c2c91;
+    border: 2px solid #f19800;
     border-radius: 25px;
     background: rgba(0, 0, 0, .9);
     &::before,
@@ -38,6 +38,17 @@
         }
     }
 }
+
+.spinerLine {
+    height: 100%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.123);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .spiner {
     width: 100%;
     position: relative;

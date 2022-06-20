@@ -6,6 +6,7 @@ import upgradeImg from "../../Assets/images/Header/upgrade.png"
 import bonusImg from "../../Assets/images/Header/bonus.png"
 import { Link } from "react-router-dom";
 import { Input, Text } from "@chakra-ui/react";
+import bonusBtn from "../../Assets/images/bonus.png";
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -85,7 +86,9 @@ function Header() {
                 </nav>
               </div>
             </div>
-            <Link to="/bonus" className="header__menu-btn">Бонусы</Link>
+            <Link to="/bonus" className="header__menu-btn">
+              <img src={bonusBtn} alt="link"/>
+            </Link>
             {show && (
               <div className="pay-popup">
                 <div className="popup-modal">
