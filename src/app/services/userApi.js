@@ -1,18 +1,13 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
+import { authBaseQuery } from './baseQueries';
 
 export const usersApi = createApi({
-	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://91.203.176.164:9090',
-		prepareHeaders: (headers) => {
-            headers.set('Authorization', 'someToken123');
-			return headers;
-		},
-	}),
+	baseQuery: authBaseQuery,
 	reducerPath: 'usersApi',
 	endpoints: (build) => ({
 		getUserData: build.query({
 			query: () => ({
-				url: 'api/me',
+				url: 'api/categories',
 			}),
 		}),
 	}),
