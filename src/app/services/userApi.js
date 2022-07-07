@@ -7,7 +7,7 @@ export const usersApi = createApi({
 	endpoints: (build) => ({
 		getUserData: build.query({
 			query: () => ({
-				url: 'api/categories',
+				url: 'api/me',
 			}),
 		}),
 	}),

@@ -1,5 +1,27 @@
 # Getting Started with Create React App
 
+## API
+
+GET /api/categories - [Category] - возвращает список категорий
+
+POST /api/case/open - [Skin] открывает кейс, возвращает выигранный скин или ошибку
+
+id - id кейса
+
+GET /api/paymentgift/winner - [PaymentGiftWin] - победители в призе за пополнение счета
+
+/auth/steam - сюда отправляем для авторизации
+
+GET /api/me - User -  инфо о текущем пользователе
+
+GET /api/loyalty - Loyalty - инфо о программах  лояльности
+
+POST /api/user/skin/sell - продажа выигранного скина
+id - id скина пользователя
+
+POST /api/user/skin/out - вывод выигранного скина
+id - id скина пользователя
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
