@@ -12,7 +12,7 @@ import { isCaseSpin, setCaseSpin } from '../../../app/caseSlice';
 import OpenedCase from '../../OpenedCase/OpenedCase';
 import { useGetCategoriesQuery } from '../../../app/services/caseApi';
 import { apiHost } from '../../../app/services/baseQueries';
-import { useOpenCaseMutation } from '../../../app/services/userApi';
+import { useOpenCaseMutation, useSellSkinMutation } from '../../../app/services/userApi';
 import { getBadgeClass } from '../../../functions/getBadge';
 import { OpenCase } from '../../../app/services/openCase';
 
@@ -23,6 +23,7 @@ function CasePage() {
   const isSpin = useSelector(isCaseSpin);
   const [isQuickOpening, setQuickOpen] = useState(false);
   const { data, isLoading } = useGetCategoriesQuery();
+  const [sellSkinMutation] = useSellSkinMutation();
 
   let caseElem = null;
 
@@ -44,41 +45,30 @@ function CasePage() {
     setQuickOpen(true);
 
     const res = await OpenCase(caseElem.id);
-    const id = res.data.id;
+    const item = res.data;
 
-    for (const item of caseElem.skins) {
-      if (item.id === id) {
-        dispatch(setCaseSpin(false));
+    dispatch(setCaseSpin(false));
 
-        setOpenedCaseState({
-          isOpened: true,
-          data: item
-        });
+    setOpenedCaseState({
+      isOpened: true,
+      data: item
+    });
 
-        setQuickOpen(false);
-
-        break;
-      }
-    }
+    setQuickOpen(false);
   }
 
   const getRandomIdForSpin = async function () {
     const res = await OpenCase(caseElem.id);
-    return res.data.id;
+    return res.data;
   }
 
-  const onStopSpinner = async function (id) {
-    for (const item of caseElem.skins) {
-      if (item.id === id) {
-        dispatch(setCaseSpin(false));
+  const onStopSpinner = async function (skin) {
+    dispatch(setCaseSpin(false));
 
-        setOpenedCaseState({
-          isOpened: true,
-          data: item
-        });
-        break;
-      }
-    }
+    setOpenedCaseState({
+      isOpened: true,
+      data: skin
+    });
   }
 
   const tryAgain = function () {
@@ -87,14 +77,12 @@ function CasePage() {
     });
   }
 
-  const take = function () {
+  const sellSkin = function (id) {
+    sellSkinMutation({ id });
+
     setOpenedCaseState({
       isOpened: false
     });
-  }
-
-  const getBadge = function (name) {
-    return getBadgeClass(name);
   }
 
   return (isLoading || !caseElem) ? null : (
@@ -144,7 +132,7 @@ function CasePage() {
               }
 
               {openedCaseState.isOpened &&
-                <OpenedCase data={openedCaseState.data} tryAgain={tryAgain} take={take} />
+                <OpenedCase data={openedCaseState.data} tryAgain={tryAgain} sellSkin={sellSkin} />
               }
 
             </div>
@@ -160,10 +148,12 @@ function CasePage() {
           <span className="case-content__title">Содержимое кейса</span>
           <div className="case-content__wrapper">
             {caseElem.skins.map((itemGun) => {
+              const badge = getBadgeClass(itemGun.rarity);
+
               return (
                 <div className="case-content__item" key={itemGun.id}>
                   <div className="case-badge">
-                    <span className="case-badge__silver"></span>
+                    <span className={badge}></span>
                   </div>
                   <div className="case-item__img">
                     <img src={itemGun.img} alt="itemGun" />

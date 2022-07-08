@@ -3,13 +3,16 @@ import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import Animate from './CaseSpinnerAnimation';
 import sound from './../../Assets/spinner.mp3';
+import { getBadgeClass } from '../../functions/getBadge';
 
 const Item = function (props) {
+    const badge = getBadgeClass(props.rarity);
+
     return (
         <div className={css.spinerInner__item} data-id={props.id}>
             <div className={css.spinerInner__card + " case-content__item"}>
                 <div className="case-badge">
-                    <span className="case-badge__silver"></span>
+                    <span className={badge}></span>
                 </div>
                 <div className="case-item__img">
                     <img src={props.img} alt="itemGun" />
@@ -26,10 +29,11 @@ export default function CaseSpinner(props) {
     const soundRef = useRef();
     const prevScroll = useRef(0);
     const lastId = useRef();
+    const skin = useRef();
     const dispatch = useDispatch();
 
-    const onStop = function (id) {
-        props.onStop(id);
+    const onStop = function () {
+        props.onStop(skin.current);
     }
 
     let multiplyData = [];
@@ -75,13 +79,16 @@ export default function CaseSpinner(props) {
                             link.removeAttribute('data-disabled');
                         }
 
-                        onStop(lastId.current);
+                        onStop();
                     }, 500);
                 });
 
-                const id = await props.getRandomId();
+                const item = await props.getRandomId();
+
+                const id = item.skin.id;
 
                 lastId.current = id;
+                skin.current = item;
 
                 for (const item of itemElemsArr) {
                     if (item.id == id && item.left - 3000 > scrolled) {

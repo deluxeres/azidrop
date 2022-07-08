@@ -22,6 +22,9 @@ id - id скина пользователя
 POST /api/user/skin/out - вывод выигранного скина
 id - id скина пользователя
 
+POST /api/user/tradelink - Добавление trade ссылки steam
+link - ссылка для обмена
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

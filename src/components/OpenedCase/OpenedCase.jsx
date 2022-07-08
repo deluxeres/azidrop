@@ -2,19 +2,22 @@ import { Link } from 'react-router-dom';
 import "./OpenedCase.scss";
 
 export default function OpenedCase(props) {
+    const id = props.data.id;
+    const skin = props.data.skin;
+
     return (
         <div className="opened-case">
             <div className="opened-case__txt">
                 Ваш выигрыш
             </div>
             <div className="opened-case__title">
-                {props.data.ItemName}
+                {skin.name}
             </div>
-            <div className={"case__image " + props.data.badge}>
-                <img src={props.data.itemImg} alt="item" />
+            <div className={"case__image " + skin.badge}>
+                <img src={skin.img} alt="item" />
             </div>
             <div className="opened-case__price">
-                {props.data.itemPrice} P
+                {skin.price} P
             </div>
             <div className="opened-case__txt">
                 Вы можете забрать этот предмет <Link to="/profile">в профиле</Link>
@@ -24,7 +27,7 @@ export default function OpenedCase(props) {
                     <button onClick={props.tryAgain}>Попробовать ещё</button>
                 </div>
                 <div className="case-button__quick">
-                    <button onClick={props.take}>Продать за {props.data.itemPrice}₽</button>
+                    <button onClick={() => props.sellSkin(id)}>Продать за {skin.price}₽</button>
                 </div>
             </div>
         </div>

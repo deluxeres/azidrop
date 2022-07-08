@@ -1,38 +1,68 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./ProfileDrop.scss";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Tabs, Tab, TabPanel, TabList, TabPanels } from "@chakra-ui/react"
 import caseItem from "../../../../DataBase/CaseItems.json";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { useSellSkinMutation, useWithdrawSkinMutation } from '../../../../app/services/userApi';
+import { getBadgeClass } from '../../../../functions/getBadge';
 
 const SkinItem = (props) => {
   const skin = props.skin;
 
+  const sell = () => {
+    props.sellSkin(props.id);
+  }
+
+  const withdraw = () => {
+    props.withdrawSkin(props.id);
+  }
+
+  const badge = getBadgeClass(props.rarity);
+
   return (
     <div className="drop-item">
       <div className="drop-badge">
-        <span className="case-badge__orange"></span>
+        <span className={badge}></span>
       </div>
-        <div className="drop-item__img">
-          <img src={skin.img} alt="itemGun" />
-        </div>
-        <span className="drop-item__name">{skin.name}</span>
+      <div className="drop-item__img">
+        <img src={skin.img} alt="itemGun" />
+      </div>
+      <span className="drop-item__name">{skin.name}</span>
 
-        <div className="drop-price">
-          <span className="drop-item-price">{skin.price} Р</span>
-        </div>
+      <div className="drop-price">
+        <span className="drop-item-price">{skin.price} Р</span>
+      </div>
 
-        <div className="drop-hover">
-          <button className="drop-sell">Продать</button>
-          <button className="drop-take">Вывести</button>
-        </div>
+      <div className="drop-hover">
+        <button className="drop-sell" onClick={sell}>Продать</button>
+        <button className="drop-take" onClick={withdraw}>Вывести</button>
+      </div>
     </div>
-    );
+  );
 }
 
 function ProfileDrop(props) {
-  const skins = props.data && props.data.skins.map((item) => <SkinItem {...item} key={item.id} />);
+  const [sellSkinMutation] = useSellSkinMutation();
+  const [withdrawSkinMutation] = useWithdrawSkinMutation();
+
+  const withdraw = (id) => {
+    if (props.data.steam_trade_link) {
+      withdrawSkinMutation({ id });
+    } else {
+      props.alertClick('Укажите Trade-URL');
+    }
+  }
+
+  const skins = props.data && props.data.skins.map((item) => (
+    <SkinItem
+      sellSkin={(id) => sellSkinMutation({ id })}
+      withdrawSkin={withdraw}
+      {...item}
+      key={item.id}
+    />
+  ));
 
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;

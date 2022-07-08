@@ -494,3 +494,14 @@
         color: #574ae2;
     }
 }
+.profile-user__logout {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: -75px;
+    transform: translate(-50%, -50%);
+    transition: 0.1s;
+    &:hover {
+        color: #574ae2;
+    }
+}

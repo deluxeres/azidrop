@@ -1,5 +1,5 @@
 const getBadge = function (name) {
-    switch (name.toLowerCase()) {
+    switch (name && name.toLowerCase()) {
         case 'базового класса':
             return 'silver';
         case 'засекреченное':
