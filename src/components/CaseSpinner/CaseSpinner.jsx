@@ -6,15 +6,15 @@ import sound from './../../Assets/spinner.mp3';
 
 const Item = function (props) {
     return (
-        <div className={css.spinerInner__item} data-id={props.CaseId}>
+        <div className={css.spinerInner__item} data-id={props.id}>
             <div className={css.spinerInner__card + " case-content__item"}>
                 <div className="case-badge">
-                    <span className={props.badge}></span>
+                    <span className="case-badge__silver"></span>
                 </div>
                 <div className="case-item__img">
-                    <img src={props.itemImg} alt="itemGun" />
+                    <img src={props.img} alt="itemGun" />
                 </div>
-                <span className="case-item__name">{props.ItemName}</span>
+                <span className="case-item__name">{props.name}</span>
             </div>
         </div>
     );
@@ -34,7 +34,7 @@ export default function CaseSpinner(props) {
 
     let multiplyData = [];
 
-    for (let i = 0; i < 21; i++) {
+    for (let i = 0; i < 21 * 21 / props.data.length; i++) {
         multiplyData = multiplyData.concat(props.data);
     }
 

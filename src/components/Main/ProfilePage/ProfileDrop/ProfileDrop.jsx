@@ -6,7 +6,34 @@ import caseItem from "../../../../DataBase/CaseItems.json";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-function ProfileDrop() {
+const SkinItem = (props) => {
+  const skin = props.skin;
+
+  return (
+    <div className="drop-item">
+      <div className="drop-badge">
+        <span className="case-badge__orange"></span>
+      </div>
+        <div className="drop-item__img">
+          <img src={skin.img} alt="itemGun" />
+        </div>
+        <span className="drop-item__name">{skin.name}</span>
+
+        <div className="drop-price">
+          <span className="drop-item-price">{skin.price} Р</span>
+        </div>
+
+        <div className="drop-hover">
+          <button className="drop-sell">Продать</button>
+          <button className="drop-take">Вывести</button>
+        </div>
+    </div>
+    );
+}
+
+function ProfileDrop(props) {
+  const skins = props.data && props.data.skins.map((item) => <SkinItem {...item} key={item.id} />);
+
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -42,28 +69,7 @@ function ProfileDrop() {
               <TabPanel className="drop-tabpanel">
                 <div className="profile-inventory">
                   <div className="inventory-wrapper">
-                  {caseItem.map((dropItem) => {
-                    return (
-                      <div className="drop-item" key={dropItem.id}>
-                        <div className="drop-badge">
-                          <span className={dropItem.badge}></span>
-                        </div>
-                          <div className="drop-item__img">
-                            <img src={dropItem.itemImg} alt="itemGun" />
-                          </div>
-                          <span className="drop-item__name">{dropItem.ItemName}</span>
-
-                          <div className="drop-price">
-                            <span className="drop-item-price">{dropItem.itemPrice} Р</span>
-                          </div>
-
-                          <div className="drop-hover">
-                            <button className="drop-sell">Продать</button>
-                            <button className="drop-take">Вывести</button>
-                          </div>
-                      </div>
-                      );
-                    })}
+                    {skins}
                   </div>
                 </div>
               </TabPanel>

@@ -10,34 +10,31 @@ import { useDispatch, useSelector } from 'react-redux';
 import CaseSpinner from '../../CaseSpinner/CaseSpinner';
 import { isCaseSpin, setCaseSpin } from '../../../app/caseSlice';
 import OpenedCase from '../../OpenedCase/OpenedCase';
+import { useGetCategoriesQuery } from '../../../app/services/caseApi';
+import { apiHost } from '../../../app/services/baseQueries';
+import { useOpenCaseMutation } from '../../../app/services/userApi';
+import { getBadgeClass } from '../../../functions/getBadge';
+import { OpenCase } from '../../../app/services/openCase';
 
-const getRandomId = function (delay = 0) {
-  return new Promise((resolve, reject) => {
-    const min = 1;
-    const max = 16;
-    setTimeout(function () {
-      resolve(Math.floor(Math.random() * (max - min + 1)) + min);
-    }, delay);
-  });
-}
-
-function CasePage(props) {
-  const [caseElem, setCaseElem] = useState({});
+function CasePage() {
   const [openedCaseState, setOpenedCaseState] = useState({ isOpened: false, data: {} });
   const { id } = useParams();
   const dispatch = useDispatch();
   const isSpin = useSelector(isCaseSpin);
   const [isQuickOpening, setQuickOpen] = useState(false);
+  const { data, isLoading } = useGetCategoriesQuery();
 
-  useEffect(() => {
-    db["cases"].forEach(cat => {
-      cat.items.forEach(item => {
-        if (item.id === +id) {
-          setCaseElem(item);
+  let caseElem = null;
+
+  if (data) {
+    for (const category of data) {
+      for (const item of category.cases) {
+        if (+item.id === +id) {
+          caseElem = item;
         }
-      });
-    });
-  }, []);
+      }
+    }
+  }
 
   const spinCase = function () {
     dispatch(setCaseSpin(true));
@@ -46,10 +43,11 @@ function CasePage(props) {
   const quickOpen = async function () {
     setQuickOpen(true);
 
-    const id = await getRandomId();
+    const res = await OpenCase(caseElem.id);
+    const id = res.data.id;
 
-    for (const item of caseItem) {
-      if (item.CaseId === id) {
+    for (const item of caseElem.skins) {
+      if (item.id === id) {
         dispatch(setCaseSpin(false));
 
         setOpenedCaseState({
@@ -64,11 +62,14 @@ function CasePage(props) {
     }
   }
 
-  const getRandomIdForSpin = () => getRandomId(1100);
+  const getRandomIdForSpin = async function () {
+    const res = await OpenCase(caseElem.id);
+    return res.data.id;
+  }
 
   const onStopSpinner = async function (id) {
-    for (const item of caseItem) {
-      if (item.CaseId === id) {
+    for (const item of caseElem.skins) {
+      if (item.id === id) {
         dispatch(setCaseSpin(false));
 
         setOpenedCaseState({
@@ -92,8 +93,12 @@ function CasePage(props) {
     });
   }
 
-  return (
-    <div className="case-page" key={caseElem.id}>
+  const getBadge = function (name) {
+    return getBadgeClass(name);
+  }
+
+  return (isLoading || !caseElem) ? null : (
+    <div className="case-page">
       <div className="container">
         <div className="case-wrapper" id="caseWrap">
           <div className="case-wrapper-container">
@@ -117,7 +122,7 @@ function CasePage(props) {
               {!isSpin && !openedCaseState.isOpened &&
                 <>
                   <div className="case__image">
-                    <img src={caseElem.image} alt="case" />
+                    <img src={caseElem.img.replace('localhost', apiHost)} alt="case" />
                   </div>
                   <div className="case-buttons">
                     <div className="case-button__spin">
@@ -132,7 +137,7 @@ function CasePage(props) {
 
               {isSpin &&
                 <CaseSpinner
-                  data={caseItem}
+                  data={caseElem.skins}
                   getRandomId={getRandomIdForSpin}
                   onStop={onStopSpinner}
                 />
@@ -154,16 +159,16 @@ function CasePage(props) {
         <div className="case-content">
           <span className="case-content__title">Содержимое кейса</span>
           <div className="case-content__wrapper">
-            {caseItem.map((itemGun) => {
+            {caseElem.skins.map((itemGun) => {
               return (
-                <div className="case-content__item" key={itemGun.CaseId}>
+                <div className="case-content__item" key={itemGun.id}>
                   <div className="case-badge">
-                    <span className={itemGun.badge}></span>
+                    <span className="case-badge__silver"></span>
                   </div>
                   <div className="case-item__img">
-                    <img src={itemGun.itemImg} alt="itemGun" />
+                    <img src={itemGun.img} alt="itemGun" />
                   </div>
-                  <span className="case-item__name">{itemGun.ItemName}</span>
+                  <span className="case-item__name">{itemGun.name}</span>
                 </div>
               );
             })}

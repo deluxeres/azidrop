@@ -1,5 +1,5 @@
 import "./App.scss";
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Main from "./components/Main/Main";
 import Header from "./components/Header/Header";
@@ -14,11 +14,21 @@ import Faq from './components/Main/Faq/Faq'
 import BonusPrize from "./components/Main/BonusPrize/BonusPrize"
 import HeaderTop from "./components/Header/HeaderTop/HeaderTop"
 import Popup from './components/Popup/Popup';
+import { useGetUserDataQuery } from './app/services/userApi';
+import { setLogin } from './app/userSlice';
+import { useDispatch } from 'react-redux';
+import { AuthRoute } from './AuthRoute';
 
 
 function App() {
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
-  const [loading, setLoading] = useState(false)
+  const { data: userData, isSuccess: userSuccess } = useGetUserDataQuery();
+
+  if (userSuccess && userData) {
+    dispatch(setLogin());
+  }
 
   useEffect(() => {
     setLoading(true)
@@ -35,7 +45,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/casePage/:id" element={<CasePage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+
+        <Route path="/profile" element={<AuthRoute />}>
+          <Route index element={<ProfilePage />} />
+        </Route>
+
         <Route path="/bonus" element={<BonusPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/dailybonus" element={<Dailybonus />} />
