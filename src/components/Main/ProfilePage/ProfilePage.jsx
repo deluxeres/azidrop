@@ -1,23 +1,43 @@
 import React, { useState } from 'react'
 import Statictic from "../Statictic/Statictic"
 import "./ProfilePage.scss"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { Input, Text } from '@chakra-ui/react'
 import ProfileDrop from './ProfileDrop/ProfileDrop'
 import contractImg from "../../../Assets/images/Header/contracts.png"
 import upgradeImg from "../../../Assets/images/Header/upgrade.png"
 import battleImg from "../..//../Assets/images/Header/battle.png"
-import { useGetUserDataQuery } from '../../../app/services/userApi'
+import { useAddTradelinkMutation, useGetUserDataQuery } from '../../../app/services/userApi'
+import { Alert, Snackbar } from '@mui/material'
 
 function ProfilePage() {
   const { data: userData, isLoading } = useGetUserDataQuery();
+  const [setTradeLink] = useAddTradelinkMutation();
   const [show, setShow] = useState(false);
+  const [open, setOpen] = useState({is: false, msg: ''});
+
+  const alertClick = (msg) => {
+    setOpen({is: true, msg});
+  };
+
+  const alertClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen({is: false, msg: ''});
+  };
 
   const [value, setValue] = React.useState('');
   const handleChange = (event) => setValue(event.target.value);
 
   const createdDate = new Date(userData.created_at);
   const daysLag = Math.ceil(Math.abs(new Date().getTime() - createdDate.getTime()) / (1000 * 3600 * 24));
+
+  const setTLink = (e) => {
+    e.preventDefault();
+    setTradeLink({ link: e.target.trade_link.value });
+  }
 
   return isLoading ? null : (
     <div className="profile">
@@ -40,7 +60,7 @@ function ProfilePage() {
               </div>
               <div className="profile-block__inner">
                 <img className="profile-block__img" src={contractImg} alt='profile' />
-                <span style={{whiteSpace: 'nowrap'}}>{daysLag} дней</span>
+                <span style={{ whiteSpace: 'nowrap' }}>{daysLag} дней</span>
                 <p>На нашем сайте</p>
               </div>
               <div className="profile-block__inner">
@@ -55,6 +75,8 @@ function ProfilePage() {
               </div>
 
               <a className="profile-user__name" href={'https://steamcommunity.com/profiles/' + userData.steamid} target='_blank'>{userData.name}</a>
+
+              <Link to="/logout" className="profile-user__logout">Выйти</Link>
 
               {/* <a href="https://steamcommunity.com" target="_blank" rel="noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="17" viewBox="0 0 28 17">
@@ -85,14 +107,14 @@ function ProfilePage() {
               <div className="profile-trade__title">
                 <p>Trade-URL <a href="https://steamcommunity.com" target="__blanc">(Найти ссылку можно на сайте Steam)</a></p>
               </div>
-              <form className="profile-trade__form">
-                <input placeholder="https://steamcommunity.com/tradeoffer/new/?partner=0&token=XXXXXXXX" />
+              <form className="profile-trade__form" onSubmit={setTLink}>
+                <input placeholder="https://steamcommunity.com/tradeoffer/new/?partner=0&token=XXXXXXXX" value={userData.steam_trade_link} name="trade_link" />
                 <button className="profile-trade__btn">Сохранить</button>
               </form>
             </div>
           </div>
         </div>
-        <ProfileDrop data={userData} />
+        <ProfileDrop data={userData} alertClick={alertClick} />
         <Statictic />
 
         {show &&
@@ -144,6 +166,12 @@ function ProfilePage() {
           </div>
         }
       </div>
+
+      <Snackbar open={open.is} autoHideDuration={6000} onClose={alertClose}>
+        <Alert onClose={alertClose} severity="success" sx={{ width: '100%' }}>
+          {open.msg}
+        </Alert>
+      </Snackbar>
     </div>
   )
 }

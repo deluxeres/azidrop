@@ -17,7 +17,7 @@ import Popup from './components/Popup/Popup';
 import { useGetUserDataQuery } from './app/services/userApi';
 import { setLogin } from './app/userSlice';
 import { useDispatch } from 'react-redux';
-import { AuthRoute } from './AuthRoute';
+import { AuthRoute, LogoutRoute } from './AuthRoute';
 
 
 function App() {
@@ -55,6 +55,7 @@ function App() {
         <Route path="/dailybonus" element={<Dailybonus />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/bonus-prize" element={<BonusPrize />} />
+        <Route path="/logout" element={<LogoutRoute />} />
       </Routes>
       <Footer />
       <Popup />

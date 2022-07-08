@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
-import { isUserLogin } from './app/userSlice';
+import { isUserLogin, setLogin, setLogout } from './app/userSlice';
 
 export const AuthRoute = () => {
     const isLogin = useSelector(isUserLogin);
@@ -11,4 +11,12 @@ export const AuthRoute = () => {
 	} else {
 		return <Navigate to="/" />;
 	}
-};
+}
+
+export const LogoutRoute = () => {
+	const dispatch = useDispatch();
+
+    dispatch(setLogout());
+
+	return <Navigate to="/" />;
+}

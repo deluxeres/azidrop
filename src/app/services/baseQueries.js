@@ -1,7 +1,10 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/dist/query';
 import axios from 'axios';
 
-export const baseUrl = 'http://91.203.176.164:9090';
+export const apiHost = '91.203.176.164';
+// export const apiHost = 'localhost';
+export const baseUrl = 'http://' + apiHost + ':9090';
+export const authLink = 'http://' + apiHost + ':9090/auth/steam';
 
 export const defaultBaseQuery = fetchBaseQuery({
     baseUrl: baseUrl,
@@ -19,6 +22,3 @@ export const axiosAuthBaseQuery = axios.create({
     baseURL: baseUrl,
     headers: { 'front': 'someToken123' }
 });
-
-export const apiHost = '91.203.176.164';
-export const authLink = 'http://91.203.176.164:9090/auth/steam';
