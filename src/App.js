@@ -22,22 +22,24 @@ import { AuthRoute, LogoutRoute } from './AuthRoute';
 
 function App() {
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const { data: userData, isSuccess: userSuccess } = useGetUserDataQuery();
 
-  if (userSuccess && userData) {
-    dispatch(setLogin());
-  } else {
-    dispatch(setLogout());
-  }
+  
 
   useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 6000)
-  }, [])
+    if (userSuccess && userData) {
+      dispatch(setLogin());
+    } else {
+      dispatch(setLogout());
+    }
+
+    // setLoading(true)
+    // setTimeout(() => {
+    //   setLoading(false)
+    // }, 6000)
+  }, [userSuccess, userData]);
 
   return (
     <div className="App">
