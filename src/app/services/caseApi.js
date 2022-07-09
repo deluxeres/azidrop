@@ -20,7 +20,18 @@ export const caseApi = createApi({
 				url: 'api/paymentgift/winner',
 			}),
 		}),
+		getWinSkins: build.query({
+			query: () => ({
+				url: 'api/skin/winner',
+				params: {count: 15}
+			}),
+		}),
 	}),
 });
 
-export const { useGetCategoriesQuery, useGetLoyalityQuery, useGetPayWinnerQuery } = caseApi;
+export const {
+	useGetCategoriesQuery,
+	useGetLoyalityQuery,
+	useGetPayWinnerQuery,
+	useGetWinSkinsQuery
+} = caseApi;

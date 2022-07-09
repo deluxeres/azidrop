@@ -5,15 +5,48 @@ import liveGuns from "../../../DataBase/Live.json";
 import { Link } from "react-router-dom";
 // import headerLogo from "../../../Assets/images/Header/logo.png";
 import headerLogo from "../../../Assets/images/Header/logotype.png";
+import { useGetWinSkinsQuery } from '../../../app/services/caseApi';
+import { getColorClass, getLineClass } from '../../../functions/getBadge';
+
+const Skin = (props) => {
+  const line = getLineClass(props.rarity);
+  const color = getColorClass(props.rarity);
+
+  return (
+    <div className="live-card__card">
+      {/* <div className="live-card__name">
+                                <span>{gun.name}</span>
+                              </div> */}
+      <div className="live-card__line">
+        <span className={line}></span>
+      </div>
+
+      <div className="live-card__badge">
+        <span className={color}></span>
+      </div>
+
+      <div className="live-card__img">
+        <img src={props.img} alt="gun" />
+      </div>
+      {/* <div className="live-card__tag">
+                                <span className={gun.badge}></span>
+                              </div> */}
+    </div>
+  );
+}
 
 function HeaderLive() {
+  const { data } = useGetWinSkinsQuery();
+
+  const skins = data && data.map(item => <Skin {...item} key={item.id} />);
+
   return (
     <div className="header-live">
       <div className="LiveContainer">
         <div className="header-lent">
-        <div className="header__logo">
+          <div className="header__logo">
             <Link to="/">
-                <img src={headerLogo} alt="logotype" />
+              <img src={headerLogo} alt="logotype" />
             </Link>
           </div>
           <div className="live-tabs">
@@ -61,58 +94,14 @@ function HeaderLive() {
                   <TabPanel>
                     <div className="live-top">
                       <div className="live-top__container">
-                        {liveGuns['live'].reverse().map((gun) => {
-                          return (
-                            <div className="live-card__card" key={gun.id}>
-                              {/* <div className="live-card__name">
-                                <span>{gun.name}</span>
-                              </div> */}
-                              <div className="live-card__line">
-                                <span className={gun.line}></span>
-                              </div>
-
-                              <div className="live-card__badge">
-                                <span className={gun.badge}></span>
-                              </div>
-
-                              <div className="live-card__img">
-                                <img src={gun.imageUrl} alt="gun" />
-                              </div>
-                              {/* <div className="live-card__tag">
-                                <span className={gun.badge}></span>
-                              </div> */}
-                            </div>
-                          );
-                        })}
+                        {skins}
                       </div>
                     </div>
                   </TabPanel>
                   <TabPanel>
-                  <div className="live-top">
+                    <div className="live-top">
                       <div className="live-top__container">
-                        {liveGuns['live'].map((gun) => {
-                          return (
-                            <div className="live-card__card" key={gun.id}>
-                              {/* <div className="live-card__name">
-                                <span>{gun.name}</span>
-                              </div> */}
-                              <div className="live-card__line">
-                                <span className={gun.line}></span>
-                              </div>
-
-                              <div className="live-card__badge">
-                                <span className={gun.badge}></span>
-                              </div>
-
-                              <div className="live-card__img">
-                                <img src={gun.imageUrl} alt="gun" />
-                              </div>
-                              {/* <div className="live-card__tag">
-                                <span className={gun.badge}></span>
-                              </div> */}
-                            </div>
-                          );
-                        })}
+                        {skins}
                       </div>
                     </div>
                   </TabPanel>

@@ -15,7 +15,7 @@ import BonusPrize from "./components/Main/BonusPrize/BonusPrize"
 import HeaderTop from "./components/Header/HeaderTop/HeaderTop"
 import Popup from './components/Popup/Popup';
 import { useGetUserDataQuery } from './app/services/userApi';
-import { setLogin } from './app/userSlice';
+import { setLogin, setLogout } from './app/userSlice';
 import { useDispatch } from 'react-redux';
 import { AuthRoute, LogoutRoute } from './AuthRoute';
 
@@ -28,6 +28,8 @@ function App() {
 
   if (userSuccess && userData) {
     dispatch(setLogin());
+  } else {
+    dispatch(setLogout());
   }
 
   useEffect(() => {
@@ -41,7 +43,7 @@ function App() {
     <div className="App">
       <HeaderTop />
       <HeaderLive />
-      <Header />
+      <Header userData={userData} />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/casePage/:id" element={<CasePage />} />
