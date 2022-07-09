@@ -8,16 +8,15 @@ import { Link } from "react-router-dom";
 import { Input, Text } from "@chakra-ui/react";
 import bonusBtn from "../../Assets/images/bonus.png";
 import { authLink } from '../../app/services/baseQueries';
-import { useGetUserDataQuery } from '../../app/services/userApi';
 import { useSelector } from 'react-redux';
 import { isUserLogin } from '../../app/userSlice';
 
-function Header() {
+function Header(props) {
   const isLogin = useSelector(isUserLogin);
   const [show, setShow] = useState(false);
   const [value, setValue] = React.useState("");
   const handleChange = (event) => setValue(event.target.value);
-  const { data: userData } = useGetUserDataQuery();
+  const userData = props.userData || {};
 
   return (
     <div className="header-section">

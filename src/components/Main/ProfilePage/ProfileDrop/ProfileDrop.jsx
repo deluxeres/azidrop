@@ -29,7 +29,7 @@ const SkinItem = (props) => {
       <div className="drop-item__img">
         <img src={skin.img} alt="itemGun" />
       </div>
-      <span className="drop-item__name">{skin.name}</span>
+      <span className="drop-item__name">{skin.short_name}</span>
 
       <div className="drop-price">
         <span className="drop-item-price">{skin.price} Р</span>

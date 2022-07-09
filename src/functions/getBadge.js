@@ -69,4 +69,6 @@ const getBadge = function (name) {
     }
 }
 
-export const getBadgeClass = (name) => 'case-badge__' + getBadge(name); 
+export const getBadgeClass = (name) => 'case-badge__' + getBadge(name);
+export const getLineClass = (name) => 'live-card__line__' + getBadge(name);
+export const getColorClass = (name) => getBadge(name);
