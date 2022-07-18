@@ -37,28 +37,25 @@ const Skin = (props) => {
 
 function HeaderLive() {
   const { data } = useGetWinSkinsQuery();
-
-  // const purpleSkins = data && data.map(item => {
-  //   return <Skin {...item} key={item.id} />
-  // });
-
-  // const skins = data && data.filter(item => {
-  //   const color = getColorClass(item.rarity);
-
-  //   if (color !== 'purple') {
-  //     return <Skin {...item} key={item.id} />
-  //   }
-  // });
-
-  const purpleSkins = data && data.filter(item => {
+  
+  const skins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
-    if (color === 'purple') {
-      return <Skin {...item} key={item.id} />
+    if (color !== 'purple') {
+      return item;
     }
   });
 
-  console.log(purpleSkins);
+  const purpleSkins = !!data && data.filter(item => {
+    const color = getColorClass(item.rarity);
+
+    if (color === 'purple') {
+      return item;
+    }
+  });
+
+  const skinsView = !!skins && skins.map(item => <Skin {...item} key={item.id} />);
+  const purpleSkinsView = !!purpleSkins && purpleSkins.map(item => <Skin {...item} key={item.id} />);
 
   return (
     <div className="header-live">
@@ -114,14 +111,14 @@ function HeaderLive() {
                   <TabPanel>
                     <div className="live-top">
                       <div className="live-top__container">
-                        {!!purpleSkins && purpleSkins}
+                        {!!purpleSkinsView && purpleSkinsView}
                       </div>
                     </div>
                   </TabPanel>
                   <TabPanel>
                     <div className="live-top">
                       <div className="live-top__container">
-                        {/* {!!skins && skins} */}
+                        {!!skinsView && skinsView}
                       </div>
                     </div>
                   </TabPanel>
