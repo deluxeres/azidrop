@@ -37,22 +37,25 @@ const Skin = (props) => {
 
 function HeaderLive() {
   const { data } = useGetWinSkinsQuery();
-
-  const skins = data && data.filter(item => {
+  
+  const skins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
     if (color !== 'purple') {
-      return <Skin {...item} key={item.id} />
+      return item;
     }
   });
 
-  const purpleSkins = data && data.filter(item => {
+  const purpleSkins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
     if (color === 'purple') {
-      return <Skin {...item} key={item.id} />
+      return item;
     }
   });
+
+  const skinsView = !!skins && skins.map(item => <Skin {...item} key={item.id} />);
+  const purpleSkinsView = !!purpleSkins && purpleSkins.map(item => <Skin {...item} key={item.id} />);
 
   return (
     <div className="header-live">
@@ -108,14 +111,14 @@ function HeaderLive() {
                   <TabPanel>
                     <div className="live-top">
                       <div className="live-top__container">
-                        {!!purpleSkins && purpleSkins}
+                        {!!purpleSkinsView && purpleSkinsView}
                       </div>
                     </div>
                   </TabPanel>
                   <TabPanel>
                     <div className="live-top">
                       <div className="live-top__container">
-                        {!!skins && skins}
+                        {!!skinsView && skinsView}
                       </div>
                     </div>
                   </TabPanel>

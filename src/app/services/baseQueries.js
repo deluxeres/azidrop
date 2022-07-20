@@ -1,10 +1,10 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/dist/query';
 import axios from 'axios';
 
-export const apiHost = '91.203.176.164';
+export const apiHost = '142.93.237.47';
 // export const apiHost = 'localhost';
-export const baseUrl = 'http://' + apiHost + ':9090';
-export const authLink = 'http://' + apiHost + ':9090/auth/steam';
+export const baseUrl = 'http://' + apiHost;
+export const authLink = 'http://' + apiHost + '/auth/steam';
 
 export const defaultBaseQuery = fetchBaseQuery({
     baseUrl: baseUrl,
