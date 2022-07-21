@@ -18,6 +18,7 @@ import { useGetUserDataQuery } from './app/services/userApi';
 import { setLogin, setLogout } from './app/userSlice';
 import { useDispatch } from 'react-redux';
 import { AuthRoute, LogoutRoute } from './AuthRoute';
+import Alert from './components/Alert/Alert';
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
       </Routes>
       <Footer />
       <Popup />
+      <Alert />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Statictic from "../Statictic/Statictic"
 import "./ProfilePage.scss"
 import { Link, NavLink } from "react-router-dom"
@@ -9,15 +9,25 @@ import upgradeImg from "../../../Assets/images/Header/upgrade.png"
 import battleImg from "../..//../Assets/images/Header/battle.png"
 import { useAddTradelinkMutation, useGetUserDataQuery } from '../../../app/services/userApi'
 import { Alert, Snackbar } from '@mui/material'
+import { useDispatch } from 'react-redux'
+import { openErrorAlert } from '../../../app/alertSlice'
 
 function ProfilePage() {
+  const dispatch = useDispatch();
   const { data: userData, isLoading } = useGetUserDataQuery();
-  const [setTradeLink] = useAddTradelinkMutation();
+  const [setTradeLink, resultTradeLink] = useAddTradelinkMutation();
   const [show, setShow] = useState(false);
-  const [open, setOpen] = useState({is: false, msg: ''});
+  const [open, setOpen] = useState({ is: false, msg: '' });
+
+  useEffect(() => {
+    if (resultTradeLink.data && resultTradeLink.data.error) {
+      dispatch(openErrorAlert(resultTradeLink.data.error));
+    }
+  }, [resultTradeLink]);
+
 
   const alertClick = (msg) => {
-    setOpen({is: true, msg});
+    setOpen({ is: true, msg });
   };
 
   const alertClose = (event, reason) => {
@@ -25,7 +35,7 @@ function ProfilePage() {
       return;
     }
 
-    setOpen({is: false, msg: ''});
+    setOpen({ is: false, msg: '' });
   };
 
   const [value, setValue] = React.useState('');
@@ -76,7 +86,7 @@ function ProfilePage() {
 
               <a className="profile-user__name" href={'https://steamcommunity.com/profiles/' + userData.steamid} target='_blank'>{userData.name}</a>
 
-              <Link to="/logout" className="profile-user__logout">Выйти</Link>
+              <a href="/logout" className="profile-user__logout">Выйти</a>
 
               {/* <a href="https://steamcommunity.com" target="_blank" rel="noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="17" viewBox="0 0 28 17">
@@ -108,7 +118,7 @@ function ProfilePage() {
                 <p>Trade-URL <a href="https://steamcommunity.com" target="__blanc">(Найти ссылку можно на сайте Steam)</a></p>
               </div>
               <form className="profile-trade__form" onSubmit={setTLink}>
-                <input placeholder="https://steamcommunity.com/tradeoffer/new/?partner=0&token=XXXXXXXX" value={userData.steam_trade_link} name="trade_link" />
+                <input placeholder="https://steamcommunity.com/tradeoffer/new/?partner=0&token=XXXXXXXX" defaultValue={userData.steam_trade_link || ''} name="trade_link" />
                 <button className="profile-trade__btn">Сохранить</button>
               </form>
             </div>
