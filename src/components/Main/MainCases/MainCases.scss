@@ -61,17 +61,20 @@
                 display: flex;
                 align-items: center;
                 flex-direction: column;
+                margin-top: 12px;
 
                 .case-card_name {
-                    width: 100%;
+                    color: #ffffff;
+                    display: block;
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    overflow: hidden;
                     text-align: center;
-                    font-size: 14px;
                     text-overflow: ellipsis;
                     white-space: nowrap;
-                    overflow: hidden;
-                    color: #b5b5d4;
-                    display: block;
-                    margin-bottom: 10px;
+                    width: 100%;
+                    z-index: 100;
+                    font-weight: 600;
                 }
     
                 .case-card_price {
