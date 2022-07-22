@@ -15,6 +15,7 @@ import { apiHost } from '../../../app/services/baseQueries';
 import { useOpenCaseMutation, useSellSkinMutation } from '../../../app/services/userApi';
 import { getBadgeClass } from '../../../functions/getBadge';
 import { OpenCase } from '../../../app/services/openCase';
+import { openErrorAlert } from '../../../app/alertSlice';
 
 function CasePage() {
   const [openedCaseState, setOpenedCaseState] = useState({ isOpened: false, data: {} });
@@ -23,7 +24,14 @@ function CasePage() {
   const isSpin = useSelector(isCaseSpin);
   const [isQuickOpening, setQuickOpen] = useState(false);
   const { data, isLoading } = useGetCategoriesQuery();
-  const [sellSkinMutation] = useSellSkinMutation();
+  const [sellSkinMutation, resultSellSkin] = useSellSkinMutation();
+  const wonSkin = useRef(null);
+
+  useEffect(() => {
+    if (resultSellSkin.data && resultSellSkin.data.error) {
+      dispatch(openErrorAlert(resultSellSkin.data.error));
+    }
+  }, [resultSellSkin]);
 
   let caseElem = null;
 
@@ -37,7 +45,16 @@ function CasePage() {
     }
   }
 
-  const spinCase = function () {
+  const spinCase = async function () {
+    const res = await OpenCase(caseElem.id);
+
+    if (res.data.error) {
+      dispatch(openErrorAlert(res.data.error));
+      return null;
+    }
+
+    wonSkin.current = res.data;
+
     dispatch(setCaseSpin(true));
   }
 
@@ -45,6 +62,13 @@ function CasePage() {
     setQuickOpen(true);
 
     const res = await OpenCase(caseElem.id);
+
+    if (res.data.error) {
+      dispatch(openErrorAlert(res.data.error));
+      setQuickOpen(false);
+      return;
+    }
+
     const item = res.data;
 
     dispatch(setCaseSpin(false));
@@ -57,9 +81,12 @@ function CasePage() {
     setQuickOpen(false);
   }
 
-  const getRandomIdForSpin = async function () {
-    const res = await OpenCase(caseElem.id);
-    return res.data;
+  const getRandomIdForSpin = function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(wonSkin.current);
+      }, 2500);
+    });
   }
 
   const onStopSpinner = async function (skin) {

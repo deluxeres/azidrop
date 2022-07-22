@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./ProfileDrop.scss";
 import { Link } from "react-router-dom"
 import { Tabs, Tab, TabPanel, TabList, TabPanels } from "@chakra-ui/react"
-import caseItem from "../../../../DataBase/CaseItems.json";
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 import { useSellSkinMutation, useWithdrawSkinMutation } from '../../../../app/services/userApi';
 import { getBadgeClass } from '../../../../functions/getBadge';
+import { useDispatch } from 'react-redux';
+import { openErrorAlert } from '../../../../app/alertSlice';
 
 const SkinItem = (props) => {
   const skin = props.skin;
@@ -44,8 +43,21 @@ const SkinItem = (props) => {
 }
 
 function ProfileDrop(props) {
-  const [sellSkinMutation] = useSellSkinMutation();
-  const [withdrawSkinMutation] = useWithdrawSkinMutation();
+  const dispatch = useDispatch();
+  const [sellSkinMutation, resultSellSkin] = useSellSkinMutation();
+  const [withdrawSkinMutation, resultWithdrawSkin] = useWithdrawSkinMutation();
+
+  useEffect(() => {
+    if (resultSellSkin.data && resultSellSkin.data.error) {
+      dispatch(openErrorAlert(resultSellSkin.data.error));
+    }
+  }, [resultSellSkin]);
+
+  useEffect(() => {
+    if (resultWithdrawSkin.data && resultWithdrawSkin.data.error) {
+      dispatch(openErrorAlert(resultWithdrawSkin.data.error));
+    }
+  }, [resultWithdrawSkin]);
 
   const withdraw = (id) => {
     if (props.data.steam_trade_link) {
@@ -63,10 +75,6 @@ function ProfileDrop(props) {
       key={item.id}
     />
   ));
-
-  const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
 
   const handleCopy = () => {
     console.log('copied');

@@ -175,6 +175,9 @@
 
 .drop-item__img {
   z-index: 100;
+  img{
+      max-width: 100%;
+  }
 }
 
 .drop-item__name {
