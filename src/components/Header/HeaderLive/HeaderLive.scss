@@ -75,6 +75,10 @@
 
         .live-card__img {
             z-index: 100;
+
+            img {
+                width: 100%;
+            }
         }
 
         .live-card__badge {

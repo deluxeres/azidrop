@@ -33,7 +33,8 @@ function Footer() {
           <div className="footer-info">
             <div className="footer-info__link">
                 <Link to="/bonus">Бонусная система</Link>
-                <Link to="/">privacy policy</Link>
+                <Link to="/policy">Политика конфиденциальности</Link>
+                <Link to="/agreement">Пользовательское соглашение</Link>
                 <Link to="/">contacts</Link>
                 <Link to="/faq">faq</Link>
             </div>

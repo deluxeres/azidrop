@@ -230,6 +230,11 @@
 
 .case-item__img {
   z-index: 100;
+  width: 70%;
+
+  img {
+    width: 100%;
+  }
 }
 
 .case-item__name {

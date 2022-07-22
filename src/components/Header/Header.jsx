@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./header.scss";
-import contractImg from "../../Assets/images/Header/contracts.png"
+import contractImg from "../../Assets/images/Header/contracts1.png"
 import battleImg from "../../Assets/images/Header/battle.png"
 import upgradeImg from "../../Assets/images/Header/upgrade.png"
 import bonusImg from "../../Assets/images/Header/bonus.png"

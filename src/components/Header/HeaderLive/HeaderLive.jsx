@@ -5,6 +5,7 @@ import liveGuns from "../../../DataBase/Live.json";
 import { Link } from "react-router-dom";
 // import headerLogo from "../../../Assets/images/Header/logo.png";
 import headerLogo from "../../../Assets/images/Header/logotype.png";
+import animLogo from "../../../Assets/images/Header/logo.mp4";
 import { useGetWinSkinsQuery } from '../../../app/services/caseApi';
 import { getColorClass, getLineClass } from '../../../functions/getBadge';
 

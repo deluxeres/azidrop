@@ -16,7 +16,7 @@ const Case = function (props) {
           </div>
           <div className="case-card__info">
             <span className="case-card_name">{props.name}</span>
-            <span className="case-card_price">{props.price}р</span>
+            <span className="case-card_price">{props.price} ₽</span>
           </div>
         </div>
       </div>

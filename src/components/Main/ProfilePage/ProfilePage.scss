@@ -471,11 +471,13 @@
 }
 
 .profile-page-user {
-    color: #574ae2;
+    color: #f19800;
+    cursor: default;
     transition: 0.3s;
     border-bottom: 1px dashed #fff;
     &:hover {
         color: #fcfcfc;
+        cursor: default;
     }
 }
 .profile-user__name {
@@ -498,10 +500,11 @@
     position: absolute;
     z-index: 3;
     left: 50%;
-    bottom: -75px;
+    bottom: -70px;
     transform: translate(-50%, -50%);
     transition: 0.1s;
+    color: #f19800;
     &:hover {
-        color: #574ae2;
+        color: #fff;
     }
 }

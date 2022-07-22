@@ -64,6 +64,10 @@ const getBadge = function (name) {
             return 'orange';
         case 'exceptional':
             return 'orange';
+        case 'прямо с завода':
+            return 'orange';
+        case 'Factory new':
+            return 'orange';
         default:
             return 'silver';
     }

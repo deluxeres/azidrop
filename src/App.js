@@ -6,6 +6,8 @@ import Header from "./components/Header/Header";
 import HeaderLive from "./components/Header/HeaderLive/HeaderLive";
 import CasePage from "./components/Main/CasePage/CasePage";
 import Footer from "./components/Footer/Footer";
+import Policy from './components/Main/Policy/Policy';
+import Agreement from "./components/Main/Agreement/Agreement";
 import ProfilePage from "./components/Main/ProfilePage/ProfilePage";
 import NotFound from './components/NotFound'
 import BonusPage from './components/Main/BonusPage/BonusPage'
@@ -61,6 +63,8 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/bonus-prize" element={<BonusPrize />} />
         <Route path="/logout" element={<LogoutRoute />} />
+        <Route path="/policy" element={<Policy />} />
+        <Route path="/agreement" element={<Agreement />} />
       </Routes>
       <Footer />
       <Popup />
