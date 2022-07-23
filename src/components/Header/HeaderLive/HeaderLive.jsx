@@ -45,6 +45,7 @@ function HeaderLive() {
     if (!['red', 'purple', 'orange', 'maline'].includes(color)) {
       return item;
     }
+
   });
 
   const purpleSkins = !!data && data.filter(item => {

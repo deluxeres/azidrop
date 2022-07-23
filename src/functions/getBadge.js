@@ -3,31 +3,31 @@ const getBadge = function (name) {
         case 'базового класса':
             return 'silver';
         case 'засекреченное':
-            return 'silver';
+            return 'purple';
         case 'армейское качество':
-            return 'silver';
+            return 'blue';
         case 'запрещенное':
-            return 'silver';
+            return 'maline';
         case 'ширпотреб':
-            return 'blue';
+            return 'silver';
         case 'промышленное качество':
-            return 'blue';
+            return 'bluelight';
         case 'тайное':
-            return 'blue';
+            return 'red';
         case 'высшего класса':
             return 'blue';
         case 'примечательного типа':
             return 'purple';
         case 'экзотичного вида':
-            return 'purple';
+            return 'maline';
         case 'consumer grade':
             return 'purple';
         case 'контрабандное':
-            return 'purple';
+            return 'orange';
         case 'контрабанда':
             return 'purple';
         case 'экстраординарного типа':
-            return 'purple';
+            return 'red';
         case 'restricted':
             return 'red';
         case 'mil-spec grade':
@@ -47,26 +47,24 @@ const getBadge = function (name) {
         case 'exotic':
             return 'red';
         case 'base grade':
-            return 'orange';
+            return 'blue';
         case 'distinguished':
-            return 'orange';
+            return 'blue';
         case 'исключительный':
-            return 'orange';
+            return 'blue';
         case 'superior':
-            return 'orange';
+            return 'blue';
         case 'master':
-            return 'orange';
+            return 'blue';
         case 'мастерский':
-            return 'orange';
+            return 'red';
         case 'заслуженный':
-            return 'orange';
-        case 'превосходный':
+            return 'blue';
+        case 'blue':
             return 'orange';
         case 'exceptional':
-            return 'orange';
-        case 'прямо с завода':
-            return 'orange';
-        case 'Factory new':
+            return 'blue';
+        case 'Нeoбычaйнo peдкиe':
             return 'orange';
         default:
             return 'silver';
