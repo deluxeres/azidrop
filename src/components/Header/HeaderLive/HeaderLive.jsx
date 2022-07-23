@@ -42,7 +42,7 @@ function HeaderLive() {
   const skins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
-    if (color !== 'purple') {
+    if (!['red', 'purple', 'orange', 'maline'].includes(color)) {
       return item;
     }
   });
@@ -50,7 +50,7 @@ function HeaderLive() {
   const purpleSkins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
-    if (color === 'purple') {
+    if (['red', 'purple', 'orange', 'maline'].includes(color)) {
       return item;
     }
   });

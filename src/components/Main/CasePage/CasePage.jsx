@@ -13,7 +13,7 @@ import OpenedCase from '../../OpenedCase/OpenedCase';
 import { useGetCategoriesQuery } from '../../../app/services/caseApi';
 import { apiHost } from '../../../app/services/baseQueries';
 import { useOpenCaseMutation, useSellSkinMutation } from '../../../app/services/userApi';
-import { getBadgeClass } from '../../../functions/getBadge';
+import { getBadgeClass, getColorClass } from '../../../functions/getBadge';
 import { OpenCase } from '../../../app/services/openCase';
 import { openErrorAlert } from '../../../app/alertSlice';
 
@@ -112,6 +112,21 @@ function CasePage() {
     });
   }
 
+  const skins = !!caseElem && caseElem.skins.map(item => {
+    const col = {
+      orange: 1,
+      purple: 2,
+      maline: 3,
+      blue: 4,
+      bluelight: 5,
+      silver: 6,
+    };
+
+    item.sortIndex = col[getColorClass(item.rarity)];
+  });
+
+  !!skins && skins.sort((a, b) => b.sortIndex - a.sortIndex);
+
   return (isLoading || !caseElem) ? null : (
     <div className="case-page">
       <div className="container">
@@ -174,7 +189,7 @@ function CasePage() {
         <div className="case-content">
           <span className="case-content__title">Содержимое кейса</span>
           <div className="case-content__wrapper">
-            {caseElem.skins.map((itemGun) => {
+            {skins.map((itemGun) => {
               const badge = getBadgeClass(itemGun.rarity);
 
               return (
