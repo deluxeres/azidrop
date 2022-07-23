@@ -112,20 +112,25 @@ function CasePage() {
     });
   }
 
-  const skins = !!caseElem && caseElem.skins.map(item => {
+  let skins = !!caseElem && JSON.parse(JSON.stringify(caseElem.skins));
+
+  skins = !!skins && skins.map(item => {
     const col = {
       orange: 1,
-      purple: 2,
-      maline: 3,
-      blue: 4,
-      bluelight: 5,
-      silver: 6,
+      red: 2,
+      purple: 3,
+      maline: 4,
+      blue: 5,
+      bluelight: 6,
+      silver: 7,
     };
 
     item.sortIndex = col[getColorClass(item.rarity)];
+
+    return item;
   });
 
-  !!skins && skins.sort((a, b) => b.sortIndex - a.sortIndex);
+  !!skins && skins.sort((a, b) => a.sortIndex - b.sortIndex);
 
   return (isLoading || !caseElem) ? null : (
     <div className="case-page">
