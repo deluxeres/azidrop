@@ -50,7 +50,11 @@ function Home() {
                       <span>{paymentBonus.promocode}</span>
                     </div>
                   </CopyToClipboard>
-                  <button className="promo-block__copy">Скопировать</button>
+                  <CopyToClipboard text={paymentBonus.promocode} onCopy={handleCopy}>
+                    <div className="promo-block__code" onClick={alertClick}>
+                      <button className="promo-block__copy">Скопировать</button>
+                    </div>
+                  </CopyToClipboard>
                 </div>
                 <div className="promo-block-info">
                   <div className="promo-block-info__title">Осталось</div>

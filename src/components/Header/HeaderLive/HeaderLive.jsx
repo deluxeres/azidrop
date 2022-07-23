@@ -42,15 +42,22 @@ function HeaderLive() {
   const skins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
-    if (color !== 'purple') {
+    // if (color !== 'purple') {
+    //   return item;
+    // }
+    if (color !== 'purple' && color != 'red' && color != 'orange' && color != 'maline') {
       return item;
     }
+
   });
 
   const purpleSkins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
-    if (color === 'purple') {
+    // if (color === 'purple') {
+    //   return item;
+    // }
+    if (color === 'purple' &&  color === 'red' && color === 'orange' || color === 'maline') {
       return item;
     }
   });

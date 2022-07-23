@@ -131,7 +131,7 @@ function CasePage() {
                 <span></span>
               </div>
               <div className="case__name">
-                <span>{caseElem.name}</span>
+                <span>Кейс: {caseElem.name}</span>
               </div>
 
               {!isSpin && !openedCaseState.isOpened &&

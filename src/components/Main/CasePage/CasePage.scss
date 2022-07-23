@@ -238,11 +238,15 @@
 }
 
 .case-item__name {
-  font-size: 13px;
   color: #fff;
+  font-size: 13px;
   font-weight: 400;
-  z-index: 100;
   text-align: center;
+  z-index: 100;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 20ch;
 }
 
 .case-badge {
@@ -276,7 +280,7 @@
     border: 1px solid #ffffff30;
   }
   &__red {
-    background: linear-gradient(180deg,rgba(81,25,17,0),rgba(197, 48, 28, 0.486) 90%),#201f2b;
+    background: linear-gradient(180deg,rgba(81,25,17,0),rgba(206, 40, 19, 0.596) 90%),#201f2b;
     width: 100%;
     display: block;
     height: 100%;
@@ -285,6 +289,22 @@
   }
   &__orange {
     background: linear-gradient(180deg,rgba(81,55,17,0),rgba(197, 138, 28, 0.541) 90%),#201f2b;
+    width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid #ffffff30;
+  }
+  &__bluelight {
+    background: linear-gradient(180deg,rgba(81,55,17,0),rgba(195, 235, 253, 0.541) 90%),#201f2b;
+    width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid #ffffff30;
+  }
+  &__maline {
+    background: linear-gradient(180deg,rgba(81,55,17,0),rgba(255, 10, 112, 0.541) 90%),#201f2b;
     width: 100%;
     display: block;
     height: 100%;
