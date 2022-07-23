@@ -1,5 +1,5 @@
 .header-top {
-    height: 40px;
+    height: 50px;
     display: flex;
     align-items: center;
     background-color: #00000057;
@@ -68,6 +68,43 @@
             font-size: 14px;
         }
     }
+}
+
+.header-top-burger {
+    z-index: 1000000;
+}
+
+.burgerButton {
+    background: #f19800;
+    color: black;
+    width: 30px;
+    outline: none;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.burgerLink {
+    background: transparent;
+    outline: none;
+    border: none;
+    margin: 15px 0px;
+    border-bottom: 1px solid #ffffff21;
+    padding-bottom: 5px;
+
+    &:nth-child(3) {
+        border-bottom: 0;
+    }
+    a {
+        color: #fff;
+    }
+}
+
+.burgerList {
+    background-color: rgba(19, 19, 26, 0.98);
+    border-radius: 6px;
+    box-shadow: 0 9px 34px rgba(9, 9, 14, 0.2);
+    padding: 10px 15px;
 }
 
 @keyframes fade {

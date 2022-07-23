@@ -1,5 +1,17 @@
 import React from "react";
 import "./HeaderTop.scss";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+  IconButton
+} from '@chakra-ui/react'
+import {HamburgerIcon} from '@chakra-ui/icons'
 import { Link } from "react-router-dom";
 
 
@@ -7,6 +19,28 @@ function HeaderTop() {
   return (
     <div className="header-top">
       <div className="container-top">
+        <div className="header-top-burger">
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label='Options'
+              icon={<HamburgerIcon />}
+              variant='outline'
+              className='burgerButton'
+            />
+            <MenuList className="burgerList">
+              <MenuItem className="burgerLink">
+                <Link to="/bonus-prize">Призы за пополнения</Link>
+              </MenuItem>
+              <MenuItem className="burgerLink">
+                <Link to="/bonus">Бонусная система</Link>
+              </MenuItem>
+              <MenuItem className="burgerLink">
+              <Link to="/faq">FAQ</Link>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
         <div className="header-top__link">
           <nav>
             <ul>

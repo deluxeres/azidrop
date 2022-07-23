@@ -162,6 +162,9 @@
         align-items: center;
         width: 100% !important;
     }
+    .header-top__link {
+        display: none;
+    }
     .header__link nav ul li a {
         text-align: center !important;
         justify-content: space-between !important;

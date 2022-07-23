@@ -116,13 +116,13 @@ function CasePage() {
 
   skins = !!skins && skins.map(item => {
     const col = {
-      orange: 1,
-      red: 2,
-      purple: 3,
+      orange: 7,
+      red: 6,
+      purple: 5,
       maline: 4,
-      blue: 5,
-      bluelight: 6,
-      silver: 7,
+      blue: 3,
+      bluelight: 2,
+      silver: 1,
     };
 
     item.sortIndex = col[getColorClass(item.rarity)];
