@@ -26,6 +26,10 @@ const Skin = (props) => {
         <span className={color}></span>
       </div>
 
+      <div className="live-card__name">
+        <span>{props.name}</span>
+      </div>
+
       <div className="live-card__img">
         <img src={props.img} alt="gun" />
       </div>
