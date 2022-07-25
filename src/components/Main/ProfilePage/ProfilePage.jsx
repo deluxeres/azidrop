@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Statictic from "../Statictic/Statictic"
 import "./ProfilePage.scss"
 import { Link, NavLink } from "react-router-dom"
-import { Input, Text } from '@chakra-ui/react'
+import { Input, Text, Tooltip, Button } from '@chakra-ui/react'
 import ProfileDrop from './ProfileDrop/ProfileDrop'
 import contractImg from "../../../Assets/images/Header/contracts.png"
 import upgradeImg from "../../../Assets/images/Header/upgrade.png"
@@ -114,9 +114,13 @@ function ProfilePage() {
             </div>
 
             <div className="profile-trade">
+
               <div className="profile-trade__title">
-                <p>Trade-URL <a href="https://steamcommunity.com" target="__blanc">(Найти ссылку можно на сайте Steam)</a></p>
+                <Tooltip className="trade-hover" label='Внимание! Мы никогда не добавляемся в Steam и не просим отдать вещи по двойной цене/перейти по ссылке и т.п. Будьте бдительны!' placement='top'>
+                  <p>Trade-URL <a href={'https://steamcommunity.com/profiles/' + userData.steamid + "/tradeoffers/privacy#trade_offer_access_url"} target="__blanc">(Найти ссылку можно на сайте Steam)</a></p>
+                </Tooltip>
               </div>
+
               <form className="profile-trade__form" onSubmit={setTLink}>
                 <input placeholder="https://steamcommunity.com/tradeoffer/new/?partner=0&token=XXXXXXXX" defaultValue={userData.steam_trade_link || ''} name="trade_link" />
                 <button className="profile-trade__btn">Сохранить</button>
