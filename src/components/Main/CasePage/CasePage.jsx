@@ -159,6 +159,17 @@ function CasePage() {
                   <div className="case__image">
                     <img src={caseElem.img.replace('localhost', apiHost)} alt="case" />
                   </div>
+
+                <div className="case-free">
+                <span className="case-free__splash">🧡</span>
+                  <div className="case-free__info">
+                    <span className="case-free__info-title">Чтобы открыть этот кейс вам необходимо</span>
+                    <span className="case-free__info-text">Пополнение баланса за последние 24 часа не менее, чем на <span className="case-free-count">0 Р</span></span>
+                    <span className="case-free__info-text">За последние 24 часа вы пополнили баланс на <span className="case-free-count">0.00 Р</span></span>
+                  </div>
+                </div>
+
+{/*                   
                   <div className="case-buttons">
                     <div className="case-button__spin">
                       <button onClick={spinCase}>Прокрутить за {caseElem.price} Р</button>
@@ -166,7 +177,7 @@ function CasePage() {
                     <div className="case-button__quick">
                       <button onClick={quickOpen} disabled={isQuickOpening}>Открыть быстро</button>
                     </div>
-                  </div>
+                  </div> */}
                 </>
               }
 
@@ -205,7 +216,7 @@ function CasePage() {
                   <div className="case-item__img">
                     <img src={itemGun.img} alt="itemGun" />
                   </div>
-                  <span className="case-item__name">{itemGun.name}</span>
+                  <span className="case-item__name">{itemGun.short_name}</span>
                 </div>
               );
             })}
