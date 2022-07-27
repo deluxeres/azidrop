@@ -5,17 +5,15 @@ import battleImg from "../../Assets/images/Header/battle.png"
 import upgradeImg from "../../Assets/images/Header/upgrade.png"
 import bonusImg from "../../Assets/images/Header/bonus.png"
 import { Link } from "react-router-dom";
-import { Input, Text } from "@chakra-ui/react";
 import bonusBtn from "../../Assets/images/bonus.png";
 import { authLink } from '../../app/services/baseQueries';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { isUserLogin } from '../../app/userSlice';
+import { openPayPopup } from '../../app/popupSlice';
 
 function Header(props) {
+  const dispatch = useDispatch();
   const isLogin = useSelector(isUserLogin);
-  const [show, setShow] = useState(false);
-  const [value, setValue] = React.useState("");
-  const handleChange = (event) => setValue(event.target.value);
   const userData = props.userData || {};
 
   return (
@@ -37,28 +35,31 @@ function Header(props) {
               }
 
               {isLogin &&
-                <Link to="/profile" className="header-profile">
-                  <div className="header__right-profile">
-                    <div className="header-profile__user">
-                      <div className="header-profile__img">
-                        <img src={userData.avatar} alt="user" />
+                <div className="header-profile">
+                  <Link to="/profile">
+                    <div className="header__right-profile">
+                      <div className="header-profile__user">
+                        <div className="header-profile__img">
+                          <img src={userData.avatar} alt="user" />
+                        </div>
+                      </div>
+                      <div className="header-profile__block">
+                        <span className="header-profile__name">{userData.name}</span>
+                        <div className="header-profile__balance">
+                          <span>{userData.balance} Р</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="header-profile__block">
-                      <span className="header-profile__name">{userData.name}</span>
-                      <div className="header-profile__balance">
-                        <span>{userData.balance} Р</span>
-                      </div>
-                    </div>
-                  </div>
+                  </Link>
+
                   <button
-                    onClick={() => setShow(!show)}
+                    onClick={() => dispatch(openPayPopup())}
                     className="header-profile__deposit"
                   >
-                  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" class="header-account__refill-icon" width="22" height="22"><path d="M13.6125 3.6208v3.4833h-1.375V3.6208c0-.2475-.22-.3666-.3666-.3666a.3675.3675 0 0 0-.1375.0274L4.4642 6.0225c-.4859.1833-.7975.6417-.7975 1.1642v.6141a3.4243 3.4243 0 0 0-1.375 2.75V7.1866c0-1.0908.6692-2.0625 1.6866-2.4474l7.2784-2.75a1.811 1.811 0 0 1 .6142-.11c.9166 0 1.7416.7424 1.7416 1.7416ZM19.7083 13.2917v.9167c0 .2475-.1925.4491-.4492.4583h-1.3383c-.4858 0-.9258-.3575-.9625-.8342-.0275-.2841.0825-.55.2658-.7333.165-.1742.3942-.2658.6417-.2658H19.25c.2658.0091.4583.2108.4583.4583Z" fill="#4F3D2E"></path><path d="M17.8567 11.8708h.935c.5042 0 .9167-.4125.9167-.9167v-.4033c0-1.8975-1.5492-3.4467-3.4467-3.4467H5.7383c-.7791 0-1.4941.2567-2.0716.6967a3.4244 3.4244 0 0 0-1.375 2.75V16.72c0 1.8975 1.5492 3.4466 3.4466 3.4466h10.5234c1.8975 0 3.4467-1.5491 3.4467-3.4466v-.1742c0-.5042-.4125-.9167-.9167-.9167h-.7975c-.88 0-1.7233-.5408-1.9525-1.3933-.1925-.6967.0367-1.3658.495-1.815.3392-.3483.8067-.55 1.32-.55Zm-5.0233-.1833H6.4167c-.3758 0-.6875-.3117-.6875-.6875 0-.3759.3117-.6875.6875-.6875h6.4167c.3758 0 .6875.3116.6875.6875 0 .3758-.3117.6875-.6875.6875Z" fill="#4F3D2E"></path></svg>
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" class="header-account__refill-icon" width="22" height="22"><path d="M13.6125 3.6208v3.4833h-1.375V3.6208c0-.2475-.22-.3666-.3666-.3666a.3675.3675 0 0 0-.1375.0274L4.4642 6.0225c-.4859.1833-.7975.6417-.7975 1.1642v.6141a3.4243 3.4243 0 0 0-1.375 2.75V7.1866c0-1.0908.6692-2.0625 1.6866-2.4474l7.2784-2.75a1.811 1.811 0 0 1 .6142-.11c.9166 0 1.7416.7424 1.7416 1.7416ZM19.7083 13.2917v.9167c0 .2475-.1925.4491-.4492.4583h-1.3383c-.4858 0-.9258-.3575-.9625-.8342-.0275-.2841.0825-.55.2658-.7333.165-.1742.3942-.2658.6417-.2658H19.25c.2658.0091.4583.2108.4583.4583Z" fill="#4F3D2E"></path><path d="M17.8567 11.8708h.935c.5042 0 .9167-.4125.9167-.9167v-.4033c0-1.8975-1.5492-3.4467-3.4467-3.4467H5.7383c-.7791 0-1.4941.2567-2.0716.6967a3.4244 3.4244 0 0 0-1.375 2.75V16.72c0 1.8975 1.5492 3.4466 3.4466 3.4466h10.5234c1.8975 0 3.4467-1.5491 3.4467-3.4466v-.1742c0-.5042-.4125-.9167-.9167-.9167h-.7975c-.88 0-1.7233-.5408-1.9525-1.3933-.1925-.6967.0367-1.3658.495-1.815.3392-.3483.8067-.55 1.32-.55Zm-5.0233-.1833H6.4167c-.3758 0-.6875-.3117-.6875-.6875 0-.3759.3117-.6875.6875-.6875h6.4167c.3758 0 .6875.3116.6875.6875 0 .3758-.3117.6875-.6875.6875Z" fill="#4F3D2E"></path></svg>
                     Пополнить
                   </button>
-                </Link>
+                </div>
               }
 
             </div>
@@ -97,99 +98,6 @@ function Header(props) {
             <Link to="/bonus" className="header__menu-btn">
               <img src={bonusBtn} alt="link" />
             </Link>
-            {show && (
-              <div className="pay-popup">
-                <div className="popup-modal">
-                  <div className="popup-modal__container">
-                    <button
-                      className="popup-modal__btn"
-                      onClick={() => setShow(!show)}
-                    >
-                      <svg
-                        fill="#ffffff"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="23px"
-                        height="23px"
-                      >
-                        <path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z" />
-                      </svg>
-                    </button>
-                    <div className="popup-modal__title">
-                      <p>Пополнение баланса</p>
-                    </div>
-                    <div className="popup-wrapper">
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/cards.e2f19d4d.svg"
-                          alt="card"
-                        />
-                      </div>
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/qiwi.78b0a233.svg"
-                          alt="card"
-                        />
-                      </div>
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/youmoney.ed9a1d75.svg"
-                          alt="card"
-                        />
-                      </div>
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/alfabank.22ba2811.svg"
-                          alt="card"
-                        />
-                      </div>
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/ecopayz.5840fd41.svg"
-                          alt="card"
-                        />
-                      </div>
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/tron.81a8c177.svg"
-                          alt="card"
-                        />
-                      </div>
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/sberbank.c77a6642.svg"
-                          alt="card"
-                        />
-                      </div>
-                      <div className="tab-card">
-                        <img
-                          src="https://ggdrop.gg/static/media/bitcoin.4660a169.svg"
-                          alt="card"
-                        />
-                      </div>
-                    </div>
-                    <div className="popup-modal__sum">
-                      <Text color="white" mb="20px" mt="15px">
-                        К оплате: {value} руб.
-                      </Text>
-                      <Input
-                        value={value}
-                        onChange={handleChange}
-                        placeholder="Введите сумму пополнения"
-                        size="sm"
-                      />
-                    </div>
-                    <div className="popup-modal__sum">
-                      <input
-                        placeholder="FREE#234235"
-                        size="sm"
-                      />
-                    </div>
-                    <button className="popup-modal__pay">Пополнить счет</button>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>

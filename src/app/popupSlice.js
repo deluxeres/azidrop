@@ -19,6 +19,10 @@ export const popupSlice = createSlice({
             state.message.text = action.payload.text;
             state.message.img = action.payload.img;
         },
+        openPayPopup: function (state, action) {
+            state.status = 'opened';
+            state.visiblePopup = 'PayPopup';
+        },
         closePopup: function (state, action) {
             state.status = 'closed';
             state.visiblePopup = '';
@@ -29,5 +33,5 @@ export const popupSlice = createSlice({
 export const selectVisible = (state) => state.popup.visiblePopup;
 export const selectMessage = (state) => state.popup.message;
 
-export const { openCasePopup, closePopup } = popupSlice.actions;
+export const { openCasePopup, openPayPopup, closePopup } = popupSlice.actions;
 export default popupSlice.reducer;

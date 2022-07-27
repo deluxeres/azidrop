@@ -13,9 +13,10 @@ export const defaultBaseQuery = fetchBaseQuery({
 export const authBaseQuery = fetchBaseQuery({
     baseUrl: baseUrl,
     prepareHeaders: (headers) => {
-        if (process.env.DEV) {
+        if (process.env.NODE_ENV === "development") {
             headers.set('front', 'someToken123');
         }
+        
         return headers;
     },
 });
