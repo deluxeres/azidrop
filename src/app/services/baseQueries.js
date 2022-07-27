@@ -23,5 +23,5 @@ export const authBaseQuery = fetchBaseQuery({
 
 export const axiosAuthBaseQuery = axios.create({
     baseURL: baseUrl,
-    headers: { 'front': 'someToken123' }
+    headers: process.env.NODE_ENV === "development" ? { 'front': 'someToken123' } : null,
 });

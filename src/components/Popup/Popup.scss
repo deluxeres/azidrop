@@ -499,13 +499,12 @@ $def-vw-base: 1920;
 
     .popup-modal {
         width: 650px;
-        height: 500px;
         background-color: #17171f;
         border-radius: 6px;
         border: 1px dashed #ffffff3d;
 
         &__container {
-            padding: 15px;
+            padding: 30px 15px 40px;
             position: relative;
             display: flex;
             align-items: center;
@@ -538,6 +537,7 @@ $def-vw-base: 1920;
         }
 
         &__title {
+			margin-bottom: 35px;
             p {
                 font-size: 25px;
                 color: #fff;
@@ -550,6 +550,7 @@ $def-vw-base: 1920;
 
         &__sum {
             width: 80%;
+			margin-top: 15px;
             input {
                 background-color: #ffffff;
                 color: #000000;
@@ -581,17 +582,23 @@ $def-vw-base: 1920;
         }
         
         &__pay {
+			display: flex;
+			align-items: center;
+			justify-content: center;
             width: 50%;
             height: 40px;
+			line-height: normal;
+			padding-bottom: 2px;
             background-color: #574ae2;
             position: static !important;
             border: none;
             outline: none;
+			font-size: 14px;
             color: #ffffff;
             transition: 0.3s;
             cursor: pointer;
             border-radius: 12px;
-
+			margin: 30px auto 0;
             &:hover {
                 background-color: #3427be;
             }
@@ -617,4 +624,24 @@ $def-vw-base: 1920;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.tab-card {
+    width: 120px;
+    height: 80px;
+    border-radius: 7px;
+    background: #1d1d26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+	border: none;
+    &.active {
+        background-color: #30303b;
+    }
+    img {
+        width: 70px;
+    }
 }

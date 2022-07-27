@@ -183,25 +183,6 @@
     background-color: #1d1d26;;
 }
 
-.tab-card {
-    width: 120px;
-    height: 80px;
-    border-radius: 7px;
-    background-color: #1d1d26;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    &:active {
-        background-color: #30303b;
-    }
-    img {
-        width: 70px;
-    }
-}
-
 .header__right {
     display: flex;
     align-items: center;

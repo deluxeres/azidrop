@@ -41,8 +41,10 @@ const Skin = (props) => {
 }
 
 function HeaderLive() {
-  const { data } = useGetWinSkinsQuery();
-  
+  const { data } = useGetWinSkinsQuery(null, {
+    pollingInterval: 2000,
+  });
+
   const skins = !!data && data.filter(item => {
     const color = getColorClass(item.rarity);
 
