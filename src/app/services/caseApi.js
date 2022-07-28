@@ -23,7 +23,7 @@ export const caseApi = createApi({
 		getWinSkins: build.query({
 			query: () => ({
 				url: 'api/skin/winner',
-				params: {limit: 25}
+				// params: {limit: 25}
 			}),
 		}),
 	}),

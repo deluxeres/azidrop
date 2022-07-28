@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closePopup, selectMessage, selectVisible } from '../../app/popupSlice';
 import { useEffect } from 'react';
 import CasePopup from './CasePopup';
+import PayPopup from './PayPopup';
 
 let winScrollTop = 0;
 
@@ -54,18 +55,29 @@ function Popup() {
             visiblePopup = <CasePopup close={close} {...message} />;
             break;
 
+        case 'PayPopup':
+            visiblePopup = <PayPopup close={close} />;
+            break;
+
         default:
             visiblePopup = null;
             break;
     }
 
-    useEffect(function() {
-        if (visiblePopup) {
-            fixBody(true);
-        } else {
-            fixBody(false);
+    useEffect(function () {
+        if (visiblePopupName !== 'PayPopup') {
+            if (visiblePopup) {
+                fixBody(true);
+            } else {
+                fixBody(false);
+            }
         }
+
     }, [visiblePopupName]);
+
+    if (visiblePopupName === 'PayPopup') {
+        return visiblePopup;
+    }
 
     return <>{visiblePopup && <div className="popup">{visiblePopup}</div>}</>;
 }

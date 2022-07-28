@@ -13,14 +13,15 @@ export const defaultBaseQuery = fetchBaseQuery({
 export const authBaseQuery = fetchBaseQuery({
     baseUrl: baseUrl,
     prepareHeaders: (headers) => {
-        if (process.env.DEV) {
+        if (process.env.NODE_ENV === "development") {
             headers.set('front', 'someToken123');
         }
+        
         return headers;
     },
 });
 
 export const axiosAuthBaseQuery = axios.create({
     baseURL: baseUrl,
-    headers: { 'front': 'someToken123' }
+    headers: process.env.NODE_ENV === "development" ? { 'front': 'someToken123' } : null,
 });

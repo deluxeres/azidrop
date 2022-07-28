@@ -57,13 +57,13 @@ function BonusPage() {
                   </Alert>
           </Snackbar>
 
-          {/* <div class="bonus-banner">
-							<div class="bonus-banner__left">
-								<div class="bonus-banner__icon"></div>
+          {/* <div className="bonus-banner">
+							<div className="bonus-banner__left">
+								<div className="bonus-banner__icon"></div>
 							</div>
-							<div class="bonus-banner__right">
-								<div class="bonus-banner__intro"></div>
-									<div class="bonus-banner__text">Используйте домен forcedrop.app в нике Steam и через 24 часа получайте бонус к любому пополнению +10%</div>	
+							<div className="bonus-banner__right">
+								<div className="bonus-banner__intro"></div>
+									<div className="bonus-banner__text">Используйте домен forcedrop.app в нике Steam и через 24 часа получайте бонус к любому пополнению +10%</div>	
 							</div>
 						</div> */}
 
@@ -72,25 +72,25 @@ function BonusPage() {
           {/* <div className="bonus-block__wrapper">
             <div className="bonus-card">
               <div className="bonus-card__img"><img src="https://forcedrop.app/public/img/bonus/bonus-group-vk.png?v=4" alt='bonus'/></div>
-              <div class="bonus-card__title">Подписаться на группу VK</div>
+              <div className="bonus-card__title">Подписаться на группу VK</div>
               <span className="bonus-card__price">6₽</span>
               <button>Получить бонус</button>
             </div>
             <div className="bonus-card">
               <div className="bonus-card__img"><img src="https://forcedrop.app/public/img/bonus/bonus-telegram.png?v=4" alt='bonus'/></div>
-              <div class="bonus-card__title">Подписаться на Telegram</div>
+              <div className="bonus-card__title">Подписаться на Telegram</div>
               <span className="bonus-card__price">6₽</span>
               <button>Получить бонус</button>
             </div>
             <div className="bonus-card">
               <div className="bonus-card__img"><img src="https://forcedrop.app/public/img/bonus/bonus-youtube.png?v=4" alt='bonus'/></div>
-              <div class="bonus-card__title">Подписаться на YouTube</div>
+              <div className="bonus-card__title">Подписаться на YouTube</div>
               <span className="bonus-card__price">6₽</span>
               <button>Получить бонус</button>
             </div>
             <div className="bonus-card">
               <div className="bonus-card__img"><img src="https://forcedrop.app/public/img/bonus/bonus-tiktok.png?v=4" alt='bonus'/></div>
-              <div class="bonus-card__title">Подписаться на TikTok</div>
+              <div className="bonus-card__title">Подписаться на TikTok</div>
               <span className="bonus-card__price">6₽</span>
               <button>Получить бонус</button>
             </div>
