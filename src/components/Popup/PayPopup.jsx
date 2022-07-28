@@ -1,4 +1,4 @@
-import { Input, Text } from "@chakra-ui/react";
+import { Input, Text, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react";
 import { useState } from 'react';
 import './Popup.scss';
 
@@ -30,7 +30,7 @@ function PayPopup(props) {
             </svg>
           </button>
           <div className="popup-modal__title">
-            <p>Пополнение баланса</p>
+            <p>💳 Пополнение баланса</p>
           </div>
           <div className="popup-wrapper">
             <button onClick={() => selectMethod('visa')} className={selected_method === 'visa' ? 'tab-card active' : 'tab-card'}>
@@ -88,21 +88,19 @@ function PayPopup(props) {
               {selected_method !== 'skinsback' &&
                 <>
                   <div className="popup-modal__sum">
-                    <Text color="white" mb="20px" mt="15px">
-                      К оплате: {value} руб.
-                    </Text>
-                    <Input
-                      value={value}
-                      onChange={handleChange}
-                      placeholder="Введите сумму пополнения"
+                    <input
+                      placeholder="Промокод (при наличии)"
                       size="sm"
                     />
                   </div>
                   <div className="popup-modal__sum">
-                    <input
-                      placeholder="FREE#234235"
+                      <Input placeholder='Введите сумму' size="10"/>
+                    {/* <Input
+                      value={value}
+                      onChange={handleChange}
+                      placeholder="Введите сумму пополнения"
                       size="sm"
-                    />
+                    /> */}
                   </div>
                   <button className="popup-modal__pay">Пополнить счет</button>
                 </>
