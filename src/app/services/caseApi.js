@@ -21,9 +21,14 @@ export const caseApi = createApi({
 			}),
 		}),
 		getWinSkins: build.query({
-			query: () => ({
+			query: ({id}) => ({
 				url: 'api/skin/winner',
-				// params: {limit: 25}
+				params: {id}
+			}),
+		}),
+		getFreeCase: build.query({
+			query: () => ({
+				url: 'api/freecase',
 			}),
 		}),
 	}),
@@ -33,5 +38,6 @@ export const {
 	useGetCategoriesQuery,
 	useGetLoyalityQuery,
 	useGetPayWinnerQuery,
-	useGetWinSkinsQuery
+	useGetWinSkinsQuery,
+	useGetFreeCaseQuery,
 } = caseApi;

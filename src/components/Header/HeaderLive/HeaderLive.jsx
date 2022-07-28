@@ -44,28 +44,29 @@ const getSkinsData = (data, cached, isFirstResp) => {
   if (isFirstResp) {
     return data;
   } else {
-    const cdata = JSON.parse(JSON.stringify(cached));
-    const l = cdata.unshift(data[0]);
-    console.log(l);
-    return cdata;
+    // const cdata = JSON.parse(JSON.stringify(cached));
+    const ndata = data.concat(cached);
+    return ndata;
   }
 }
 
 function HeaderLive() {
   const isFirstResp = useRef(true);
+  const lastId = useRef(null);
   const cachedData = useRef([]);
   const purpSkinLine = useRef();
   const skinLine = useRef();
   const [tabch, tabClick] = useState(1);
 
-  const { data: skinsData } = useGetWinSkinsQuery(null, {
-    pollingInterval: 2000,
+  const { data: skinsData } = useGetWinSkinsQuery({id: lastId.current}, {
+    // pollingInterval: 2000,
   });
 
   const data = getSkinsData(skinsData, cachedData.current, isFirstResp.current);
 
   if (data) {
     cachedData.current = data;
+    lastId.current = !!data[0] && data[0].id;
   }
 
   const skins = !!data && data.filter(item => {
