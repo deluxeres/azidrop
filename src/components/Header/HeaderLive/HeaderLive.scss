@@ -37,10 +37,16 @@
 
 .live-top {
     overflow: hidden;
+    position: relative;
+    height: 100px;
+    width: 100vw;
     .live-top__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: absolute;
+        top: 0;
+        transition: 1s;
     }
 
     .live-card__card {
