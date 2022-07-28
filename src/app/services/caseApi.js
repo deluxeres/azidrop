@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import { defaultBaseQuery } from './baseQueries';
+import { axiosQuery, defaultBaseQuery } from './baseQueries';
 
 export const caseApi = createApi({
 	baseQuery: defaultBaseQuery,
@@ -21,10 +21,53 @@ export const caseApi = createApi({
 			}),
 		}),
 		getWinSkins: build.query({
-			query: ({id}) => ({
+			query: () => ({
 				url: 'api/skin/winner',
-				params: {id}
 			}),
+			async onCacheEntryAdded(arg, { updateCachedData, cacheDataLoaded, cacheEntryRemoved }) {
+				let sto, pooling;
+
+				try {
+					const resCd = await cacheDataLoaded;
+
+					sto = null;
+					pooling = true;
+
+					const listener = (res) => {
+						updateCachedData((draft) => {
+							if (res.data.items.length) {
+								draft.items.unshift(...res.data.items);
+							}
+						});
+					}
+
+					function loop(id) {
+						axiosQuery.get('api/skin/winner', { params: { from: id } })
+							.then(res => {
+								listener(res);
+
+								sto = setTimeout(() => {
+									if (pooling) {
+										loop(res.data.lastId);
+									}
+								}, 2000);
+							});
+					}
+
+					setTimeout(() => {
+						if (pooling) {
+							loop(resCd.data.lastId);
+						}
+					}, 2000);
+				} catch {
+
+				}
+
+				await cacheEntryRemoved;
+
+				clearTimeout(sto);
+				pooling = false;
+			},
 		}),
 		getFreeCase: build.query({
 			query: () => ({

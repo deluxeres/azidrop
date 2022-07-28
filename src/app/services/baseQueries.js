@@ -25,3 +25,7 @@ export const axiosAuthBaseQuery = axios.create({
     baseURL: baseUrl,
     headers: process.env.NODE_ENV === "development" ? { 'front': 'someToken123' } : null,
 });
+
+export const axiosQuery = axios.create({
+    baseURL: baseUrl,
+});
