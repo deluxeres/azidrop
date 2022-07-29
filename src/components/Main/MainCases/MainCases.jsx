@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./MainCases.scss";
 import db from "../../../DataBase/Live.json";
-import { useGetCategoriesQuery } from "../../../app/services/caseApi";
+import { useGetCategoriesQuery, useGetFreeCaseQuery } from "../../../app/services/caseApi";
 import { apiHost } from "../../../app/services/baseQueries";
 
 const Case = function (props) {
@@ -44,7 +44,16 @@ const Category = function (props) {
 };
 
 function MainCases() {
-  const { data, isLoading } = useGetCategoriesQuery();
+  const { data: cats, isLoading } = useGetCategoriesQuery();
+  const { data: freeCases } = useGetFreeCaseQuery();
+
+  const data = !!cats && JSON.parse(JSON.stringify(cats));
+
+  !!data && data.push({
+    id: 45545654654,
+    name: 'Бесплантые',
+    cases: !!freeCases && freeCases.items
+  });
 
   const categories =
     data && data.map((cat) => <Category {...cat} key={cat.id} />);

@@ -40,35 +40,13 @@ const Skin = (props) => {
   );
 }
 
-const getSkinsData = (data, cached, isFirstResp) => {
-  if (isFirstResp) {
-    return data;
-  } else {
-    const cdata = JSON.parse(JSON.stringify(cached));
-    const l = cdata.unshift(data[0]);
-    console.log(l);
-    return cdata;
-  }
-}
-
 function HeaderLive() {
-  const isFirstResp = useRef(true);
-  const cachedData = useRef([]);
   const purpSkinLine = useRef();
   const skinLine = useRef();
   const [tabch, tabClick] = useState(1);
+  const { data } = useGetWinSkinsQuery();
 
-  const { data: skinsData } = useGetWinSkinsQuery(null, {
-    pollingInterval: 2000,
-  });
-
-  const data = getSkinsData(skinsData, cachedData.current, isFirstResp.current);
-
-  if (data) {
-    cachedData.current = data;
-  }
-
-  const skins = !!data && data.filter(item => {
+  const skins = !!data && data.items.filter(item => {
     const color = getColorClass(item.rarity);
 
     if (!['red', 'purple', 'orange', 'maline'].includes(color)) {
@@ -77,7 +55,9 @@ function HeaderLive() {
 
   });
 
-  const purpleSkins = !!data && data.filter(item => {
+  console.log(data);
+
+  const purpleSkins = !!data && data.items.filter(item => {
     const color = getColorClass(item.rarity);
 
     if (['red', 'purple', 'orange', 'maline'].includes(color)) {
@@ -90,12 +70,10 @@ function HeaderLive() {
 
   useEffect(() => {
     if (purpleSkinsView && tabch === 1) {
-      isFirstResp.current = false;
       purpSkinLine.current.style.right = (purpSkinLine.current.parentElement.offsetWidth - purpSkinLine.current.offsetWidth) + 'px';
     }
 
     if (skinsView && tabch === 2) {
-      isFirstResp.current = false;
       skinLine.current.style.right = (skinLine.current.parentElement.offsetWidth - skinLine.current.offsetWidth) + 'px';
     }
 
