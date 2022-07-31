@@ -1,6 +1,6 @@
 import "./App.scss";
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Main from "./components/Main/Main";
 import Header from "./components/Header/Header";
 import HeaderLive from "./components/Header/HeaderLive/HeaderLive";
@@ -44,6 +44,16 @@ function App() {
     // }, 6000)
   }, [userSuccess, userData]);
 
+  const ScrollTop = () => {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
+
   return (
     <div className="App">
       <HeaderTop />
@@ -69,6 +79,7 @@ function App() {
       <Footer />
       <Popup />
       <Alert />
+      <ScrollTop />
     </div>
   );
 }
