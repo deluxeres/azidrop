@@ -66,6 +66,8 @@ const getBadge = function (name) {
             return 'blue';
         case 'Нeoбычaйнo peдкиe':
             return 'orange';
+        case '★':
+            return 'orange';
         default:
             return 'silver';
     }

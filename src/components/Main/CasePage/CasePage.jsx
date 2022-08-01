@@ -167,7 +167,7 @@ function CasePage() {
       <div className="container">
         <div className="case-wrapper" id="caseWrap">
           <div className="case-wrapper-container">
-            <div className="case-mystery">
+            {/* <div className="case-mystery">
               <span className="case-mystery__price">
                 Стоимость кейса{" "}
                 <span className="case-mystery__sum">{caseElem.price} Р</span>
@@ -175,7 +175,7 @@ function CasePage() {
               <span className="case-mystery__text">
                 Открывай и испытывай удачу
               </span>
-            </div>
+            </div> */}
             <div className="case__container">
               <div className="case__innerName">
                 <span></span>

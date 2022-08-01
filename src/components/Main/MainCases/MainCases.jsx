@@ -49,9 +49,9 @@ function MainCases() {
 
   const data = !!cats && JSON.parse(JSON.stringify(cats));
 
-  !!data && data.push({
+  !!data && data.unshift({
     id: 45545654654,
-    name: 'Бесплантые',
+    name: 'Бесплатные кейсы',
     cases: !!freeCases && freeCases.items
   });
 
