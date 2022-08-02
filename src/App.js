@@ -16,6 +16,7 @@ import Upgrades from './components/Main/Upgrades/Upgrades'
 import Battles from './components/Main/Battles/Battles'
 import Dailybonus from './components/Main/Dailybonus/Dailybonus'
 import Faq from './components/Main/Faq/Faq'
+import PayAlert from './components/PayAlert/PayAlert'
 import BonusPrize from "./components/Main/BonusPrize/BonusPrize"
 import HeaderTop from "./components/Header/HeaderTop/HeaderTop"
 import Popup from './components/Popup/Popup';
@@ -81,6 +82,7 @@ function App() {
         <Route path="/contracts" element={<Contracts />} />
         <Route path="/upgrades" element={<Upgrades />} />
         <Route path="/battles" element={<Battles />} />
+        <Route path='/payalert' element={<PayAlert />} />
       </Routes>
       <Footer />
       <Popup />

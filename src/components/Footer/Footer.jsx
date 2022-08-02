@@ -35,7 +35,7 @@ function Footer() {
                 <Link to="/bonus">Бонусная система</Link>
                 <Link to="/policy">Политика конфиденциальности</Link>
                 <Link to="/agreement">Пользовательское соглашение</Link>
-                <Link to="/">contacts</Link>
+                <Link to="/">azidropmail@mail.ru</Link>
                 <Link to="/faq">faq</Link>
             </div>
             <div className="footer-info__text">

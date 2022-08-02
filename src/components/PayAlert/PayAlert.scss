@@ -1,0 +1,36 @@
+.payalert {
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .pay-status {
+        width: 60%;
+        background-color: #ffffff0d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 35px 0px 35px 0px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+
+        img {
+            width: 100%;
+        }
+        p {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 500;
+            display: block;
+        }
+        span {
+            color: #ffffff;
+            font-size: 20px;
+            display: block;
+        }
+    }
+}
