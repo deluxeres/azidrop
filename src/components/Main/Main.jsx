@@ -9,6 +9,7 @@ import Statictic from "../Main/Statictic/Statictic"
 import { useGetLoyalityQuery } from '../../app/services/caseApi';
 
 function Home() {
+
   const { data: promoData } = useGetLoyalityQuery();
   const paymentBonus = promoData && promoData.paymentBonus;
 

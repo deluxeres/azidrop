@@ -11,6 +11,9 @@ import Agreement from "./components/Main/Agreement/Agreement";
 import ProfilePage from "./components/Main/ProfilePage/ProfilePage";
 import NotFound from './components/NotFound'
 import BonusPage from './components/Main/BonusPage/BonusPage'
+import Contracts from './components/Main/Contracts/Contracts'
+import Upgrades from './components/Main/Upgrades/Upgrades'
+import Battles from './components/Main/Battles/Battles'
 import Dailybonus from './components/Main/Dailybonus/Dailybonus'
 import Faq from './components/Main/Faq/Faq'
 import BonusPrize from "./components/Main/BonusPrize/BonusPrize"
@@ -75,6 +78,9 @@ function App() {
         <Route path="/logout" element={<LogoutRoute />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/agreement" element={<Agreement />} />
+        <Route path="/contracts" element={<Contracts />} />
+        <Route path="/upgrades" element={<Upgrades />} />
+        <Route path="/battles" element={<Battles />} />
       </Routes>
       <Footer />
       <Popup />

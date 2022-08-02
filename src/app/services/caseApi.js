@@ -83,4 +83,5 @@ export const {
 	useGetPayWinnerQuery,
 	useGetWinSkinsQuery,
 	useGetFreeCaseQuery,
+	useGetStatQuery
 } = caseApi;

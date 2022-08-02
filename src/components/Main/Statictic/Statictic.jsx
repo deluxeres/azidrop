@@ -2,24 +2,25 @@ import React from "react";
 import "./Statictic.scss";
 
 function Statictic() {
+
   return (
     <div className="statictic">
       <div className="stat-block">
         <div className="stat-info">
           <div className="stat-info__cases">
-            <p>461 273 164</p>
+            <p>0</p>
             <span>ОТКРЫТО КЕЙСОВ</span>
           </div>
-          <div className="stat-info__contracts">
+          {/* <div className="stat-info__contracts">
             <p>461 323 </p>
             <span>КОНТРАКТОВ</span>
-          </div>
+          </div> */}
           <div className="stat-info__players">
-            <p>461 273 164</p>
+            <p>0</p>
             <span>ИГРОКОВ</span>
           </div>
           <div className="stat-info__online">
-            <p>12323</p>
+            <p>0</p>
             <span>ОНЛАЙН</span>
           </div>
         </div>

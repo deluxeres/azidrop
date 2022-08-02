@@ -46,7 +46,7 @@ function Header(props) {
                       <div className="header-profile__block">
                         <span className="header-profile__name">{userData.name}</span>
                         <div className="header-profile__balance">
-                          <span>{userData.balance} Р</span>
+                          <span>{userData.showBalance} Р</span>
                         </div>
                       </div>
                     </div>
@@ -76,7 +76,7 @@ function Header(props) {
                       </Link>
                     </li>
                     <li>
-                      <Link className="headerMenu__link" to="/cases">
+                      <Link className="headerMenu__link" to="/battles">
                         <div className="header-svg">
                           <img src={battleImg} alt="link" />
                         </div>
@@ -84,7 +84,7 @@ function Header(props) {
                       </Link>
                     </li>
                     <li>
-                      <Link className="headerMenu__link" to="/dailybonus">
+                      <Link className="headerMenu__link" to="/upgrades">
                         <div className="header-svg">
                           <img src={upgradeImg} alt="link" />
                         </div>
