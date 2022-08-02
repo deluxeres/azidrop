@@ -257,12 +257,11 @@
   border-radius: 12px;
 
   &__purple {
-    background: linear-gradient(180deg,rgba(81,17,29,0),rgba(209,56,102,.24) 90%),#201f2b;
+    background: linear-gradient(180deg, rgba(81, 55, 17, 0), rgba(252, 10, 111, 0.32) 90%), #201f2b;
     width: 100%;
     display: block;
     height: 100%;
     border-radius: 12px;
-    border: 1px solid #ffffff30;
   }
   &__silver {
     background: linear-gradient(180deg,rgba(36,70,78,0),rgba(82,172,192,.22) 90%),#201f2b;
@@ -270,15 +269,13 @@
     display: block;
     height: 100%;
     border-radius: 12px;
-    border: 1px solid #ffffff30;
   }
   &__blue {
-    background: linear-gradient(180deg,rgba(34,17,81,0),rgba(125,46,204,.24) 90%),#201f2b;
+    background: linear-gradient(180deg, rgba(34, 17, 81, 0), rgba(63, 6, 119, 0.24) 90%), #1e1d29;
     width: 100%;
     display: block;
     height: 100%;
     border-radius: 12px;
-    border: 1px solid #ffffff30;
   }
   &__red {
     background: linear-gradient(180deg,rgba(81,25,17,0),rgba(206, 40, 19, 0.596) 90%),#201f2b;
@@ -286,7 +283,6 @@
     display: block;
     height: 100%;
     border-radius: 12px;
-    border: 1px solid #ffffff30;
   }
   &__orange {
     background: linear-gradient(180deg,rgba(81,55,17,0),rgba(197, 138, 28, 0.541) 90%),#201f2b;
@@ -294,23 +290,20 @@
     display: block;
     height: 100%;
     border-radius: 12px;
-    border: 1px solid #ffffff30;
   }
   &__bluelight {
-    background: linear-gradient(180deg,rgba(81,55,17,0),rgba(0, 46, 131, 0.541) 90%),#201f2b;
+    background: linear-gradient(180deg, rgba(81, 55, 17, 0), rgba(1, 47, 133, 0.2) 90%), #201f2b;
     width: 100%;
     display: block;
     height: 100%;
     border-radius: 12px;
-    border: 1px solid #ffffff30;
   }
   &__maline {
-    background: linear-gradient(180deg,rgba(81,55,17,0),rgba(255, 10, 112, 0.541) 90%),#201f2b;
+    background: linear-gradient(180deg, rgba(81, 17, 29, 0), rgba(190, 8, 63, 0.24) 90%), #201f2b;
     width: 100%;
     display: block;
     height: 100%;
     border-radius: 12px;
-    border: 1px solid #ffffff30;
   }
 }
 .case{

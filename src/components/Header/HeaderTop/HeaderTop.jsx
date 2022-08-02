@@ -63,7 +63,7 @@ function HeaderTop() {
           </div>
           <span>{Math.floor(100 + 480 * Math.random())}</span>
         </div>
-          <a href="https://twitter.com/" target="_blanc" rel="noopener">
+          <a href="https://vk.com/club214414714" target="_blanc" rel="noopener">
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ function HeaderTop() {
               ></path>
             </svg>
           </a>
-          <a href="https://twitter.com/" target="_blanc" rel="noopener">
+          {/* <a href="https://twitter.com/" target="_blanc" rel="noopener">
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ function HeaderTop() {
                 fill="#ffffff"
               ></path>
             </svg>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
