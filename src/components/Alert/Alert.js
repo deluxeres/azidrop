@@ -21,7 +21,7 @@ export default function Alert() {
     };
 
     return (
-        <Snackbar open={alert.isOpen} autoHideDuration={6000} onClose={alertClose}>
+        <Snackbar open={alert.isOpen} autoHideDuration={6000} onClose={alertClose} style={{zIndex: 99999}}>
             <AlertItem onClose={alertClose} severity={alert.type} sx={{ width: '100%' }}>
                 {alert.message}
             </AlertItem>

@@ -1,14 +1,29 @@
 import { Input, Text, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react";
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { openErrorAlert } from '../../app/alertSlice';
+import { axiosAuthBaseQuery } from '../../app/services/baseQueries';
 import './Popup.scss';
 
 function PayPopup(props) {
+  const dispatch = useDispatch();
   const [selected_method, selectMethod] = useState(null);
   const [value, setValue] = useState('');
   const handleChange = (event) => setValue(event.target.value);
 
   const close = function () {
     props.close();
+  }
+
+  const payBySkinback = () => {
+    axiosAuthBaseQuery.get('/api/payment/skin')
+      .then((res) => {
+        if (res.data.error) {
+          dispatch(openErrorAlert(res.data.error));
+        } else if (res.data.url) {
+          window.location.href = res.data.url;
+        }
+      });
   }
 
   return (
@@ -94,7 +109,7 @@ function PayPopup(props) {
                     />
                   </div>
                   <div className="popup-modal__sum">
-                      <Input placeholder='Введите сумму' size="10"/>
+                    <Input placeholder='Введите сумму' size="10" />
                     {/* <Input
                       value={value}
                       onChange={handleChange}
@@ -107,7 +122,7 @@ function PayPopup(props) {
               }
 
               {selected_method === 'skinsback' &&
-                <a href="http://azidrop.pro/payment/skin" className="popup-modal__pay">Пополнить счет</a>
+                <button onClick={payBySkinback} className="popup-modal__pay">Пополнить счет</button>
               }
             </>
           }
