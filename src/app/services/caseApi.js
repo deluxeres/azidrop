@@ -10,6 +10,11 @@ export const caseApi = createApi({
 				url: 'api/categories',
 			}),
 		}),
+		getCase: build.query({
+			query: ({ id }) => ({
+				url: 'api/cases/' + id,
+			}),
+		}),
 		getLoyality: build.query({
 			query: () => ({
 				url: 'api/loyalty',
@@ -79,6 +84,7 @@ export const caseApi = createApi({
 
 export const {
 	useGetCategoriesQuery,
+	useGetCaseQuery,
 	useGetLoyalityQuery,
 	useGetPayWinnerQuery,
 	useGetWinSkinsQuery,

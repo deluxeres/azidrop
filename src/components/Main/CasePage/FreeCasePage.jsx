@@ -8,11 +8,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import CaseSpinner from '../../CaseSpinner/CaseSpinner';
 import { isCaseSpin, setCaseSpin } from '../../../app/caseSlice';
 import OpenedCase from '../../OpenedCase/OpenedCase';
-import { useGetCategoriesQuery, useGetFreeCaseQuery } from '../../../app/services/caseApi';
+import { useGetFreeCaseQuery } from '../../../app/services/caseApi';
 import { apiHost, authLink } from '../../../app/services/baseQueries';
 import { useSellSkinMutation } from '../../../app/services/userApi';
 import { getBadgeClass, getColorClass } from '../../../functions/getBadge';
-import { OpenCase, OpenFreeCase } from '../../../app/services/openCase';
+import { OpenFreeCase } from '../../../app/services/openCase';
 import { openErrorAlert } from '../../../app/alertSlice';
 import { isUserLogin } from '../../../app/userSlice';
 
@@ -22,20 +22,13 @@ function CasePage() {
   const dispatch = useDispatch();
   const isSpin = useSelector(isCaseSpin);
   const [isQuickOpening, setQuickOpen] = useState(false);
-  const { data: cats, isLoading } = useGetCategoriesQuery();
-  const { data: freeCases } = useGetFreeCaseQuery();
+  const { data: freeCases, isLoading } = useGetFreeCaseQuery();
   const [sellSkinMutation, resultSellSkin] = useSellSkinMutation();
   const wonSkin = useRef(null);
   const isLogin = useSelector(isUserLogin);
-  const isFree = useRef(false);
+  const available = useRef(false);
 
-  const data = !!cats && JSON.parse(JSON.stringify(cats));
-
-  !!data && data.push({
-    id: 45545654654,
-    name: 'Бесплантые',
-    cases: (!!freeCases && freeCases.items) || []
-  });
+  const data = !!freeCases && freeCases.items;
 
   useEffect(() => {
     if (resultSellSkin.data && resultSellSkin.data.error) {
@@ -46,31 +39,15 @@ function CasePage() {
   let caseElem = null;
 
   if (data) {
-    for (const category of data) {
-      for (const item of category.cases) {
-        if (+item.id === +id) {
-          caseElem = item;
-
-          if (freeCases.items) {
-            for (const frit of freeCases.items) {
-              if (+frit.id === +id) {
-                isFree.current = true;
-              }
-            }
-          }
-        }
+    for (const item of data) {
+      if ('free-' + item.id === id) {
+        caseElem = item;
       }
     }
   }
 
   const spinCase = async function () {
-    let res = null;
-
-    if (isFree.current) {
-      res = await OpenFreeCase(caseElem.id);
-    } else {
-      res = await OpenCase(caseElem.id);
-    }
+    let res = await OpenFreeCase(caseElem.id);
 
     if (res.data.error) {
       dispatch(openErrorAlert(res.data.error));
@@ -85,13 +62,7 @@ function CasePage() {
   const quickOpen = async function () {
     setQuickOpen(true);
 
-    let res = null;
-
-    if (isFree.current) {
-      res = await OpenFreeCase(caseElem.id);
-    } else {
-      res = await OpenCase(caseElem.id);
-    }
+    let res = await OpenFreeCase(caseElem.id);
 
     if (res.data.error) {
       dispatch(openErrorAlert(res.data.error));
@@ -190,7 +161,7 @@ function CasePage() {
                     <img src={caseElem.img.replace('localhost', apiHost)} alt="case" />
                   </div>
 
-                  {isFree.current &&
+                  {(!available.current && isLogin) &&
                     <div className="case-free">
                       <span className="case-free__splash">🧡</span>
                       <div className="case-free__info">
@@ -201,7 +172,7 @@ function CasePage() {
                     </div>
                   }
 
-                  {isLogin && !isFree.current &&
+                  {(available.current && isLogin) &&
                     <div className="case-buttons">
                       <div className="case-button__spin">
                         <button onClick={spinCase}>Прокрутить за {caseElem.price} Р</button>
