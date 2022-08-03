@@ -45,7 +45,7 @@ function PayPopup(props) {
                 alt="card"
               />
             </button>
-            <button onClick={() => selectMethod('yoomoney')} className={selected_method === 'yoomoney' ? 'tab-card active' : 'tab-card'}>
+            {/* <button onClick={() => selectMethod('yoomoney')} className={selected_method === 'yoomoney' ? 'tab-card active' : 'tab-card'}>
               <img
                 src="https://ggdrop.gg/static/media/youmoney.ed9a1d75.svg"
                 alt="card"
@@ -74,7 +74,7 @@ function PayPopup(props) {
                 src="https://ggdrop.gg/static/media/sberbank.c77a6642.svg"
                 alt="card"
               />
-            </button>
+            </button> */}
             <button onClick={() => selectMethod('skinsback')} className={selected_method === 'skinsback' ? 'tab-card active' : 'tab-card'}>
               <img
                 src="https://ggdrop.gg/static/media/skinsback.a0b3ba26.svg"
@@ -107,7 +107,7 @@ function PayPopup(props) {
               }
 
               {selected_method === 'skinsback' &&
-                <a href="/payment/skin" className="popup-modal__pay">Пополнить счет</a>
+                <a href="http://azidrop.pro/payment/skin" className="popup-modal__pay">Пополнить счет</a>
               }
             </>
           }
