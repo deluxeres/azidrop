@@ -5,7 +5,7 @@ import { Tabs, Tab, TabPanel, TabList, TabPanels } from "@chakra-ui/react"
 import { useSellSkinMutation, useWithdrawSkinMutation } from '../../../../app/services/userApi';
 import { getBadgeClass } from '../../../../functions/getBadge';
 import { useDispatch } from 'react-redux';
-import { openErrorAlert } from '../../../../app/alertSlice';
+import { openErrorAlert, openSuccessAlert } from '../../../../app/alertSlice';
 
 const SkinItem = (props) => {
   const skin = props.skin;
@@ -50,12 +50,16 @@ function ProfileDrop(props) {
   useEffect(() => {
     if (resultSellSkin.data && resultSellSkin.data.error) {
       dispatch(openErrorAlert(resultSellSkin.data.error));
+    } else if (resultSellSkin.data) {
+      dispatch(openSuccessAlert('Успех'));
     }
   }, [resultSellSkin]);
 
   useEffect(() => {
     if (resultWithdrawSkin.data && resultWithdrawSkin.data.error) {
       dispatch(openErrorAlert(resultWithdrawSkin.data.error));
+    } else if (resultSellSkin.data) {
+      dispatch(openSuccessAlert('Успех'));
     }
   }, [resultWithdrawSkin]);
 
