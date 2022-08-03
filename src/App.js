@@ -29,11 +29,15 @@ import Alert from './components/Alert/Alert';
 
 function App() {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
   // const [loading, setLoading] = useState(false);
 
   const { data: userData, isSuccess: userSuccess } = useGetUserDataQuery();
 
-  
+  useEffect(() => {
+    console.log(pathname);
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     if (userSuccess && userData) {
@@ -47,16 +51,6 @@ function App() {
     //   setLoading(false)
     // }, 6000)
   }, [userSuccess, userData]);
-
-  const ScrollTop = () => {
-    const { pathname } = useLocation();
-  
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return null;
-  }
 
   return (
     <div className="App">
@@ -87,7 +81,6 @@ function App() {
       <Footer />
       <Popup />
       <Alert />
-      <ScrollTop />
     </div>
   );
 }

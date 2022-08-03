@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./MainCases.scss";
 import db from "../../../DataBase/Live.json";
@@ -52,10 +52,10 @@ function MainCases() {
   !!data && data.unshift({
     id: 45545654654,
     name: 'Бесплатные кейсы',
-    cases: !!freeCases && freeCases.items
+    cases: (!!freeCases && freeCases.items) || [],
   });
 
-  const categories = data && data.map((cat) => <Category catId={cat.id} {...cat} key={cat.id} />);
+  const categories = !!data && data.map((cat) => <Category catId={cat.id} {...cat} key={cat.id} />);
 
   return isLoading ? null : <div className="main-wrapper">{categories}</div>;
 }

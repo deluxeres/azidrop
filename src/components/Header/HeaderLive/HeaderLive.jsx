@@ -55,8 +55,6 @@ function HeaderLive() {
 
   });
 
-  console.log(data);
-
   const purpleSkins = !!data && data.items.filter(item => {
     const color = getColorClass(item.rarity);
 
