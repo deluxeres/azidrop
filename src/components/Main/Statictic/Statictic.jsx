@@ -1,28 +1,30 @@
 import React from "react";
+import { useGetStatisticsQuery } from '../../../app/services/caseApi';
 import "./Statictic.scss";
 
 function Statictic() {
+  const {data, isLoading} = useGetStatisticsQuery();
 
-  return (
+  return isLoading ? null : (
     <div className="statictic">
       <div className="stat-block">
         <div className="stat-info">
           <div className="stat-info__cases">
-            <p>0</p>
-            <span>ОТКРЫТО КЕЙСОВ</span>
+            <p>{data.case}</p>
+            <span>КЕЙСОВ</span>
           </div>
           {/* <div className="stat-info__contracts">
             <p>461 323 </p>
             <span>КОНТРАКТОВ</span>
           </div> */}
           <div className="stat-info__players">
-            <p>0</p>
+            <p>{data.user}</p>
             <span>ИГРОКОВ</span>
           </div>
-          <div className="stat-info__online">
+          {/* <div className="stat-info__online">
             <p>0</p>
             <span>ОНЛАЙН</span>
-          </div>
+          </div> */}
         </div>
         <div className="stat-img">
           <img

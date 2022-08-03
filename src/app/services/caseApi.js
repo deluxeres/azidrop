@@ -25,6 +25,11 @@ export const caseApi = createApi({
 				url: 'api/paymentgift/winner',
 			}),
 		}),
+		getStatistics: build.query({
+			query: () => ({
+				url: 'api/statistics',
+			}),
+		}),
 		getWinSkins: build.query({
 			query: () => ({
 				url: 'api/skin/winner',
@@ -89,5 +94,6 @@ export const {
 	useGetPayWinnerQuery,
 	useGetWinSkinsQuery,
 	useGetFreeCaseQuery,
+	useGetStatisticsQuery,
 	useGetStatQuery
 } = caseApi;
