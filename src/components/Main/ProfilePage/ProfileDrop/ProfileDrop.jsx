@@ -18,7 +18,7 @@ const SkinItem = (props) => {
     props.withdrawSkin(props.id);
   }
 
-  const badge = getBadgeClass(props.rarity);
+  const badge = getBadgeClass(props.rarity, skin.short_name);
 
   return (
     <div className="drop-item">

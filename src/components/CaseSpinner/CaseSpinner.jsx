@@ -6,7 +6,7 @@ import sound from './../../Assets/spinner.mp3';
 import { getBadgeClass } from '../../functions/getBadge';
 
 const Item = function (props) {
-    const badge = getBadgeClass(props.rarity);
+    const badge = getBadgeClass(props.rarity, props.name);
 
     return (
         <div className={css.spinerInner__item} data-id={props.id}>

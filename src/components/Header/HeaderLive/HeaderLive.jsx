@@ -10,8 +10,8 @@ import { useGetWinSkinsQuery } from '../../../app/services/caseApi';
 import { getColorClass, getLineClass } from '../../../functions/getBadge';
 
 const Skin = (props) => {
-  const line = getLineClass(props.rarity);
-  const color = getColorClass(props.rarity);
+  const line = getLineClass(props.rarity, props.name);
+  const color = getColorClass(props.rarity, props.name);
 
   return (
     <div className="live-card__card">
@@ -46,17 +46,10 @@ function HeaderLive() {
   const [tabch, tabClick] = useState(1);
   const { data } = useGetWinSkinsQuery();
 
-  const skins = !!data && data.items.filter(item => {
-    const color = getColorClass(item.rarity);
-
-    if (!['red', 'purple', 'orange', 'maline'].includes(color)) {
-      return item;
-    }
-
-  });
+  const skins = !!data && data.items;
 
   const purpleSkins = !!data && data.items.filter(item => {
-    const color = getColorClass(item.rarity);
+    const color = getColorClass(item.rarity, item.name);
 
     if (['red', 'purple', 'orange', 'maline'].includes(color)) {
       return item;

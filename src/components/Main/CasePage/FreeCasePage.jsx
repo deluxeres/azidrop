@@ -49,7 +49,7 @@ function CasePage() {
 
   useEffect(() => {
     if (user && caseElem) {
-      if (user.lastPaymentSum > caseElem.price) {
+      if (+user.lastPaymentSum >= +caseElem.price) {
         available.current = true;
       }
     }
@@ -135,7 +135,7 @@ function CasePage() {
       silver: 1,
     };
 
-    item.sortIndex = col[getColorClass(item.rarity)];
+    item.sortIndex = col[getColorClass(item.rarity, item.name)];
 
     return item;
   });
@@ -230,7 +230,7 @@ function CasePage() {
           <span className="case-content__title">Содержимое кейса</span>
           <div className="case-content__wrapper">
             {skins.map((itemGun) => {
-              const badge = getBadgeClass(itemGun.rarity);
+              const badge = getBadgeClass(itemGun.rarity, itemGun.short_name);
 
               return (
                 <div className="case-content__item" key={itemGun.id}>
