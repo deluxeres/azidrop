@@ -10,7 +10,7 @@ import { isCaseSpin, setCaseSpin } from '../../../app/caseSlice';
 import OpenedCase from '../../OpenedCase/OpenedCase';
 import { useGetFreeCaseQuery } from '../../../app/services/caseApi';
 import { apiHost, authLink } from '../../../app/services/baseQueries';
-import { useSellSkinMutation } from '../../../app/services/userApi';
+import { useGetUserDataQuery, useSellSkinMutation } from '../../../app/services/userApi';
 import { getBadgeClass, getColorClass } from '../../../functions/getBadge';
 import { OpenFreeCase } from '../../../app/services/openCase';
 import { openErrorAlert } from '../../../app/alertSlice';
@@ -23,6 +23,7 @@ function CasePage() {
   const isSpin = useSelector(isCaseSpin);
   const [isQuickOpening, setQuickOpen] = useState(false);
   const { data: freeCases, isLoading } = useGetFreeCaseQuery();
+  const { data: user } = useGetUserDataQuery();
   const [sellSkinMutation, resultSellSkin] = useSellSkinMutation();
   const wonSkin = useRef(null);
   const isLogin = useSelector(isUserLogin);
@@ -45,6 +46,14 @@ function CasePage() {
       }
     }
   }
+
+  useEffect(() => {
+    if (user && caseElem) {
+      if (+user.lastPaymentSum >= +caseElem.price) {
+        available.current = true;
+      }
+    }
+  }, [user, data, caseElem]);
 
   const spinCase = async function () {
     let res = await OpenFreeCase(caseElem.id);
@@ -126,7 +135,7 @@ function CasePage() {
       silver: 1,
     };
 
-    item.sortIndex = col[getColorClass(item.rarity)];
+    item.sortIndex = col[getColorClass(item.rarity, item.name)];
 
     return item;
   });
@@ -167,7 +176,7 @@ function CasePage() {
                       <div className="case-free__info">
                         <span className="case-free__info-title">Чтобы открыть этот кейс вам необходимо</span>
                         <span className="case-free__info-text">Пополнение баланса за последние 24 часа<br /> не менее, чем на <span className="case-free-count">{caseElem.price} Р</span></span>
-                        <span className="case-free__info-text">За последние 24 часа вы пополнили баланс на <span className="case-free-count">0.00 Р</span></span>
+                        <span className="case-free__info-text">За последние 24 часа вы пополнили баланс на <span className="case-free-count">{!!user && user.lastPaymentSum} Р</span></span>
                       </div>
                     </div>
                   }
@@ -221,7 +230,7 @@ function CasePage() {
           <span className="case-content__title">Содержимое кейса</span>
           <div className="case-content__wrapper">
             {skins.map((itemGun) => {
-              const badge = getBadgeClass(itemGun.rarity);
+              const badge = getBadgeClass(itemGun.rarity, itemGun.short_name);
 
               return (
                 <div className="case-content__item" key={itemGun.id}>
