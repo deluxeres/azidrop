@@ -139,7 +139,7 @@ function ProfileDrop(props) {
                 </div>
                 <span className="drop-tab-title">Ваш инвентарь пуст</span>
                 <p>Перейдите на главную и откройте кейсы.</p>
-                <Link to="/">Перейти к кейсам</Link>
+                <Link to="/">Перейти к контрактам</Link>
               </TabPanel>
               <TabPanel className="drop-tabpanel">
                 <div className="drop-tab-img">
@@ -147,7 +147,7 @@ function ProfileDrop(props) {
                 </div>
                 <span className="drop-tab-title">Ваш инвентарь пуст</span>
                 <p>Перейдите на главную и откройте кейсы.</p>
-                <Link to="/">Перейти к кейсам</Link>
+                <Link to="/">Перейти к апгрейдам</Link>
               </TabPanel>
             </TabPanels>
           </Tabs>

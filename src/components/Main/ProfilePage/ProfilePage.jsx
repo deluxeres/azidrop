@@ -64,7 +64,7 @@ function ProfilePage() {
             <div className="profile-block-top">
               <div className="profile-block__inner">
                 <img className="profile-block__img" src={contractImg} alt='profile' />
-                <span>0</span>
+                <span>{userData.openCaseCount}</span>
                 <p>Кейсы</p>
               </div>
               <div className="profile-block__inner">

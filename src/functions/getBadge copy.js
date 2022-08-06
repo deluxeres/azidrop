@@ -25,25 +25,25 @@ const getBadge = function (name, tit) {
         case 'экзотичного вида':
             return 'maline';
         case 'consumer grade':
-            return 'silver';
+            return 'purple';
         case 'контрабандное':
             return 'orange';
         case 'контрабанда':
-            return 'orange';
+            return 'purple';
         case 'экстраординарного типа':
             return 'red';
         case 'restricted':
-            return 'maline';
+            return 'red';
         case 'mil-spec grade':
-            return 'blue';
+            return 'red';
         case 'classified':
             return 'red';
         case 'industrial grade':
-            return 'bluelight';
+            return 'red';
         case 'covert':
             return 'red';
         case 'high grade':
-            return 'blue';
+            return 'red';
         case 'remarkable':
             return 'red';
         case 'extraordinary':
@@ -53,13 +53,13 @@ const getBadge = function (name, tit) {
         case 'base grade':
             return 'blue';
         case 'distinguished':
-            return 'maline';
+            return 'blue';
         case 'исключительный':
-            return 'maline';
+            return 'blue';
         case 'superior':
-            return 'purple';
+            return 'blue';
         case 'master':
-            return 'red';
+            return 'blue';
         case 'мастерский':
             return 'red';
         case 'заслуженный':
@@ -67,7 +67,7 @@ const getBadge = function (name, tit) {
         case 'blue':
             return 'orange';
         case 'exceptional':
-            return 'maline';
+            return 'blue';
         case 'Нeoбычaйнo peдкиe':
             return 'orange';
         case '★':
