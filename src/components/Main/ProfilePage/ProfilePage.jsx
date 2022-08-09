@@ -63,19 +63,17 @@ function ProfilePage() {
           <div className="profile-block-container">
             <div className="profile-block-top">
               <div className="profile-block__inner">
-                <img className="profile-block__img" src={contractImg} alt='profile' />
                 <span>{userData.openCaseCount}</span>
                 <p>Кейсы</p>
               </div>
               <div className="profile-block__inner">
                 <img className="profile-block__img" src={contractImg} alt='profile' />
-                <span style={{ whiteSpace: 'nowrap' }}>{daysLag} дней</span>
-                <p>На нашем сайте</p>
-              </div>
-              <div className="profile-block__inner">
-                <img className="profile-block__img" src={contractImg} alt='profile' />
                 <span>0</span>
                 <p>Контракты</p>
+              </div>
+              <div className="profile-block__inner">
+                <span style={{ whiteSpace: 'nowrap' }}>{daysLag} дней</span>
+                <p>На нашем сайте</p>
               </div>
             </div>
             <div className="profile-block__user">
