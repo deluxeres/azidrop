@@ -19,13 +19,13 @@ function BonusPrize() {
                                 <h2>
                                     <AccordionButton className="faq-btn">
                                         <Box flex='1' textAlign='left' className="accord-title">
-                                            Как принять участие?
+                                            Как принять участие в розыгрыше?
                                         </Box>
                                         <AccordionIcon />
                                     </AccordionButton>
                                 </h2>
                                 <AccordionPanel pb={4} className="faq-text">
-                                    Для участия необходимо пополнить баланс на сумму соответствующую одному из уровней.
+                                            Для участия вам необходимо пополнить баланс на сумму, соответствующую одному из трех уровней розыгрыша. Пока работает таймер, ваши пополнения суммируются неограниченное количество раз. Пополнив счет более чем на 1500р вы примете участие во всех трех розыгрышах и сможете испытать удачу в борьбе за них
                                 </AccordionPanel>
                             </AccordionItem>
                             <AccordionItem className="accord-block">
@@ -38,7 +38,7 @@ function BonusPrize() {
                                     </AccordionButton>
                                 </h2>
                                 <AccordionPanel pb={4} className="faq-text">
-                                    В каждом из уровней случайным образом определяется по 1 победителю.
+                                         В каждом из уровней розыгрыша случайным образом определяется по одному счастливчику
                                 </AccordionPanel>
                             </AccordionItem>
                             <AccordionItem className="accord-block">
@@ -51,20 +51,20 @@ function BonusPrize() {
                                     </AccordionButton>
                                 </h2>
                                 <AccordionPanel pb={4} className="faq-text">
-                                    Победители определяются автоматически в конце розыгрыша.
+                                            Победители определяются автоматически по истечению времени на таймере. 
                                 </AccordionPanel>
                             </AccordionItem>
                             <AccordionItem className="accord-block">
                                 <h2>
                                     <AccordionButton className="faq-btn">
                                         <Box flex='1' textAlign='left' className="accord-title">
-                                            Я победил! Как забрать приз?
+                                            Как забрать приз?
                                         </Box>
                                         <AccordionIcon />
                                     </AccordionButton>
                                 </h2>
                                 <AccordionPanel pb={4} className="faq-text">
-                                    Выигранный предмет появится на странице вашего профиля и вы сразу сможете его вывести.
+                                        Предмет появится на странице вашего профиля после чего вы сможете его вывести.
                                 </AccordionPanel>
                             </AccordionItem>
                         </Accordion>

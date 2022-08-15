@@ -5,6 +5,8 @@ import freeImg from "../../../Assets/images/free.png"
 import BonusBlock from "../BonusPrize/Bonus"
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { useGetLoyalityQuery } from '../../../app/services/caseApi';
+
 
 function promoCopy() {
   console.log("copied");
@@ -30,7 +32,9 @@ function BonusPage() {
     setOpen(false);
   };
 
-  return (
+  const {data, isLoading} = useGetLoyalityQuery();
+
+  return isLoading ? null : (
     <div className="bonus">
       <div className="container">
         <div className="bonus-block">
@@ -42,7 +46,7 @@ function BonusPage() {
                 <p>Free bonus</p>
                 <span onClick={alertClick}>Используйте домен 
                 <CopyToClipboard text="azidrop.com" onCopy={promoCopy} className="bonusCopy">
-                   <strong>azidrop.com</strong>
+                   <strong>{data.nameLoyalty.pattern}</strong>
                 </CopyToClipboard>
                  в нике Steam и через 24 часа получайте бонус к любому пополнению +10%</span>
               </div>
@@ -53,7 +57,7 @@ function BonusPage() {
           </div>
           <Snackbar open={open} autoHideDuration={6000} onClose={alertClose}>
                   <Alert onClose={alertClose} severity="success" sx={{ width: '100%' }}>
-                    Вы скопировали домен azidrop.com
+                    Вы скопировали домен {data.nameLoyalty.pattern}
                   </Alert>
           </Snackbar>
 
@@ -95,7 +99,7 @@ function BonusPage() {
               <button>Получить бонус</button>
             </div>
           </div> */}
-          <p className="bonus-block__text">Вам необходимо иметь хотя бы одно пополнение на 150 ₽, с момента запуска данной системы, чтобы получить бонус за подписки на социальные сети. Если Вы уже подписаны, то нажмите кнопку получения бонуса. Бонус за подписку выдается один раз.</p>
+          {/* <p className="bonus-block__text">Вам необходимо иметь хотя бы одно пополнение на 150 ₽, с момента запуска данной системы, чтобы получить бонус за подписки на социальные сети. Если Вы уже подписаны, то нажмите кнопку получения бонуса. Бонус за подписку выдается один раз.</p> */}
         </div>
       </div>
     </div>

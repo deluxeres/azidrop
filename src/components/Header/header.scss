@@ -33,6 +33,11 @@
                 color: #7E83B0;
                 font-weight: 400;
                 font-size: 18px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 10ch;
+                display: block;
             }
 
             &__balance {

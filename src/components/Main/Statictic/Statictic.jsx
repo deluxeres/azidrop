@@ -11,7 +11,7 @@ function Statictic() {
         <div className="stat-info">
           <div className="stat-info__cases">
             <p>{data.case}</p>
-            <span>КЕЙСОВ</span>
+            <span>ОТКРЫТО КЕЙСОВ</span>
           </div>
           {/* <div className="stat-info__contracts">
             <p>461 323 </p>

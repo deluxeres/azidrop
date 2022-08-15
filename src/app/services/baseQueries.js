@@ -1,9 +1,9 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/dist/query';
 import axios from 'axios';
 
-export const apiHost = process.env.NODE_ENV === "development" ? '142.93.237.47' : window.location.hostname;
-export const baseUrl = '//' + apiHost;
-export const authLink = '//' + apiHost + '/auth/steam';
+export const apiHost = process.env.NODE_ENV === "development" ? 'azidrop.pro' : window.location.hostname;
+export const baseUrl = 'https://' + apiHost;
+export const authLink = 'https://' + apiHost + '/auth/steam';
 
 export const defaultBaseQuery = fetchBaseQuery({
     baseUrl: baseUrl,

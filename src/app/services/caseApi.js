@@ -15,6 +15,11 @@ export const caseApi = createApi({
 				url: 'api/cases/' + id,
 			}),
 		}),
+		getSettings: build.query({
+			query: () => ({
+				url: 'api/settings',
+			}),
+		}),
 		getLoyality: build.query({
 			query: () => ({
 				url: 'api/loyalty',
@@ -94,6 +99,7 @@ export const {
 	useGetPayWinnerQuery,
 	useGetWinSkinsQuery,
 	useGetFreeCaseQuery,
+	useGetSettingsQuery,
 	useGetStatisticsQuery,
 	useGetStatQuery
 } = caseApi;

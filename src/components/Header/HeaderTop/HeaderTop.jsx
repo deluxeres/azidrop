@@ -61,7 +61,7 @@ function HeaderTop() {
           <div className="online-general-bar">
             <div className="online-bar"></div>
           </div>
-          <span>{Math.floor(100 + 480 * Math.random())}</span>
+          <span>{Math.floor(110 + 10 * Math.random())}</span>
         </div>
           <a href="https://vk.com/club214414714" target="_blanc" rel="noopener">
             <svg

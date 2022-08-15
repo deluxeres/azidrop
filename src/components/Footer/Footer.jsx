@@ -8,17 +8,20 @@ import master from "../../Assets/images/Footer/master.png";
 import footerLogo from '../../Assets/images/Header/logo.png'
 import "./Footer.scss";
 import headerLogo from "../../Assets/images/Header/logotype.png"
+import { useGetSettingsQuery } from "../../app/services/caseApi"
 
 
 function Footer() {
+
+  const Setdata = useGetSettingsQuery();
+
   return (
     <div className="footer">
       <div className="container">
         <div className="footer-payment">
-          <img src={webMoney} alt="payment" />
-          <img src={Skrill} alt="payment" />
-          <img src={visa} alt="payment" />
-          <img src={eco} alt="payment" />
+          <img src="https://ggdrop.gg/static/media/settle-cards.45d5786d.svg" alt="payment" />
+          <img src="https://ggdrop.gg/static/media/skinsback.a0b3ba26.svg" alt="payment" />
+          <img src="https://ggdrop.gg/static/media/qiwi.78b0a233.svg" alt="payment" />
           <img src={master} alt="payment" />
         </div>
         <div className="footer-general">
