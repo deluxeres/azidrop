@@ -48,6 +48,8 @@ function CasePage() {
   }
 
   useEffect(() => {
+    console.log(user);
+    console.log(caseElem);
     if (user && caseElem) {
       if (+user.lastPaymentSum >= +caseElem.price) {
         available.current = true;
@@ -170,7 +172,7 @@ function CasePage() {
                     <img src={caseElem.img.replace('localhost', apiHost)} alt="case" />
                   </div>
 
-                  {(!available.current && isLogin) &&
+                  {(user && +user.lastPaymentSum < +caseElem.price && isLogin) &&
                     <div className="case-free">
                       <span className="case-free__splash">🧡</span>
                       <div className="case-free__info">
@@ -181,10 +183,10 @@ function CasePage() {
                     </div>
                   }
 
-                  {(available.current && isLogin) &&
+                  {(user && +user.lastPaymentSum >= +caseElem.price && isLogin) &&
                     <div className="case-buttons">
                       <div className="case-button__spin">
-                        <button onClick={spinCase}>Прокрутить за {caseElem.price} Р</button>
+                        <button onClick={spinCase}>Открыть</button>
                       </div>
                       <div className="case-button__quick">
                         <button onClick={quickOpen} disabled={isQuickOpening}>Открыть быстро</button>

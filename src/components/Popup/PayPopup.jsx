@@ -1,5 +1,5 @@
 import { Input, Text, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react";
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { openErrorAlert } from '../../app/alertSlice';
 import { axiosAuthBaseQuery } from '../../app/services/baseQueries';
@@ -10,9 +10,32 @@ function PayPopup(props) {
   const [selected_method, selectMethod] = useState(null);
   const [value, setValue] = useState('');
   const handleChange = (event) => setValue(event.target.value);
+  const promoInp = useRef();
+  const amountInp = useRef();
 
   const close = function () {
     props.close();
+  }
+
+  const payBy = () => {
+    const promocode = promoInp.current.value;
+    const amount = amountInp.current.value;
+
+    if (!amount) {
+      dispatch(openErrorAlert('Введите сумму пополнения'));
+      return;
+    }
+
+    axiosAuthBaseQuery.post('/api/payment/paypalych', {
+      amount,
+      promocode,
+    }).then((res) => {
+        if (res.data.error) {
+          dispatch(openErrorAlert(res.data.error));
+        } else if (res.data.url) {
+          window.location.href = res.data.url;
+        }
+      });
   }
 
   const payBySkinback = () => {
@@ -104,12 +127,13 @@ function PayPopup(props) {
                 <>
                   <div className="popup-modal__sum">
                     <input
+                      ref={promoInp}
                       placeholder="Промокод (при наличии)"
                       size="sm"
                     />
                   </div>
                   <div className="popup-modal__sum">
-                    <Input placeholder='Введите сумму' size="10" />
+                    <Input ref={amountInp} placeholder='Введите сумму' size="10" />
                     {/* <Input
                       value={value}
                       onChange={handleChange}
@@ -117,7 +141,7 @@ function PayPopup(props) {
                       size="sm"
                     /> */}
                   </div>
-                  <button className="popup-modal__pay">Пополнить счет</button>
+                  <button onClick={payBy} className="popup-modal__pay">Пополнить счет</button>
                 </>
               }
 
